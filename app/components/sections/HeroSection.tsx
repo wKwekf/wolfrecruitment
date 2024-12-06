@@ -1,0 +1,170 @@
+'use client'
+
+import { useState, useRef, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Button } from "@/components/ui/button"
+import { ArrowRight, VolumeX, Volume2 } from 'lucide-react'
+import Link from 'next/link'
+
+const logos = [
+  { name: 'Siemens', src: '/logos/Siemens.png' },
+  { name: 'Nike', src: '/logos/Nike.png' },
+  { name: 'Santander', src: '/logos/Santander.png' },
+  { name: 'Campus Founders', src: '/logos/CampusFounders.png' },
+  { name: 'BayernLB', src: '/logos/Bayernlb.png' }
+]
+
+const benefits = [
+  "Profitiere von unserem exklusiven Netzwerk der Top-1000 AI-Experten Deutschlands",
+  "Erhalte maßgeschneiderte Gehalts- und Positionierungsberatung für den AI-Bereich",
+  "Nutze unsere direkte Vernetzung in der regionalen Tech- und AI-Szene",
+  "Baue auf unsere Erfahrung aus über 750 erfolgreichen Tech-Vermittlungen",
+]
+
+export default function HeroSection() {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const [showControls, setShowControls] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true
+      videoRef.current.play().then(() => {
+        setIsPlaying(true)
+      }).catch(error => {
+        console.error("Autoplay failed:", error)
+      })
+    }
+  }, [])
+
+  const handleMuteToggle = () => {
+    setIsMuted(!isMuted)
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+    }
+  }
+
+  const handleVideoClick = () => {
+    setShowControls(true)
+    if (isMuted) {
+      setIsMuted(false)
+      if (videoRef.current) {
+        videoRef.current.muted = false
+      }
+    }
+    if (!isPlaying && videoRef.current) {
+      videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
+  return (
+    <section className="bg-[#121118] text-white py-12 sm:py-16 lg:py-20">
+      <div className="max-w-custom mx-auto px-4 sm:px-6">
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full"
+          >
+            <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
+              Wir verbinden dein Unternehmen in 7 Tagen mit deinem neuen Mitarbeiter für AI
+            </h1>
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 text-white">
+              1000+ AI Top-Performer in unserem exklusiven Netzwerk
+            </p>
+            
+            <div className="w-full mb-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
+              <div className="relative w-full lg:w-1/2 aspect-video">
+                <video
+                  ref={videoRef}
+                  src={heroVideoUrl}
+                  width="100%"
+                  height="100%"
+                  loop
+                  playsInline
+                  muted={isMuted}
+                  controls={showControls}
+                  className="rounded-lg"
+                  onClick={handleVideoClick}
+                >
+                  <track
+                    kind="subtitles"
+                    src="/videos/subtitles/HeroVideo.vtt"
+                    srcLang="de"
+                    label="Deutsch"
+                    default
+                  />
+                </video>
+                {!showControls && (
+                  <button
+                    onClick={handleMuteToggle}
+                    className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-6 h-6 text-white" />
+                    ) : (
+                      <Volume2 className="w-6 h-6 text-white" />
+                    )}
+                  </button>
+                )}
+              </div>
+              <div className="w-full lg:w-1/2 flex flex-col items-start">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start mb-4">
+                    <span className="mr-4 flex-shrink-0 mt-1 text-[#FFFFFF]">✓</span>
+                    <p className="text-left text-base sm:text-lg">{benefit}</p>
+                  </div>
+                ))}
+                <div className="w-full flex flex-col items-center mt-6">
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="font-semibold w-full sm:w-auto"
+                    asChild
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
+                    <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
+                      Jetzt unverbindliches Erstgespräch buchen
+                      <motion.span
+                        className="inline-block ml-2"
+                        animate={{ x: isHovered ? 5 : 0 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <ArrowRight className="h-6 w-6" />
+                      </motion.span>
+                    </Link>
+                  </Button>
+                  <p className="text-sm text-gray-400 mt-2">Erfahrung aus mehr als 750 Vermittlungen</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-12 sm:mt-16 flex flex-col items-center">
+          <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8">Proudly trusted by</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 w-full max-w-5xl place-items-center">
+            {logos.map((logo) => (
+              <div key={logo.name} className="w-32 sm:w-36 h-16 sm:h-20 relative">
+                <Image
+                  src={logo.src}
+                  alt={`${logo.name} logo`}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

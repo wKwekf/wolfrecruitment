@@ -1,0 +1,30 @@
+import Header from '@/app/components/layout/Header'
+import Footer from '@/app/components/layout/Footer'
+import HeroSection from '@/app/components/sections/HeroSection'
+import SecondSection from '@/app/components/sections/SecondSection'
+import ThirdSection from '@/app/components/sections/ThirdSection'
+import VideoSection from '@/app/components/sections/VideoSection'
+import TestimonialSection from '@/app/components/sections/TestimonialSection'
+import FAQSection from '@/app/components/sections/FAQSection'
+import PricingSection from '@/app/components/sections/PricingSection'
+import ROISection from './components/sections/ROISection'
+
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+        <main>
+          <HeroSection />
+          <SecondSection />
+          <ThirdSection />
+          <VideoSection />
+          <TestimonialSection />
+          <PricingSection />
+          <ROISection />
+          <FAQSection />
+        </main>
+      <Footer />
+    </>
+  )
+}

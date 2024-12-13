@@ -268,14 +268,14 @@ export default function FourthSection() {
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Lösung:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Innerhalb von 7 Tagen präsentierten wir die ersten KI-Experten mit Banking-Expertise. Von 7 vorgestellten Kandidaten überzeugten 4 im ersten Gespräch.
+                      Innerhalb von 7 Tagen präsentierten wir die ersten KI-Experten mit Banking-Expertise. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Ergebnis:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Nach nur 4 Wochen wurde zwei ideale Kandidat gefunden. Die Position konnte schnell und passgenau besetzt werden.
+                      Nach nur 4 Wochen wurden zwei ideale Kandidaten gefunden. Die Position konnte schnell und passgenau besetzt werden.
                     </p>
                   </div>
                 </div>

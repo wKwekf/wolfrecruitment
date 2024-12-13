@@ -12,14 +12,15 @@ const logos = [
   { name: 'Nike', src: '/logos/Nike.png' },
   { name: 'Santander', src: '/logos/Santander.png' },
   { name: 'Campus Founders', src: '/logos/CampusFounders.png' },
-  { name: 'BayernLB', src: '/logos/Bayernlb.png' }
+  { name: 'BayernLB', src: '/logos/Bayernlb.png' },
+  { name: 'DEPT', src: '/logos/DEPT.png' }
 ]
 
 const benefits = [
-  "Profitiere von unserem exklusiven Netzwerk der Top-1000 AI-Experten Deutschlands",
-  "Erhalte maßgeschneiderte Gehalts- und Positionierungsberatung für den AI-Bereich",
-  "Nutze unsere direkte Vernetzung in der regionalen Tech- und AI-Szene",
-  "Baue auf unsere Erfahrung aus über 750 erfolgreichen Tech-Vermittlungen",
+  "In 7 Tagen: Passende AI-Experten bereit für deine Interviews",
+  "82% der vorgestellten Kandidaten werden direkt zum Interview eingeladen",
+  "Technische Expertise: Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten",
+  "Maximale Auswahl: Direkter Zugriff auf 1000+ spezialisierte AI-Experten",
 ]
 
 export default function HeroSection() {
@@ -74,10 +75,10 @@ export default function HeroSection() {
             className="w-full"
           >
             <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
-              Wir verbinden dein Unternehmen in 7 Tagen mit deinem neuen Mitarbeiter für AI
+              AI-Innovationen warten nicht. In 7 Tagen zu deinen passenden AI-Experten.
             </h1>
             <p className="text-base sm:text-lg mb-6 sm:mb-8 text-white">
-              1000+ AI Top-Performer in unserem exklusiven Netzwerk
+              Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.
             </p>
             
             <div className="w-full mb-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
@@ -150,10 +151,10 @@ export default function HeroSection() {
         </div>
 
         <div className="mt-12 sm:mt-16 flex flex-col items-center">
-          <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8">Proudly trusted by</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 w-full max-w-5xl place-items-center">
+          <p className="text-sm text-gray-400 mb-4 sm:mb-6">Uns vertrauen großartige Teams von</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-12 w-full max-w-6xl place-items-center">
             {logos.map((logo) => (
-              <div key={logo.name} className="w-32 sm:w-36 h-16 sm:h-20 relative">
+              <div key={logo.name} className="w-24 h-10 relative flex items-center justify-center">
                 <Image
                   src={logo.src}
                   alt={`${logo.name} logo`}

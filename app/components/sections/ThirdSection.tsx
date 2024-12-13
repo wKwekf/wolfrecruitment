@@ -4,16 +4,16 @@ import { motion } from 'framer-motion'
 
 const results = [
   {
-    headline: "7 Tage",
-    description: "bis zum ersten passgenauen Bewerber"
+    headline: "Schnell & zuverlässig",
+    description: "In 94 % der Fälle liefern wir dir den ersten passenden Kandidaten in 7 Tagen.*"
   },
   {
-    headline: "Mehr als 1000",
-    description: "AI Top-Perfomer in unserem exklusiven Netzwerk"
+    headline: "Überzeugende Qualität",
+    description: "82 % unserer Kandidaten werden direkt ins Interview eingeladen.*"
   },
   {
-    headline: "Weniger als 3%",
-    description: "Drop-Off-Rate durch intensive Kick-Offs"
+    headline: "Exklusive Top-Talente",
+    description: "Mehr als 1.000 AI-Experten für deine Projekte - handverlesen und wechselbereit."
   }
 ]
 
@@ -29,7 +29,7 @@ export default function ThirdSection() {
         >
           Was du als Unternehmen erwarten kannst
         </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {results.map((result, index) => (
             <motion.div
               key={index}
@@ -42,6 +42,10 @@ export default function ThirdSection() {
               <p className="text-lg text-gray-300">{result.description}</p>
             </motion.div>
           ))}
+        </div>
+        <div className="text-sm text-gray-400 space-y-2 px-4">
+          <p>*Basierend auf unseren Vermittlungsdaten 2024 (30 von 32 Suchen) und Kundenfeedback.</p>
+        
         </div>
       </div>
     </section>

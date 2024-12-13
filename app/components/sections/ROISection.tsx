@@ -11,6 +11,24 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Info, Edit2, Check } from 'lucide-react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 
+export const metadata = {
+  title: 'ROI-Rechner | WolfAI',
+  description: 'Berechnen Sie den ROI Ihrer AI-Recruiting Investition',
+  openGraph: {
+    title: 'ROI-Rechner | WolfAI',
+    description: 'Berechnen Sie den ROI Ihrer AI-Recruiting Investition',
+    url: 'https://wolfai.de/?section=roi',
+    images: [
+      {
+        url: '/roi-calculator-preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'WolfAI ROI-Rechner',
+      },
+    ],
+  },
+}
+
 export default function ROISection() {
   const [salary, setSalary] = useState<number | ''>(80000)
   const [valueFactor, setValueFactor] = useState<number | ''>(2)

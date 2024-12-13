@@ -11,8 +11,7 @@ const challenges = [
   "Zahlreiche Bewerbungen ohne substantielle AI-Expertise",
   "Wertvolle Zeit in Gesprächen, die nicht zielführend sind",
   "Die Schwierigkeit, technische Qualifikationen präzise zu bewerten",
-  "Das Wissen, dass etablierte Recruiting-Wege die besten AI-Spezialisten nicht erreichen",
-  "Die kontinuierliche Aufgabe, dein Team mit den richtigen AI Top-Performern zu verstärken"
+  "Das Wissen, dass andere Recruiting-Wege dir nicht die gewünschten Bewerber bringen"
 ]
 
 export default function SecondSection() {
@@ -44,7 +43,7 @@ export default function SecondSection() {
               </ul>
 
               <p className="text-base sm:text-lg mb-6 sm:mb-8">
-                Genau deswegen sind all unsere Recruiter Google Cloud zertifizierte ML-Engineers, die in klar definierten, kleinen Regionen arbeiten. So kennen Sie den lokalen AI-Markt und die wirklich passenden AI-Experten für deine spezifischen Anforderungen.
+              Daher gilt für uns: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting, jeder Recruiter arbeitet nur in einer definierten Region, und unsere ML-Zertifizierung garantiert technisches Verständnis. So finden wir die AI-Experten, die andere übersehen.
               </p>
             </motion.div>
           </div>

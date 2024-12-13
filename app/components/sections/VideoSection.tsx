@@ -254,28 +254,28 @@ export default function FourthSection() {
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Problem:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Die BayernLB suchte einen erfahrenen AI Product Owner, der die digitale Transformation vorantreiben und KI-Lösungen implementieren kann.
+                      Die BayernLB suchte zwei erfahrene ML-Engineers, die die digitale Transformation vorantreiben und KI-Lösungen implementieren kann.
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Ziel:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Einen Experten finden, der sowohl technisches Know-how als auch Führungsqualitäten mitbringt.
+                      Experten finden, die sowohl technisches Know-how als auch Führungsqualitäten mitbringen.
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Lösung:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Innerhalb von 7 Tagen präsentierten wir die ersten KI-Experten mit Banking-Expertise. Von 12 vorgestellten Kandidaten überzeugten 9 im ersten Gespräch.
+                      Innerhalb von 7 Tagen präsentierten wir die ersten KI-Experten mit Banking-Expertise. Von 7 vorgestellten Kandidaten überzeugten 4 im ersten Gespräch.
                     </p>
                   </div>
                   
                   <div>
                     <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Ergebnis:</h3>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Nach nur 3 Wochen wurde der ideale Kandidat gefunden. Die Position konnte schnell und passgenau besetzt werden.
+                      Nach nur 4 Wochen wurde zwei ideale Kandidat gefunden. Die Position konnte schnell und passgenau besetzt werden.
                     </p>
                   </div>
                 </div>

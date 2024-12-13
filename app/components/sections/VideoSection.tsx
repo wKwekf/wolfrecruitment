@@ -10,7 +10,9 @@ import { motion } from 'framer-motion'
 export default function FourthSection() {
   const [isHovered, setIsHovered] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
+  const [isMutedBLB, setIsMutedBLB] = useState(true)
   const [showControls, setShowControls] = useState(false)
+  const [showControlsBLB, setShowControlsBLB] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isPlayingBLB, setIsPlayingBLB] = useState(false)
@@ -46,12 +48,12 @@ export default function FourthSection() {
     if (isVisible) {
       if (videoRef.current) {
         videoRef.current.muted = true
+        // Ensure subtitles are shown when video starts playing
+        if (videoRef.current.textTracks[0]) {
+          videoRef.current.textTracks[0].mode = 'showing'
+        }
         videoRef.current.play().then(() => {
           setIsPlaying(true)
-          // Ensure subtitles are shown when video starts playing
-          if (videoRef.current?.textTracks[0]) {
-            videoRef.current.textTracks[0].mode = 'showing'
-          }
         }).catch(error => {
           console.error("Autoplay failed:", error)
         })
@@ -59,18 +61,30 @@ export default function FourthSection() {
       
       if (videoBLBRef.current) {
         videoBLBRef.current.muted = true
+        // Ensure subtitles are shown when video starts playing
+        if (videoBLBRef.current.textTracks[0]) {
+          videoBLBRef.current.textTracks[0].mode = 'showing'
+        }
         videoBLBRef.current.play().then(() => {
           setIsPlayingBLB(true)
-          // Ensure subtitles are shown when video starts playing
-          if (videoBLBRef.current?.textTracks[0]) {
-            videoBLBRef.current.textTracks[0].mode = 'showing'
-          }
         }).catch(error => {
           console.error("Autoplay failed:", error)
         })
       }
     }
   }, [isVisible])
+
+  useEffect(() => {
+    // Initialize subtitles for Campus Founders video
+    if (videoRef.current && videoRef.current.textTracks[0]) {
+      videoRef.current.textTracks[0].mode = 'showing'
+    }
+    
+    // Initialize subtitles for BayernLB video
+    if (videoBLBRef.current && videoBLBRef.current.textTracks[0]) {
+      videoBLBRef.current.textTracks[0].mode = 'showing'
+    }
+  }, [])
 
   useEffect(() => {
     // Check for URL parameter
@@ -103,10 +117,17 @@ export default function FourthSection() {
     }
   }
 
+  const handleMuteToggleBLB = () => {
+    setIsMutedBLB(!isMutedBLB)
+    if (videoBLBRef.current) {
+      videoBLBRef.current.muted = !isMutedBLB
+    }
+  }
+
   const handleBLBVideoClick = () => {
-    setShowControls(true)
-    if (isMuted) {
-      setIsMuted(false)
+    setShowControlsBLB(true)
+    if (isMutedBLB) {
+      setIsMutedBLB(false)
       if (videoBLBRef.current) {
         videoBLBRef.current.muted = false
       }
@@ -291,8 +312,8 @@ export default function FourthSection() {
                 height="100%"
                 loop
                 playsInline
-                muted={isMuted}
-                controls={showControls}
+                muted={isMutedBLB}
+                controls={showControlsBLB}
                 className="rounded-lg"
                 onClick={handleBLBVideoClick}
                 crossOrigin="anonymous"
@@ -305,12 +326,12 @@ export default function FourthSection() {
                   default
                 />
               </video>
-              {!showControls && (
+              {!showControlsBLB && (
                 <button
-                  onClick={handleMuteToggle}
+                  onClick={handleMuteToggleBLB}
                   className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
                 >
-                  {isMuted ? (
+                  {isMutedBLB ? (
                     <VolumeX className="w-6 h-6 text-white" />
                   ) : (
                     <Volume2 className="w-6 h-6 text-white" />

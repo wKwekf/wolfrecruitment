@@ -232,98 +232,98 @@ export default function FourthSection() {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* BayernLB Case Study */}
-      <div className="max-w-custom mx-auto px-4 mt-32">
-        <div className="flex flex-col md:flex-row-reverse items-start">
-          <div className="md:w-1/2 md:pr-8">
-            <div className="ml-auto" style={{ maxWidth: "500px" }}>
-              <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-medium mb-3 text-[#121118] text-right">
-                Fallstudie: BayernLB
-              </h1>
-              <div className="space-y-4 text-right">
-                <div className="space-y-3">
-                  <div>
-                    <span className="text-lg font-bold mb-2 block text-right">Ausgangssituation:</span>
-                    <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Die BayernLB suchte jeweils einen ML-Engineer und einen MLOps Engineer, die Grundlagen schaffen und AI-Lösungen voranbringen können.
-                    </p>
+        {/* BayernLB Case Study */}
+        <div className="max-w-custom mx-auto px-4 mt-32">
+          <div className="flex flex-col md:flex-row-reverse items-start">
+            <div className="md:w-1/2 md:pr-8">
+              <div className="ml-auto" style={{ maxWidth: "500px" }}>
+                <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-medium mb-3 text-[#121118] text-right">
+                  Fallstudie: BayernLB
+                </h1>
+                <div className="space-y-4 text-right">
+                  <div className="space-y-3">
+                    <div>
+                      <span className="text-lg font-bold mb-2 block text-right">Ausgangssituation:</span>
+                      <p className="text-lg font-medium text-gray-600 leading-normal text-right">
+                        Die BayernLB suchte jeweils einen ML-Engineer und einen MLOps-Engineer, die Grundlagen schaffen und AI-Lösungen voranbringen können.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <span className="text-lg font-bold mb-2 block text-right">Lösung:</span>
+                      <p className="text-lg font-medium text-gray-600 leading-normal text-right">
+                        In 7 Tagen erhielt das Team der BayernLB die ersten passenden Kandidaten. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <span className="text-lg font-bold mb-2 block text-right">Ergebnis:</span>
+                      <p className="text-lg font-medium text-gray-600 leading-normal text-right">
+                        In nur 4 Wochen wurde die ML-Engineer und zwei Wochen später der MLOps Engineer mit zwei herausragenden Kandidaten besetzt.
+                      </p>
+                    </div>
                   </div>
-                  
-                  <div>
-                    <span className="text-lg font-bold mb-2 block text-right">Lösung:</span>
-                    <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      In 7 Tagen erhielt das Team der BayernLB die ersten passenden Kandidaten. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <span className="text-lg font-bold mb-2 block text-right">Ergebnis:</span>
-                    <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      In nur 4 Wochen wurde die ML-Engineer und zwei Wochen später der MLOps Engineer mit zwei herausragenden Kandidaten besetzt.
-                    </p>
-                  </div>
-                </div>
 
-                <div className="flex items-center justify-end gap-6 mt-6">
-                  <div className="text-right">
-                    <span className="text-lg font-bold text-[#121118]">Mitarbeiter</span>
-                    <p className="text-lg text-gray-600">7.500</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-lg font-bold text-[#121118]">Branche</span>
-                    <p className="text-lg text-gray-600">Finanzdienstleistungen</p>
+                  <div className="flex items-center justify-end gap-6 mt-6">
+                    <div className="text-right">
+                      <span className="text-lg font-bold text-[#121118]">Mitarbeiter</span>
+                      <p className="text-lg text-gray-600">7.500</p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-lg font-bold text-[#121118]">Branche</span>
+                      <p className="text-lg text-gray-600">Finanzdienstleistungen</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="md:w-1/2 mt-4 md:mt-0">
-            <div className="flex items-center gap-4 mb-3">
-              <div className="w-32 h-8 relative">
-                <Image
-                  src="/logos/Logo_Bayernlb_Black.png"
-                  alt="BayernLB logo"
-                  fill
-                  style={{ objectFit: 'contain' }}
-                />
+            <div className="md:w-1/2 mt-4 md:mt-0">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-32 h-8 relative">
+                  <Image
+                    src="/logos/Logo_Bayernlb_Black.png"
+                    alt="BayernLB logo"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="relative aspect-video">
-              <video
-                ref={videoBLBRef}
-                src={videoBLBUrl}
-                width="100%"
-                height="100%"
-                loop
-                playsInline
-                muted={isMutedBLB}
-                controls={showControlsBLB}
-                className="rounded-lg"
-                onClick={handleBLBVideoClick}
-                crossOrigin="anonymous"
-              >
-                <track
-                  kind="subtitles"
-                  src="/videos/subtitles/BayernLB.vtt"
-                  srcLang="de"
-                  label="Deutsch"
-                  default
-                />
-              </video>
-              {!showControlsBLB && (
-                <button
-                  onClick={handleMuteToggleBLB}
-                  className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+              <div className="relative aspect-video">
+                <video
+                  ref={videoBLBRef}
+                  src={videoBLBUrl}
+                  width="100%"
+                  height="100%"
+                  loop
+                  playsInline
+                  muted={isMutedBLB}
+                  controls={showControlsBLB}
+                  className="rounded-lg"
+                  onClick={handleBLBVideoClick}
+                  crossOrigin="anonymous"
                 >
-                  {isMutedBLB ? (
-                    <VolumeX className="w-6 h-6 text-white" />
-                  ) : (
-                    <Volume2 className="w-6 h-6 text-white" />
-                  )}
-                </button>
-              )}
+                  <track
+                    kind="subtitles"
+                    src="/videos/subtitles/BayernLB.vtt"
+                    srcLang="de"
+                    label="Deutsch"
+                    default
+                  />
+                </video>
+                {!showControlsBLB && (
+                  <button
+                    onClick={handleMuteToggleBLB}
+                    className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+                  >
+                    {isMutedBLB ? (
+                      <VolumeX className="w-6 h-6 text-white" />
+                    ) : (
+                      <Volume2 className="w-6 h-6 text-white" />
+                    )}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>

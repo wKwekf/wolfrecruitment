@@ -152,28 +152,21 @@ export default function FourthSection() {
               <div className="space-y-4">
                 <div className="space-y-3">
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118]">Problem:</h3>
+                    <span className="text-lg font-bold mb-2 block">Ausgangssituation:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal">
                       Die Campus Founders suchten monatelang erfolglos nach einem AI-Track-Lead – einer Schlüsselposition, die technische Expertise mit strategischem Denken verbindet.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118]">Ziel:</h3>
+                    <span className="text-lg font-bold mb-2 block">Lösung:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal">
-                      Schnelle Besetzung der Position mit einem erstklassigen Kandidaten.
+                      Wir präsentierten innerhalb von 7 Tagen die ersten passenden Kandidaten. Insgesamt stellten wir 15 hochqualifizierte Bewerber vor.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118]">Lösung:</h3>
-                    <p className="text-lg font-medium text-gray-600 leading-normal">
-                      Durch unser Netzwerk von 1.000+ KI-Experten präsentierten wir innerhalb von 7 Tagen die ersten passenden Kandidaten. Insgesamt stellten wir 15 hochqualifizierte Bewerber vor.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118]">Ergebnis:</h3>
+                    <span className="text-lg font-bold mb-2 block">Ergebnis:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal">
                       Position in nur 4 Wochen erfolgreich besetzt. Die Campus Founders konnten ihre Projekte direkt mit der benötigten Expertise starten.
                     </p>
@@ -182,12 +175,12 @@ export default function FourthSection() {
 
                 <div className="flex items-center gap-6 mt-6">
                   <div>
-                    <p className="font-semibold">Mitarbeiter</p>
-                    <p className="text-gray-600">86</p>
+                    <span className="text-lg font-bold text-[#121118]">Mitarbeiter</span>
+                    <p className="text-lg text-gray-600">86</p>
                   </div>
                   <div>
-                    <p className="font-semibold">Branche</p>
-                    <p className="text-gray-600">Startup-Inkubator</p>
+                    <span className="text-lg font-bold text-[#121118]">Branche</span>
+                    <p className="text-lg text-gray-600">Startup-Inkubator</p>
                   </div>
                 </div>
               </div>
@@ -252,42 +245,35 @@ export default function FourthSection() {
               <div className="space-y-4 text-right">
                 <div className="space-y-3">
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Problem:</h3>
+                    <span className="text-lg font-bold mb-2 block text-right">Ausgangssituation:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Die BayernLB suchte zwei erfahrene ML-Engineers, die die digitale Transformation vorantreiben und KI-Lösungen implementieren kann.
+                      Die BayernLB suchte jeweils einen ML-Engineer und einen MLOps Engineer, die Grundlagen schaffen und AI-Lösungen voranbringen können.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Ziel:</h3>
+                    <span className="text-lg font-bold mb-2 block text-right">Lösung:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Experten finden, die sowohl technisches Know-how als auch Führungsqualitäten mitbringen.
+                      In 7 Tagen präsentierten wir die ersten passenden Kandidaten. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
                     </p>
                   </div>
                   
                   <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Lösung:</h3>
+                    <span className="text-lg font-bold mb-2 block text-right">Ergebnis:</span>
                     <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Innerhalb von 7 Tagen präsentierten wir die ersten KI-Experten mit Banking-Expertise. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
-                    </p>
-                  </div>
-                  
-                  <div>
-                    <h3 className="font-figtree text-lg font-bold mb-1 text-[#121118] text-right">Ergebnis:</h3>
-                    <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                      Nach nur 4 Wochen wurden zwei ideale Kandidaten gefunden. Die Position konnte schnell und passgenau besetzt werden.
+                      In nur 4 Wochen wurde die ML-Engineer und zwei Wochen später der MLOps Engineer mit zwei herausragenden Kandidaten besetzt.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-end gap-6 mt-6">
                   <div className="text-right">
-                    <p className="font-semibold">Mitarbeiter</p>
-                    <p className="text-gray-600">7.500</p>
+                    <span className="text-lg font-bold text-[#121118]">Mitarbeiter</span>
+                    <p className="text-lg text-gray-600">7.500</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold">Branche</p>
-                    <p className="text-gray-600">Finanzdienstleistungen</p>
+                    <span className="text-lg font-bold text-[#121118]">Branche</span>
+                    <p className="text-lg text-gray-600">Finanzdienstleistungen</p>
                   </div>
                 </div>
               </div>

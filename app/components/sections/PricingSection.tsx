@@ -44,7 +44,7 @@ const PricingCard = () => {
                 </Badge>
               </div>
               <div className="mt-4">
-                <span className="text-5xl font-bold text-white">33%</span>
+                <span className="text-5xl font-bold text-white">30%</span>
                 <span className="text-gray-300 ml-2">vom Bruttojahresgehalt</span>
               </div>
               <p className="text-base text-gray-300">Zahlung erst bei erfolgreicher Anstellung</p>
@@ -106,7 +106,7 @@ const PricingCard = () => {
                 <h3 className="font-platform text-2xl sm:text-3xl font-medium text-white">AI-Talent Alliance</h3>
               </div>
               <div className="mt-4">
-                <span className="text-5xl font-bold text-white">27%</span>
+                <span className="text-5xl font-bold text-white">26%</span>
                 <span className="text-gray-300 ml-2">vom Bruttojahresgehalt</span>
               </div>
               <p className="text-base text-gray-300">Zahlung in 3 Chargen: Bei Beginn, ersten Interviews und Anstellung</p>

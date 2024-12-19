@@ -2,15 +2,13 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { ArrowRight, VolumeX, Volume2 } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function FourthSection() {
   const [isHovered, setIsHovered] = useState(false)
-  const [isMuted, setIsMuted] = useState(true)
-  const [isMutedBLB, setIsMutedBLB] = useState(true)
   const [showControls, setShowControls] = useState(false)
   const [showControlsBLB, setShowControlsBLB] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -86,43 +84,17 @@ export default function FourthSection() {
     }
   }, []);
 
-  const handleMuteToggle = () => {
-    setIsMuted(!isMuted)
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted
-    }
-  }
-
   const handleVideoClick = () => {
     setShowControls(true)
-    if (isMuted) {
-      setIsMuted(false)
-      if (videoRef.current) {
-        videoRef.current.muted = false
-      }
-    }
-    if (!isPlaying && videoRef.current) {
+    if (videoRef.current && !isPlaying) {
       videoRef.current.play()
       setIsPlaying(true)
     }
   }
 
-  const handleMuteToggleBLB = () => {
-    setIsMutedBLB(!isMutedBLB)
-    if (videoBLBRef.current) {
-      videoBLBRef.current.muted = !isMutedBLB
-    }
-  }
-
   const handleBLBVideoClick = () => {
     setShowControlsBLB(true)
-    if (isMutedBLB) {
-      setIsMutedBLB(false)
-      if (videoBLBRef.current) {
-        videoBLBRef.current.muted = false
-      }
-    }
-    if (!isPlayingBLB && videoBLBRef.current) {
+    if (videoBLBRef.current && !isPlayingBLB) {
       videoBLBRef.current.play()
       setIsPlayingBLB(true)
     }
@@ -193,7 +165,6 @@ export default function FourthSection() {
                 height="100%"
                 loop
                 playsInline
-                muted={isMuted}
                 controls={showControls}
                 className="rounded-lg"
                 onClick={handleVideoClick}
@@ -209,14 +180,10 @@ export default function FourthSection() {
               </video>
               {!showControls && (
                 <button
-                  onClick={handleMuteToggle}
-                  className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+                  onClick={handleVideoClick}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all"
                 >
-                  {isMuted ? (
-                    <VolumeX className="w-6 h-6 text-white" />
-                  ) : (
-                    <Volume2 className="w-6 h-6 text-white" />
-                  )}
+                  <Play className="w-8 h-8 text-white" />
                 </button>
               )}
             </div>
@@ -287,7 +254,6 @@ export default function FourthSection() {
                   height="100%"
                   loop
                   playsInline
-                  muted={isMutedBLB}
                   controls={showControlsBLB}
                   className="rounded-lg"
                   onClick={handleBLBVideoClick}
@@ -303,14 +269,10 @@ export default function FourthSection() {
                 </video>
                 {!showControlsBLB && (
                   <button
-                    onClick={handleMuteToggleBLB}
-                    className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+                    onClick={handleBLBVideoClick}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all"
                   >
-                    {isMutedBLB ? (
-                      <VolumeX className="w-6 h-6 text-white" />
-                    ) : (
-                      <Volume2 className="w-6 h-6 text-white" />
-                    )}
+                    <Play className="w-8 h-8 text-white" />
                   </button>
                 )}
               </div>

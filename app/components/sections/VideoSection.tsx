@@ -21,7 +21,7 @@ export default function FourthSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   const videoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/CampusFoundersTestimonial-2ecEr5ui8AbGwL3X5cq0RYKytxJctf.mp4"
-  const videoBLBUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/BayernLBTestimonial-2s.klfjaergjnekrgnkenrgerg.mp4-uGpwHOUrAqqIFKKYc3jUziK7W3RS6X.mp4"
+  const videoBLBUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/BayernLBTestimonial-2s.klfjaergjnekrgnkenrgerg-zWOMu1mgJFft4ScVtB1Eb6rDw3Ycgd.mp4"
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,11 +52,6 @@ export default function FourthSection() {
         if (videoRef.current.textTracks[0]) {
           videoRef.current.textTracks[0].mode = 'showing'
         }
-        videoRef.current.play().then(() => {
-          setIsPlaying(true)
-        }).catch(error => {
-          console.error("Autoplay failed:", error)
-        })
       }
       
       if (videoBLBRef.current) {
@@ -65,11 +60,6 @@ export default function FourthSection() {
         if (videoBLBRef.current.textTracks[0]) {
           videoBLBRef.current.textTracks[0].mode = 'showing'
         }
-        videoBLBRef.current.play().then(() => {
-          setIsPlayingBLB(true)
-        }).catch(error => {
-          console.error("Autoplay failed:", error)
-        })
       }
     }
   }, [isVisible])

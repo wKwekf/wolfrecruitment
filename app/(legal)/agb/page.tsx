@@ -26,8 +26,8 @@ export default function AGBPage() {
               <h2 className="text-xl font-semibold mb-2">§3 Honorarvereinbarung</h2>
               <p>Im Erfolgsfall, definiert als die Unterzeichnung eines Anstellungsvertrages mit einem von Wolf vorgestellten Kandidaten, entsteht eine Honorarverpflichtung seitens des Klienten. Der Klient hat die Wahl zwischen zwei Preismodellen:</p>
               <ul className="list-disc list-inside ml-4 mt-2">
-                <li><strong>AI-Talent Flex:</strong> Einmalzahlung in Höhe von 33% des Jahreszielgehalts des Kandidaten, fällig bei erfolgreicher Anstellung.</li>
-                <li><strong>AI-Talent Alliance:</strong> Zahlung von 27% des Jahreszielgehalts des Kandidaten, aufgeteilt in drei Chargen:
+                <li><strong>AI-Talent Flex:</strong> Einmalzahlung in Höhe von 30% des Jahreszielgehalts des Kandidaten, fällig bei erfolgreicher Anstellung.</li>
+                <li><strong>AI-Talent Alliance:</strong> Zahlung von 26% des Jahreszielgehalts des Kandidaten, aufgeteilt in drei Chargen:
                   <ul className="list-disc list-inside ml-8 mt-1">
                     <li>Erste Charge bei Projektbeginn</li>
                     <li>Zweite Charge bei ersten Interviews</li>
@@ -59,17 +59,16 @@ export default function AGBPage() {
               <ul className="list-disc list-inside ml-4 mt-2">
                 <li>Bei einem "Non-Starter" (der Kandidat tritt die Stelle nicht an):
                   <ul className="list-disc list-inside ml-8 mt-1">
-                    <li>AI-Talent Flex: Vollständige Rückerstattung des Honorars</li>
-                    <li>AI-Talent Alliance: Rückerstattung der dritten Charge</li>
+                    <li>Vollständige Rückerstattung des Honorars bei beiden Modellen</li>
                   </ul>
                 </li>
               </ul>
               <p className="mt-2">Bei einer Vertragsauflösung innerhalb der Probezeit gilt folgende Staffelung:</p>
               <ul className="list-disc list-inside ml-4 mt-2">
-                <li>Bei Vertragsauflösung im 1. Monat: 80% Rückzahlung der letzten Charge</li>
-                <li>Im 2. Monat: 60% Rückzahlung der letzten Charge</li>
-                <li>Im 3. Monat: 40% Rückzahlung der letzten Charge</li>
-                <li>Im 4. Monat: 20% Rückzahlung der letzten Charge</li>
+                <li>Bei Vertragsauflösung im 1. Monat: 80% Rückzahlung des Honorars</li>
+                <li>Im 2. Monat: 60% Rückzahlung des Honorars</li>
+                <li>Im 3. Monat: 40% Rückzahlung des Honorars</li>
+                <li>Im 4. Monat: 20% Rückzahlung des Honorars</li>
                 <li>Ab dem 5. Monat: Keine Rückzahlung</li>
               </ul>
               <p className="mt-2">Keine Rückzahlung erfolgt, wenn die Vertragsauflösung aus betrieblichen Gründen seitens des Auftraggebers erfolgt.</p>

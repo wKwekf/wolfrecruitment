@@ -217,7 +217,7 @@ export default function FourthSection() {
                     <div>
                       <span className="text-lg font-bold mb-2 block text-right">Ergebnis:</span>
                       <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                        In nur 4 Wochen wurde die ML-Engineer und zwei Wochen später der MLOps Engineer mit zwei herausragenden Kandidaten besetzt.
+                        In nur 4 Wochen wurde der ML-Engineer und zwei Wochen später der MLOps-Engineer mit zwei herausragenden Kandidaten besetzt.
                       </p>
                     </div>
                   </div>

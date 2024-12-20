@@ -14,6 +14,10 @@ const faqs = [
     answer: "Wir bieten zwei flexible Modelle an: AI-Talent Flex mit 30% vom Bruttojahresgehalt als Einmalzahlung bei erfolgreicher Vermittlung, und AI-Talent Alliance mit 26% vom Bruttojahresgehalt, aufgeteilt in 3 Chargen. Die Alliance-Option bietet zusätzliche Vorteile wie eine 7-Tage-Garantie für erste Kandidatenvorstellung und priorisierten Zugriff auf unser Netzwerk."
   },
   {
+    question: "Kann ich zwischen den Preismodellen wechseln?",
+    answer: "Bei einer neuen Position kannst du frei zwischen beiden Modellen wählen. Während der Besetzung einer Position ist ein Wechsel von Flex zu Alliance möglich - andersherum jedoch nicht. Das bedeutet, wenn du mit Flex startest und die Vorteile des Alliance-Modells nutzen möchtest, können wir das für dich anpassen. Sprich uns einfach an, und wir beraten dich gerne zu den Details."
+  },
+  {
     question: "Warum ist das Alliance-Modell günstiger als Flex?",
     answer: "Das Alliance-Modell basiert auf einer engeren Partnerschaft mit klarem Commitment von beiden Seiten. Unsere Erfahrung zeigt, dass Recruiting-Prozesse deutlich erfolgreicher verlaufen, wenn beide Parteien von Anfang an verbindlich zusammenarbeiten. Dies ermöglicht schnelleres Kandidaten-Feedback, stabilere Prozesse und letztlich eine höhere Vermittlungsquote. Diese Effizienzvorteile geben wir in Form eines reduzierten Gesamtpreises und zusätzlicher Premium-Services an unsere Alliance-Partner weiter."
   },

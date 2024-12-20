@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 const faqs = [
   {
     question: "Was ist euer Preismodell?",
-    answer: "Wir bieten zwei flexible Modelle an: AI-Talent Flex mit 33% vom Bruttojahresgehalt als Einmalzahlung bei erfolgreicher Vermittlung, und AI-Talent Alliance mit 27% vom Bruttojahresgehalt, aufgeteilt in 3 Chargen. Die Alliance-Option bietet zusätzliche Vorteile wie eine 7-Tage-Garantie für erste Kandidatenvorstellung und priorisierten Zugriff auf unser Netzwerk."
+    answer: "Wir bieten zwei flexible Modelle an: AI-Talent Flex mit 30% vom Bruttojahresgehalt als Einmalzahlung bei erfolgreicher Vermittlung, und AI-Talent Alliance mit 26% vom Bruttojahresgehalt, aufgeteilt in 3 Chargen. Die Alliance-Option bietet zusätzliche Vorteile wie eine 7-Tage-Garantie für erste Kandidatenvorstellung und priorisierten Zugriff auf unser Netzwerk."
   },
   {
     question: "Warum ist das Alliance-Modell günstiger als Flex?",

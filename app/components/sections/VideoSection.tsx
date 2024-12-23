@@ -94,6 +94,7 @@ export default function FourthSection() {
   const handleVideoClick = () => {
     setShowControls(true)
     if (videoRef.current && !isPlaying) {
+      videoRef.current.muted = false
       videoRef.current.play()
       setIsPlaying(true)
     }
@@ -102,6 +103,7 @@ export default function FourthSection() {
   const handleBLBVideoClick = () => {
     setShowControlsBLB(true)
     if (videoBLBRef.current && !isPlayingBLB) {
+      videoBLBRef.current.muted = false
       videoBLBRef.current.play()
       setIsPlayingBLB(true)
     }
@@ -164,18 +166,17 @@ export default function FourthSection() {
                 style={{ objectFit: 'contain' }}
               />
             </div>
-            <div className="relative aspect-video">
+            <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
               <video
                 ref={videoRef}
                 src={videoUrl}
-                width="100%"
-                height="100%"
                 loop
                 playsInline
                 controls={showControls}
-                className="rounded-lg"
+                className="rounded-lg absolute top-0 left-0 w-full h-full object-cover"
                 onClick={handleVideoClick}
                 crossOrigin="anonymous"
+                poster="/videos/Thumbnail/CampusFounders_Thumbnail.png"
               >
                 <track
                   kind="subtitles"
@@ -253,18 +254,17 @@ export default function FourthSection() {
                   />
                 </div>
               </div>
-              <div className="relative aspect-video">
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                 <video
                   ref={videoBLBRef}
                   src={videoBLBUrl}
-                  width="100%"
-                  height="100%"
                   loop
                   playsInline
                   controls={showControlsBLB}
-                  className="rounded-lg"
+                  className="rounded-lg absolute top-0 left-0 w-full h-full object-cover"
                   onClick={handleBLBVideoClick}
                   crossOrigin="anonymous"
+                  poster="/videos/Thumbnail/BayernLB_Thumbnail.png"
                 >
                   <track
                     kind="subtitles"

@@ -115,7 +115,7 @@ export default function FourthSection() {
         <div className="mb-12">
         </div>
         <div className="flex flex-col md:flex-row items-start">
-          <div className="md:w-1/2 md:pr-8">
+          <div className="md:w-1/2 md:pr-8 w-full">
             <div className="mr-auto" style={{ maxWidth: "500px" }}>
               <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-medium mb-3 text-[#121118]">
                 Fallstudie: Campus Founders
@@ -157,7 +157,7 @@ export default function FourthSection() {
               </div>
             </div>
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0">
+          <div className="md:w-1/2 mt-8 md:mt-0 w-full">
             <div className="mb-4 w-48 h-12 relative">
               <Image
                 src="/logos/Logo_CampusFounders_Black.png"
@@ -243,7 +243,7 @@ export default function FourthSection() {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/2 mt-4 md:mt-0">
+            <div className="md:w-1/2 mt-4 md:mt-0 w-full">
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-32 h-8 relative">
                   <Image

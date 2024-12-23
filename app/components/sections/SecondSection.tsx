@@ -42,9 +42,17 @@ export default function SecondSection() {
                 ))}
               </ul>
 
-              <p className="text-base sm:text-lg mb-6 sm:mb-8">
-              Daher gilt für uns: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting, jeder Recruiter arbeitet nur in einer definierten Region, und unsere ML-Zertifizierung garantiert technisches Verständnis. So finden wir die AI-Experten, die andere übersehen.
-              </p>
+              <blockquote className="text-base sm:text-lg italic text-gray-300 pl-4 border-l-2 border-[#F25A75] mb-4">
+                "Für uns gilt: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting, jeder Recruiter arbeitet nur in einer definierten Region, und unsere ML-Zertifizierung garantiert technisches Verständnis. Genau so finden wir die AI-Experten, die andere übersehen."
+              </blockquote>
+              <div className="w-80 h-24 relative -mt-2">
+                <Image
+                  src="/photos/UnterschriftDaniel.svg"
+                  alt="Daniel's Unterschrift"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
             </motion.div>
           </div>
           
@@ -56,7 +64,7 @@ export default function SecondSection() {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src="/photos/officework.jpg"
+                src="/photos/DanielGonzalezGarcia.png"
                 alt="AI-Recruiting Expertise"
                 fill
                 className="rounded-lg shadow-lg object-cover"

@@ -85,6 +85,35 @@ export default function ROISection() {
         <div className="text-center mb-8">
           <h2 className="font-platform text-2xl sm:text-3xl text-white mb-2">Lohnt sich für dich externe Unterstützung?</h2>
           <p className="text-xl text-gray-300">Berechne hier deinen individuellen Return on Investment:</p>
+          <div className="mt-4 flex justify-center">
+            <TooltipProvider delayDuration={0}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2D2C35] text-white hover:bg-[#3D3C45] transition-colors">
+                    <Info className="h-5 w-5" />
+                    <span>Wie funktioniert der Rechner?</span>
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent 
+                  side="bottom"
+                  sideOffset={5}
+                  className="bg-[#2D2C35] text-white border border-gray-600 rounded-lg p-4 max-w-sm shadow-lg text-base"
+                >
+                  <div className="space-y-2">
+                    <p className="text-[#F25A75]">So verwendest du den ROI-Rechner:</p>
+                    <ol className="list-decimal pl-4 space-y-1">
+                      <li>Gib das geplante Jahresgehalt für die Position ein</li>
+                      <li>Wähle den Wertschöpfungsfaktor (wie viel Mehrwert generiert die Position)</li>
+                      <li>Passe eure durchschnittliche Einstellungszeit an</li>
+                      <li>Schätze eure interne Entscheidungszeit nach Profilerhalt</li>
+                      <li>Wähle zwischen Alliance und Flex Modell</li>
+                    </ol>
+                    <p className="text-gray-300">Der Rechner zeigt dir dann den geschätzten ROI basierend auf der Zeitersparnis und dem gewählten Modell.</p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </div>
         <Card className="w-full max-w-3xl mx-auto bg-[#1D1C25] text-white border-2 border-gray-200 rounded-xl overflow-hidden relative">
           <div className="absolute top-6 sm:top-4 right-4 flex items-center space-x-2">

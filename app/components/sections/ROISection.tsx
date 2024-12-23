@@ -89,15 +89,17 @@ export default function ROISection() {
             <TooltipProvider delayDuration={0}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2D2C35] text-white hover:bg-[#3D3C45] transition-colors">
+                  <button
+                    className="cursor-pointer focus:outline-none flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2D2C35] text-white hover:bg-[#3D3C45] transition-colors"
+                    onClick={(e) => e.preventDefault()}
+                  >
                     <Info className="h-5 w-5" />
                     <span>Wie funktioniert der Rechner?</span>
                   </button>
                 </TooltipTrigger>
                 <TooltipContent 
-                  side="bottom"
                   sideOffset={5}
-                  className="bg-[#2D2C35] text-white border border-gray-600 rounded-lg p-4 max-w-sm shadow-lg text-base"
+                  className="bg-[#2D2C35] text-white border border-gray-600 rounded-lg px-4 py-2 max-w-xs shadow-lg text-base"
                 >
                   <div className="space-y-2">
                     <p className="text-[#F25A75]">So verwendest du den ROI-Rechner:</p>

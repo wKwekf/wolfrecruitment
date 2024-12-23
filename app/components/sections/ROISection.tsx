@@ -51,7 +51,7 @@ export default function ROISection() {
     const dailyValue = (Number(salary) * Number(confirmedValueFactor)) / 365;
     const timeSaved = Number(usualHiringTime) - (hiringTimeAfterCandidate + 7);
     const valueSaved = dailyValue * timeSaved;
-    const percentage = isAllianceModel ? 0.27 : 0.33;
+    const percentage = isAllianceModel ? 0.26 : 0.30;
     const cost = Number(salary) * percentage;
     const calculatedRoi = valueSaved - cost;
     

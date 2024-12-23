@@ -218,7 +218,7 @@ export default function FourthSection() {
                     <div>
                       <span className="text-lg font-bold mb-2 block text-right">Lösung:</span>
                       <p className="text-lg font-medium text-gray-600 leading-normal text-right">
-                        In 7 Tagen erhielt das Team der BayernLB die ersten passenden Kandidaten. Von den 5 vorgestellten Kandidaten wurden alle zum Interview eingeladen.
+                        Bereits nach 7 Tagen präsentierten wir die ersten 5 passenden Kandidaten. Im Verlauf des Prozesses stellten wir insgesamt 14 hochqualifizierte Bewerber vor, die alle zum Interview eingeladen wurden.
                       </p>
                     </div>
                     

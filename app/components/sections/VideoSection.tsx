@@ -82,6 +82,13 @@ export default function FourthSection() {
     if (section === 'video' && sectionRef.current) {
       sectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+    
+    if (section === 'video-blb') {
+      const blbSection = document.getElementById('case-study-blb');
+      if (blbSection) {
+        blbSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }, []);
 
   const handleVideoClick = () => {
@@ -191,7 +198,7 @@ export default function FourthSection() {
         </div>
 
         {/* BayernLB Case Study */}
-        <div className="max-w-custom mx-auto px-4 mt-32">
+        <div className="max-w-custom mx-auto px-4 mt-32" id="case-study-blb">
           <div className="flex flex-col md:flex-row-reverse items-start">
             <div className="md:w-1/2 md:pr-8">
               <div className="ml-auto" style={{ maxWidth: "500px" }}>

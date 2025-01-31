@@ -33,15 +33,33 @@ export default function HeroSection() {
   const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
 
   useEffect(() => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.as = 'video';
+    preloadLink.href = heroVideoUrl;
+    preloadLink.type = 'video/mp4';
+    document.head.appendChild(preloadLink);
+
     if (videoRef.current) {
-      videoRef.current.muted = true
-      videoRef.current.play().then(() => {
-        setIsPlaying(true)
-      }).catch(error => {
-        console.error("Autoplay failed:", error)
-      })
+      videoRef.current.muted = true;
+      videoRef.current.load();
+      
+      videoRef.current.addEventListener('loadeddata', () => {
+        videoRef.current?.play().then(() => {
+          setIsPlaying(true);
+        }).catch(error => {
+          console.error("Autoplay failed:", error);
+        });
+      });
     }
-  }, [])
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.removeEventListener('loadeddata', () => {});
+      }
+      document.head.removeChild(preloadLink);
+    };
+  }, [heroVideoUrl]);
 
   const handleMuteToggle = () => {
     setIsMuted(!isMuted)
@@ -94,7 +112,12 @@ export default function HeroSection() {
                   controls={showControls}
                   className="rounded-lg"
                   onClick={handleVideoClick}
+                  preload="auto"
                 >
+                  <source 
+                    src={heroVideoUrl} 
+                    type="video/mp4"
+                  />
                   <track
                     kind="subtitles"
                     src="/videos/subtitles/HeroVideo.vtt"

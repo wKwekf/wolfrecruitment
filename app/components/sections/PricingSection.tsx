@@ -11,6 +11,7 @@ import Link from 'next/link';
 const PricingCard = () => {
   const [isHoveredFlex, setIsHoveredFlex] = useState(false);
   const [isHoveredAlliance, setIsHoveredAlliance] = useState(false);
+  const [isHoveredROI, setIsHoveredROI] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const PricingCard = () => {
           Wähle das Modell, das am besten zu deinen Bedürfnissen passt
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
           {/* Flex Plan */}
           <Card className="relative border-2 border-gray-200 rounded-xl overflow-hidden bg-[#1D1C25] text-white h-fit">
             <CardHeader className="space-y-1 pb-4">
@@ -166,6 +167,28 @@ const PricingCard = () => {
               </Button>
             </CardFooter>
           </Card>
+        </div>
+
+        {/* ROI Calculator Link */}
+        <div className="text-center mt-12">
+          <Link 
+            href="/resources/roi-calculator"
+            className="group inline-flex items-center text-lg text-white hover:text-[#F25A75] transition-colors"
+            onMouseEnter={() => setIsHoveredROI(true)}
+            onMouseLeave={() => setIsHoveredROI(false)}
+          >
+            Berechne hier deinen individuellen Return on Investment
+            <motion.span
+              className="inline-block ml-2"
+              animate={{ x: isHoveredROI ? 5 : 0 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <ArrowRight className="h-5 w-5" />
+            </motion.span>
+          </Link>
+          <p className="text-gray-400 mt-2">
+            und finde heraus, wie viel du mit unseren Modellen sparen kannst
+          </p>
         </div>
       </div>
     </section>

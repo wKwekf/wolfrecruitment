@@ -7,8 +7,6 @@ import VideoSection from '@/app/components/sections/VideoSection'
 import TestimonialSection from '@/app/components/sections/TestimonialSection'
 import FAQSection from '@/app/components/sections/FAQSection'
 import PricingSection from '@/app/components/sections/PricingSection'
-import ROISection from './components/sections/ROISection'
-
 
 export default function Home() {
   return (
@@ -21,7 +19,6 @@ export default function Home() {
           <VideoSection />
           <TestimonialSection />
           <PricingSection />
-          <ROISection />
           <FAQSection />
         </main>
       <Footer />

@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 const navigationLinks = [
   { name: 'Testimonials', href: '#case-study' },
   { name: 'Pricing', href: '#pricing' },
-  { name: 'ROI Calculator', href: '#roi' },
   { name: 'FAQ', href: '#faq' },
 ]
 

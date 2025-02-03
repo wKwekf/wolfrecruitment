@@ -80,6 +80,8 @@ const styles = `
   }
 `
 
+const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
+
 export default function TalentPreviewPage() {
   const [email, setEmail] = useState('')
   const [description, setDescription] = useState('')
@@ -121,11 +123,22 @@ export default function TalentPreviewPage() {
   }
 
   useEffect(() => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'preload';
+    preloadLink.as = 'video';
+    preloadLink.href = heroVideoUrl;
+    preloadLink.type = 'video/mp4';
+    document.head.appendChild(preloadLink);
+
     if (videoRef.current) {
-      videoRef.current.muted = true
-      videoRef.current.load()
+      videoRef.current.muted = true;
+      videoRef.current.load();
     }
-  }, [])
+
+    return () => {
+      document.head.removeChild(preloadLink);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -252,7 +265,7 @@ export default function TalentPreviewPage() {
             <div className="relative w-full aspect-video">
               <video
                 ref={videoRef}
-                src="/videos/hero.mp4"
+                src={heroVideoUrl}
                 width="100%"
                 height="100%"
                 loop
@@ -261,10 +274,19 @@ export default function TalentPreviewPage() {
                 controls={showControls}
                 className="rounded-lg cursor-pointer"
                 onClick={handleVideoClick}
-                poster="/videos/hero-thumbnail.jpg"
-                preload="none"
+                preload="auto"
               >
-                <source src="/videos/hero.mp4" type="video/mp4" />
+                <source 
+                  src={heroVideoUrl} 
+                  type="video/mp4"
+                />
+                <track
+                  kind="subtitles"
+                  src="/videos/subtitles/HeroVideo.vtt"
+                  srcLang="de"
+                  label="Deutsch"
+                  default
+                />
               </video>
               {!showControls && (
                 <button

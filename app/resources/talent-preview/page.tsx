@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import Image from 'next/image'
 
 const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:
 
@@ -302,11 +303,12 @@ export default function TalentPreviewPage() {
               </p>
               <div className="flex items-center justify-center space-x-3">
                 {testimonials[currentTestimonialIndex].image && (
-                  <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
-                    <img 
+                  <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0 relative">
+                    <Image 
                       src={testimonials[currentTestimonialIndex].image} 
                       alt={testimonials[currentTestimonialIndex].author}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 )}

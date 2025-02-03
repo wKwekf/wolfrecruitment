@@ -124,14 +124,6 @@ export default function TalentPreviewPage() {
     if (videoRef.current) {
       videoRef.current.muted = true
       videoRef.current.load()
-      
-      videoRef.current.addEventListener('loadeddata', () => {
-        videoRef.current?.play().then(() => {
-          setIsPlaying(true)
-        }).catch(error => {
-          console.error("Autoplay failed:", error)
-        })
-      })
     }
   }, [])
 
@@ -161,12 +153,7 @@ export default function TalentPreviewPage() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Column - Content */}
           <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8"
-            >
+            <div className="space-y-8">
               <div className="space-y-4">
                 <div className="text-white font-semibold">IT'S FREE (FOR NOW...)</div>
                 <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
@@ -257,7 +244,7 @@ export default function TalentPreviewPage() {
                   </Button>
                 </div>
               </form>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Column - Video */}
@@ -272,9 +259,10 @@ export default function TalentPreviewPage() {
                 playsInline
                 muted={isMuted}
                 controls={showControls}
-                className="rounded-lg"
+                className="rounded-lg cursor-pointer"
                 onClick={handleVideoClick}
-                preload="auto"
+                poster="/videos/hero-thumbnail.jpg"
+                preload="none"
               >
                 <source src="/videos/hero.mp4" type="video/mp4" />
               </video>

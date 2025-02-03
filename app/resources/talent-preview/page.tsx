@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, Suspense } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
@@ -83,7 +83,8 @@ const styles = `
 
 const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
 
-export default function TalentPreviewPage() {
+// Create a separate component for the main content
+function TalentPreviewContent() {
   const searchParams = useSearchParams()
   const [email, setEmail] = useState(searchParams.get('email') || '')
   const [description, setDescription] = useState(searchParams.get('description') || '')
@@ -364,5 +365,18 @@ export default function TalentPreviewPage() {
         </div>
       </div>
     </section>
+  )
+}
+
+// Main page component with Suspense
+export default function TalentPreviewPage() {
+  return (
+    <Suspense fallback={
+      <div className="w-full min-h-screen flex items-center justify-center">
+        <div className="text-white text-lg">Lädt...</div>
+      </div>
+    }>
+      <TalentPreviewContent />
+    </Suspense>
   )
 }

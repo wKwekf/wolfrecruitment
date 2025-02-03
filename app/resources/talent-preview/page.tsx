@@ -80,10 +80,6 @@ const styles = `
   }
 `
 
-const styleSheet = document.createElement('style')
-styleSheet.textContent = styles
-document.head.appendChild(styleSheet)
-
 export default function TalentPreviewPage() {
   const [email, setEmail] = useState('')
   const [description, setDescription] = useState('')
@@ -150,6 +146,17 @@ export default function TalentPreviewPage() {
 
   return (
     <section className="w-full">
+      <style jsx global>{`
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          75% { transform: translateX(5px); }
+        }
+        
+        .animate-shake {
+          animation: shake 0.3s ease-in-out;
+        }
+      `}</style>
       <div className="max-w-custom mx-auto px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-20">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Column - Content */}

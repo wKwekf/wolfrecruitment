@@ -15,6 +15,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 
 const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:
 
@@ -83,10 +84,11 @@ const styles = `
 const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
 
 export default function TalentPreviewPage() {
-  const [email, setEmail] = useState('')
-  const [description, setDescription] = useState('')
-  const [dataProcessingConsent, setDataProcessingConsent] = useState(false)
-  const [marketingConsent, setMarketingConsent] = useState(false)
+  const searchParams = useSearchParams()
+  const [email, setEmail] = useState(searchParams.get('email') || '')
+  const [description, setDescription] = useState(searchParams.get('description') || '')
+  const [dataProcessingConsent, setDataProcessingConsent] = useState(searchParams.get('consent') === 'true')
+  const [marketingConsent, setMarketingConsent] = useState(searchParams.get('marketing') === 'true')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [showControls, setShowControls] = useState(false)

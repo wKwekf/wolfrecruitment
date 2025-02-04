@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
-import { VolumeX, Volume2 } from 'lucide-react'
+import { Play } from 'lucide-react'
 import { motion } from 'framer-motion'
 import {
   Accordion,
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/accordion"
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 
 const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:
 
@@ -96,12 +97,40 @@ function TalentPreviewContent() {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // TODO: Implement HubSpot submission
-    setIsSubmitting(false)
+    
+    try {
+      const response = await fetch('/api/hubspot-submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          description,
+          dataProcessingConsent,
+          marketingConsent,
+          source: window.location.href,
+          pageUri: window.location.pathname,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Submission failed')
+      }
+
+      // Redirect to success page with marketing consent status
+      window.location.href = `/resources/talent-preview/success?marketing=${marketingConsent}`
+    } catch (error) {
+      console.error('Submission error:', error)
+      alert('Es gab einen Fehler. Bitte versuche es später noch einmal.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleMuteToggle = () => {
@@ -112,17 +141,9 @@ function TalentPreviewContent() {
   }
 
   const handleVideoClick = () => {
+    setIsVideoModalOpen(true)
+    setIsMuted(false)
     setShowControls(true)
-    if (isMuted) {
-      setIsMuted(false)
-      if (videoRef.current) {
-        videoRef.current.muted = false
-      }
-    }
-    if (!isPlaying && videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
-    }
   }
 
   useEffect(() => {
@@ -152,6 +173,13 @@ function TalentPreviewContent() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    if (isVideoModalOpen && videoRef.current) {
+      videoRef.current.muted = false
+      videoRef.current.play()
+    }
+  }, [isVideoModalOpen])
+
   return (
     <section className="w-full">
       <style jsx global>{`
@@ -173,7 +201,7 @@ function TalentPreviewContent() {
               <div className="space-y-4">
                 <div className="text-white font-semibold">IT'S FREE (FOR NOW...)</div>
                 <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
-                  Erhalte zwei Profile für deine AI-Position
+                  Erhalte zwei kostenfreie Profile für deine AI-Position
                 </h1>
                 <p className="text-xl text-gray-300">
                   Sag uns, wen du suchst - und wir schicken dir zwei handverlesene Profile von passenden Kandidaten. 
@@ -224,7 +252,7 @@ function TalentPreviewContent() {
                       className="mt-1"
                     />
                     <Label htmlFor="dataProcessing" className="text-sm text-gray-300">
-                      Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.*
+                      Ich stimme der Verarbeitung meiner Daten gemäß der <a href="https://www.wolfai.de/datenschutz" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Datenschutzerklärung</a> zu.*
                     </Label>
                   </div>
 
@@ -236,7 +264,7 @@ function TalentPreviewContent() {
                       className="mt-1"
                     />
                     <Label htmlFor="marketing" className="text-sm text-gray-300">
-                      Ich möchte regelmäßig spannende Insights und Updates von WolfAI erhalten.
+                      Ja, ich möchte weitere exklusive Einblicke zu AI-Recruiting, relevante Kandidatenprofile und Branchentrends per E-Mail erhalten. Ich bin damit einverstanden, dass Wolf mich zu relevanten Angeboten, Events oder individuellen Recruiting-Lösungen kontaktiert. Ich kann mich jederzeit abmelden.
                     </Label>
                   </div>
                 </div>
@@ -256,7 +284,7 @@ function TalentPreviewContent() {
                     }}
                     className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white font-semibold py-4 px-6 text-lg transition-colors duration-200"
                   >
-                    {isSubmitting ? 'Wird gesendet...' : 'Jetzt zwei Profile erhalten'}
+                    {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenfrei zwei Profile erhalten'}
                   </Button>
                 </div>
               </form>
@@ -265,42 +293,22 @@ function TalentPreviewContent() {
 
           {/* Right Column - Video */}
           <div className="w-full lg:w-1/2 flex items-center justify-center">
-            <div className="relative w-full aspect-video">
-              <video
-                ref={videoRef}
-                src={heroVideoUrl}
-                width="100%"
-                height="100%"
-                loop
-                playsInline
-                muted={isMuted}
-                controls={showControls}
-                className="rounded-lg cursor-pointer"
-                onClick={handleVideoClick}
-                preload="auto"
-              >
-                <source 
-                  src={heroVideoUrl} 
-                  type="video/mp4"
-                />
-                <track
-                  kind="subtitles"
-                  src="/videos/subtitles/HeroVideo.vtt"
-                  srcLang="de"
-                  label="Deutsch"
-                  default
-                />
-              </video>
+            <div 
+              className="relative w-full aspect-video cursor-pointer rounded-lg overflow-hidden"
+              onClick={handleVideoClick}
+            >
+              <Image
+                src="/photos/VideoCover_Hero.png"
+                alt="Video thumbnail"
+                fill
+                className="object-cover"
+              />
               {!showControls && (
                 <button
-                  onClick={handleMuteToggle}
-                  className="absolute bottom-4 right-4 w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center"
+                  onClick={handleVideoClick}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-black bg-opacity-50 rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all"
                 >
-                  {isMuted ? (
-                    <VolumeX className="w-6 h-6 text-white" />
-                  ) : (
-                    <Volume2 className="w-6 h-6 text-white" />
-                  )}
+                  <Play className="w-8 h-8 text-white" />
                 </button>
               )}
             </div>
@@ -364,6 +372,34 @@ function TalentPreviewContent() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+        <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 bg-black overflow-hidden">
+          <div className="relative w-full aspect-video">
+            <video
+              ref={videoRef}
+              src={heroVideoUrl}
+              width="100%"
+              height="100%"
+              loop
+              playsInline
+              controls
+              className="w-full h-full"
+              autoPlay
+            >
+              <source src={heroVideoUrl} type="video/mp4" />
+              <track
+                kind="subtitles"
+                src="/videos/subtitles/HeroVideo.vtt"
+                srcLang="de"
+                label="Deutsch"
+                default
+              />
+            </video>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   )
 }

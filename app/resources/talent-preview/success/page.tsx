@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
@@ -52,11 +52,10 @@ const testimonials = [
   }
 ]
 
-export default function TalentPreviewSuccess() {
+function TalentPreviewSuccessContent() {
   const searchParams = useSearchParams()
   const showMarketingMessage = searchParams.get('marketing') === 'true'
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isMuted, setIsMuted] = useState(true)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
 
   useEffect(() => {
@@ -135,7 +134,7 @@ export default function TalentPreviewSuccess() {
                 className="w-full h-auto"
                 autoPlay
                 loop
-                muted={isMuted}
+                muted
                 playsInline
               >
                 <source src={heroVideoUrl} type="video/mp4" />
@@ -181,5 +180,18 @@ export default function TalentPreviewSuccess() {
         </div>
       </div>
     </section>
+  )
+}
+
+// Main page component with Suspense
+export default function TalentPreviewSuccess() {
+  return (
+    <Suspense fallback={
+      <div className="w-full min-h-screen flex items-center justify-center">
+        <div className="text-white text-lg">Lädt...</div>
+      </div>
+    }>
+      <TalentPreviewSuccessContent />
+    </Suspense>
   )
 } 

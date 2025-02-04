@@ -1,15 +1,17 @@
 import { NextResponse } from 'next/server'
 
-const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY
-const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID
-const HUBSPOT_FORM_GUID = process.env.HUBSPOT_FORM_GUID
-
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { email, description, dataProcessingConsent, marketingConsent, source, pageUri } = body
+    const { email, description, dataProcessingConsent, marketingConsent } = await request.json()
 
-    // Prepare the data for HubSpot
+    if (!process.env.HUBSPOT_API_KEY || !process.env.HUBSPOT_PORTAL_ID || !process.env.HUBSPOT_FORM_GUID) {
+      console.error('Missing required environment variables')
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
     const hubspotData = {
       fields: [
         {
@@ -22,15 +24,13 @@ export async function POST(request: Request) {
         }
       ],
       context: {
-        pageUri: pageUri,
-        pageName: "Talent Preview Page"
+        pageUri: "https://www.wolfai.de/resources/talent-preview",
+        pageName: "Talent Preview"
       },
       legalConsentOptions: {
         consent: {
-          // Datenschutz-Einwilligung
           consentToProcess: dataProcessingConsent,
-          text: "Ich stimme der Verarbeitung meiner Daten durch Wolf AI zu.",
-          // Marketing-Einwilligung mit den exakten Werten aus HubSpot
+          text: "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
           communications: [
             {
               value: marketingConsent,
@@ -42,30 +42,50 @@ export async function POST(request: Request) {
       }
     }
 
-    // Submit to HubSpot Forms API
     const response = await fetch(
-      `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+      `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_GUID}`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${HUBSPOT_API_KEY}`
+          'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`
         },
         body: JSON.stringify(hubspotData)
       }
     )
 
     if (!response.ok) {
-      const errorData = await response.json()
-      console.error('HubSpot API Error Details:', errorData)
-      throw new Error('HubSpot submission failed')
+      const errorText = await response.text()
+      console.error('HubSpot API Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText
+      })
+
+      let errorJson
+      try {
+        errorJson = JSON.parse(errorText)
+      } catch (e) {
+        console.error('Failed to parse error response:', errorText)
+        return NextResponse.json(
+          { error: 'Invalid response from HubSpot API', details: errorText },
+          { status: response.status }
+        )
+      }
+
+      return NextResponse.json(
+        { error: 'HubSpot API Error', details: errorJson },
+        { status: response.status }
+      )
     }
 
-    return NextResponse.json({ success: true })
+    const data = await response.json()
+    return NextResponse.json(data)
+
   } catch (error) {
-    console.error('HubSpot API Error:', error)
+    console.error('Submission error:', error)
     return NextResponse.json(
-      { error: 'Failed to submit form' },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     )
   }

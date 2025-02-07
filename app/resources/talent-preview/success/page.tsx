@@ -19,14 +19,6 @@ const testimonials = [
     logo: "/logos/Logo_Siemens_Black.png"
   },
   {
-    quote: "Die Zusammenarbeit mit Wolf war ein echtes Vergnügen.",
-    name: "Theresa Baeumel",
-    title: "Director Talent Acquisition",
-    company: "Nike",
-    photo: "/photos/Theresa.png",
-    logo: "/logos/Logo_Nike_Black.png"
-  },
-  {
     quote: "Während des Recruiting-Prozesses für mehrere Positionen in meiner Abteilung beeindruckte mich Wolf mit exzellenter Talent Acquisition und Sourcing-Expertise.",
     name: "Marina Sverdel",
     title: "Domain Owner",
@@ -117,7 +109,7 @@ function TalentPreviewSuccessContent() {
                     asChild
                     size="lg"
                   >
-                    <a href="mailto:contact@wolf.ai">
+                    <a href="https://calendly.com/wolfdanielmayer/termin-finden">
                       Jetzt kostenlose AI-Recruiting Beratung sichern
                     </a>
                   </Button>

@@ -46,7 +46,6 @@ const testimonials = [
 
 function TalentPreviewSuccessContent() {
   const searchParams = useSearchParams()
-  const showMarketingMessage = searchParams.get('marketing') === 'true'
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
 
@@ -62,27 +61,25 @@ function TalentPreviewSuccessContent() {
   return (
     <section className="w-full">
       <div className="max-w-custom mx-auto px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-20">
-        {showMarketingMessage && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-12 p-6 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-lg border border-green-500/20"
-          >
-            <div className="flex items-center space-x-4">
-              <span className="text-4xl">🎉</span>
-              <div>
-                <h3 className="text-xl font-semibold text-green-400 mb-2">Fast geschafft!</h3>
-                <p className="text-gray-300">
-                  Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
-                  damit wir dich über die neuesten AI-Recruiting Trends informieren können. 
-                  <span className="block mt-2 text-sm text-gray-400">
-                    (Bitte check auch deinen Spam-Ordner und markiere uns als "Kein Spam" 😊)
-                  </span>
-                </p>
-              </div>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-12 p-6 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-lg border border-green-500/20"
+        >
+          <div className="flex items-center space-x-4">
+            <span className="text-4xl">🎉</span>
+            <div>
+              <h3 className="text-xl font-semibold text-green-400 mb-2">Fast geschafft!</h3>
+              <p className="text-gray-300">
+                Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
+                damit wir dich über die neuesten AI-Recruiting Trends informieren können. 
+                <span className="block mt-2 text-sm text-gray-400">
+                  (Bitte check auch deinen Spam-Ordner und markiere uns als "Kein Spam" 😊)
+                </span>
+              </p>
             </div>
-          </motion.div>
-        )}
+          </div>
+        </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Column - Content */}

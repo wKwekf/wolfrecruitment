@@ -46,6 +46,7 @@ const testimonials = [
 
 function TalentPreviewSuccessContent() {
   const searchParams = useSearchParams()
+  const showMarketingMessage = searchParams.get('marketing') === 'true'
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
 
@@ -71,8 +72,17 @@ function TalentPreviewSuccessContent() {
             <div>
               <h3 className="text-xl font-semibold text-green-400 mb-2">Fast geschafft!</h3>
               <p className="text-gray-300">
-                Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
-                damit wir dich über die neuesten AI-Recruiting Trends informieren können. 
+                {showMarketingMessage ? (
+                  <>
+                    Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
+                    damit wir dir die Profile zusenden und dich über die neuesten AI-Recruiting Trends informieren können.
+                  </>
+                ) : (
+                  <>
+                    Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
+                    damit wir dir die Profile zusenden können.
+                  </>
+                )}
                 <span className="block mt-2 text-sm text-gray-400">
                   (Bitte check auch deinen Spam-Ordner und markiere uns als "Kein Spam" 😊)
                 </span>

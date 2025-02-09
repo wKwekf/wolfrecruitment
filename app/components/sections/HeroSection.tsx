@@ -11,16 +11,14 @@ const logos = [
   { name: 'Siemens', src: '/logos/Siemens.png' },
   { name: 'Nike', src: '/logos/Nike.png' },
   { name: 'Santander', src: '/logos/Santander.png' },
-  { name: 'Campus Founders', src: '/logos/CampusFounders.png' },
   { name: 'BayernLB', src: '/logos/Bayernlb.png' },
   { name: 'DEPT', src: '/logos/DEPT.png' }
 ]
 
 const benefits = [
-  "In 7 Tagen: Passende AI-Experten bereit für deine Interviews",
-  "82% der vorgestellten Kandidaten werden direkt zum Interview eingeladen",
-  "Technische Expertise: Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten",
-  "Maximale Auswahl: Direkter Zugriff auf 1000+ spezialisierte AI-Experten",
+  "Erhalte in 7 Tagen passende AI-Experten bereit für Interviews",
+  "Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten",
+  "Direkter Zugriff auf 1000+ spezialisierte AI-Experten",
 ]
 
 export default function HeroSection() {
@@ -93,12 +91,11 @@ export default function HeroSection() {
             className="w-full"
           >
             <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
-              AI-Innovationen warten nicht. In 7 Tagen zu deinen passenden AI-Experten.
+              In nur 7 Tagen zu deinem neuen AI-Mitarbeiter
             </h1>
             <p className="text-base sm:text-lg mb-6 sm:mb-8 text-white">
-              Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.
+              Verabschiede dich von langwierigen Bewerbungsprozessen – unser zielgerichteter Screening-Prozess liefert dir passgenaue, vorgeprüfte AI-Kandidaten, die sofort für dein Interview bereitstehen.
             </p>
-            
             <div className="w-full mb-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
               <div className="relative w-full lg:w-1/2 aspect-video">
                 <video
@@ -156,7 +153,7 @@ export default function HeroSection() {
                     onMouseLeave={() => setIsHovered(false)}
                   >
                     <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
-                      Jetzt unverbindliches Erstgespräch buchen
+                      Jetzt kostenfreies Erstgespräch buchen
                       <motion.span
                         className="inline-block ml-2"
                         animate={{ x: isHovered ? 5 : 0 }}
@@ -175,7 +172,7 @@ export default function HeroSection() {
 
         <div className="mt-12 sm:mt-16 flex flex-col items-center">
           <p className="text-sm text-gray-400 mb-4 sm:mb-6">Uns vertrauen großartige Teams von</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-12 w-full max-w-6xl place-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12 w-full max-w-6xl place-items-center">
             {logos.map((logo) => (
               <div key={logo.name} className="w-24 h-10 relative flex items-center justify-center">
                 <Image

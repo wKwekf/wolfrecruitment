@@ -13,7 +13,7 @@ const results = [
   },
   {
     headline: "Exklusive Top-Talente",
-    description: "Mehr als 1.000 AI-Experten für deine Projekte - handverlesen und wechselbereit."
+    description: "Mehr als 1.100 AI-Experten für deine Projekte - handverlesen und wechselbereit."
   }
 ]
 

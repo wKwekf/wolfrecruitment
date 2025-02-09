@@ -130,7 +130,7 @@ export default function HeroSection() {
                 <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
                   In nur 7 Tagen zu deinem neuen AI-Mitarbeiter
                 </h1>
-                <p className="text-base sm:text-lg mb-6 sm:mb-8 text-white">
+                <p className="text-xl text-gray-300 mb-6 sm:mb-8">
                   Verabschiede dich von langwierigen Bewerbungsprozessen – unser zielgerichteter Screening-Prozess liefert dir passgenaue, vorgeprüfte AI-Kandidaten, die sofort für dein Interview bereitstehen.
                 </p>
                 {benefits.map((benefit, index) => (

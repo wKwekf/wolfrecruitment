@@ -4,47 +4,94 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { ChevronDown } from 'lucide-react'
 
 const navigationLinks = [
-  { name: 'Testimonials', href: '#case-study' },
-  { name: 'Pricing', href: '#pricing' },
+  { name: 'Referenzen', href: '/#case-study' },
+  { name: 'Preise', href: '/#pricing' },
+  { name: 'Ressourcen', 
+    type: 'dropdown',
+    items: [
+      { name: 'ROI-Rechner', href: '/resources/roi-calculator' },
+      { name: 'Kostenlose Profile', href: '/resources/talent-preview' },
+    ]
+  },
+  { name: 'Über uns', href: '/ueber-uns' },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    setIsOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    if (window.location.pathname === '/' && href.includes('#')) {
+      e.preventDefault()
+      setIsOpen(false)
+      const element = document.querySelector(href.split('#')[1])
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
     }
+  }
+
+  const renderNavLink = (link: any) => {
+    if (link.type === 'dropdown') {
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-1 hover:text-gray-300 font-semibold">
+            {link.name}
+            <ChevronDown className="h-4 w-4" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="bg-[#1E1D24] border-gray-800">
+            {link.items.map((item: any) => (
+              <DropdownMenuItem key={item.name} className="focus:bg-gray-800">
+                <Link
+                  href={item.href}
+                  className="text-white hover:text-gray-300 w-full py-1"
+                >
+                  {item.name}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )
+    }
+
+    return (
+      <Link
+        href={link.href}
+        onClick={(e) => link.href.startsWith('/#') ? handleScroll(e, link.href) : undefined}
+        className="hover:text-gray-300 font-semibold"
+      >
+        {link.name}
+      </Link>
+    )
   }
 
   return (
     <header className="bg-[#121118] text-white w-full z-50">
       <div className="px-4 sm:px-8 py-2">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-4 sm:space-x-10">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.png"
-                alt="Your Logo"
-                width={120}
-                height={40}
-              />
-            </Link>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Wolf Logo"
+              width={120}
+              height={40}
+            />
+          </Link>
+          <div className="flex items-center space-x-6">
             <nav className="hidden md:flex space-x-4 lg:space-x-6">
               {navigationLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleScroll(e, link.href)}
-                  className="hover:text-gray-300 font-semibold"
-                >
-                  {link.name}
-                </a>
+                <div key={link.name}>
+                  {renderNavLink(link)}
+                </div>
               ))}
               <Link 
                 href="https://open.spotify.com/show/6BwXQ1XIy1KyNoqNWbNSoX" 
@@ -62,25 +109,25 @@ export default function Header() {
                 <span>Podcast</span>
               </Link>
             </nav>
-          </div>
-          <div className="hidden md:block">
-            <Button 
-              variant="default" 
-              size="lg" 
-              className="font-semibold"
-              asChild
+            <div className="hidden md:block">
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="font-semibold"
+                asChild
+              >
+                <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
+                  Erstgespräch buchen
+                </Link>
+              </Button>
+            </div>
+            <button 
+              className="md:hidden text-white ml-auto font-semibold"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
-                Erstgespräch buchen
-              </Link>
-            </Button>
+              {isOpen ? 'Schließen' : 'Menü'}
+            </button>
           </div>
-          <button 
-            className="md:hidden text-white ml-auto font-semibold"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? 'Schließen' : 'Menü'}
-          </button>
         </div>
         {isOpen && (
           <nav className="mt-4 md:hidden">
@@ -92,7 +139,10 @@ export default function Header() {
                     className="w-full justify-start font-semibold"
                     asChild
                   >
-                    <Link href={link.href} onClick={(e) => handleScroll(e, link.href)}>
+                    <Link 
+                      href={link.href}
+                      onClick={(e) => link.href.startsWith('#') ? handleScroll(e, link.href) : undefined}
+                    >
                       {link.name}
                     </Link>
                   </Button>

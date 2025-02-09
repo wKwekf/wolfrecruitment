@@ -87,6 +87,24 @@ export default function HeroSection() {
     };
   }, [heroVideoUrl]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleVideoEnd = () => {
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
+    };
+
+    video.addEventListener('ended', handleVideoEnd);
+
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd);
+    };
+  }, []);
+
   const handleMuteToggle = () => {
     setIsMuted(!isMuted)
     if (videoRef.current) {

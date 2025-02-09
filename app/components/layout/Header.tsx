@@ -12,10 +12,21 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react'
 
-const navigationLinks = [
+interface NavigationLink {
+  name: string;
+  href: string;
+  type?: 'dropdown';
+  items?: Array<{
+    name: string;
+    href: string;
+  }>;
+}
+
+const navigationLinks: NavigationLink[] = [
   { name: 'Referenzen', href: '/#case-study' },
   { name: 'Preise', href: '/#pricing' },
   { name: 'Ressourcen', 
+    href: '#',
     type: 'dropdown',
     items: [
       { name: 'ROI-Rechner', href: '/resources/roi-calculator' },
@@ -39,7 +50,7 @@ export default function Header() {
     }
   }
 
-  const renderNavLink = (link: any) => {
+  const renderNavLink = (link: NavigationLink) => {
     if (link.type === 'dropdown') {
       return (
         <DropdownMenu>
@@ -48,7 +59,7 @@ export default function Header() {
             <ChevronDown className="h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="bg-[#1E1D24] border-gray-800">
-            {link.items.map((item: any) => (
+            {link.items?.map((item) => (
               <DropdownMenuItem key={item.name} className="focus:bg-gray-800">
                 <Link
                   href={item.href}

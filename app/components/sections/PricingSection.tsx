@@ -40,9 +40,6 @@ const PricingCard = () => {
             <CardHeader className="space-y-1 pb-4">
               <div className="flex items-center justify-between">
                 <h3 className="font-platform text-2xl sm:text-3xl font-medium text-white">AI-Talent Flex</h3>
-                <Badge variant="outline" className="px-3 py-1 text-white">
-                  Einmalzahlung
-                </Badge>
               </div>
               <div className="mt-4">
                 <span className="text-5xl font-bold text-white">30%</span>
@@ -92,7 +89,7 @@ const PricingCard = () => {
 
           {/* Alliance Plan */}
           <Card className="relative border-2 border-white rounded-xl overflow-hidden bg-[#1D1C25] text-white h-fit shadow-[0_0_15px_-3px_rgba(255,255,255,0.3)]">
-            <div className="flex flex-col items-end absolute top-0 right-4 p-3 space-y-2">
+            <div className="absolute top-4 right-4">
               <Badge className="bg-[#F25A75]">
                 <Zap className="h-4 w-4 mr-1" />
                 Empfohlen

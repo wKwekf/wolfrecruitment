@@ -108,6 +108,13 @@ export default function HeroSection() {
     }
   }
 
+  const handleAvatarClick = () => {
+    const testimonialSection = document.getElementById('testimonials');
+    if (testimonialSection) {
+      testimonialSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <section className="bg-[#121118] text-white py-12 sm:py-16 lg:py-20">
       <div className="max-w-custom mx-auto px-4 sm:px-6">
@@ -209,8 +216,12 @@ export default function HeroSection() {
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={testimonial.name}
-                    className="relative w-10 h-10 border-2 border-white rounded-full overflow-hidden"
+                    className="relative w-10 h-10 border-2 border-white rounded-full overflow-hidden cursor-pointer hover:scale-110 transition-transform"
                     style={{ zIndex: testimonials.length - index }}
+                    onClick={handleAvatarClick}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Scroll to ${testimonial.name}'s testimonial`}
                   >
                     <Image
                       src={testimonial.photo}

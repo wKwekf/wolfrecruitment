@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 const navigationLinks = [
   { name: 'Testimonials', href: '#case-study' },
   { name: 'Pricing', href: '#pricing' },
-  { name: 'FAQ', href: '#faq' },
 ]
 
 export default function Header() {

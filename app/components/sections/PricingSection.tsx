@@ -97,9 +97,6 @@ const PricingCard = () => {
                 <Zap className="h-4 w-4 mr-1" />
                 Empfohlen
               </Badge>
-              <Badge variant="outline" className="px-3 py-1 text-white">
-                3 Chargen
-              </Badge>
             </div>
             
             <CardHeader className="space-y-1 pb-4">
@@ -110,7 +107,7 @@ const PricingCard = () => {
                 <span className="text-5xl font-bold text-white">26%</span>
                 <span className="text-gray-300 ml-2">vom Bruttojahresgehalt</span>
               </div>
-              <p className="text-base text-gray-300">Zahlung in 3 Chargen: Bei Beginn, ersten Interviews und Anstellung</p>
+              <p className="text-base text-gray-300">2.990€ Anzahlung, Rest bei erfolgreicher Vermittlung</p>
             </CardHeader>
             
             <CardContent className="space-y-6">

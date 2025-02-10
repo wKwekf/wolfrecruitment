@@ -161,7 +161,7 @@ export default function HeroSection() {
                   <Button
                     variant="default"
                     size="lg"
-                    className="font-semibold w-full sm:w-auto"
+                    className="font-semibold w-full sm:w-auto mb-4"
                     asChild
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -177,9 +177,7 @@ export default function HeroSection() {
                       </motion.span>
                     </Link>
                   </Button>
-                  <div className="flex flex-col items-center gap-1">
-                    <p className="text-sm text-gray-400">Nur noch 2 Slots für Suchaufträge im Februar verfügbar - Unsere Recruiter habe eine Kapazitätsgrenze für Projekte</p>
-                  </div>
+                  <p className="text-sm text-gray-400 text-center max-w-lg">Nur noch 2 Slots für Suchaufträge im Februar verfügbar - Unsere Recruiter haben eine Kapazitätsgrenze für Projekte</p>
                 </div>
               </div>
               <div className="relative w-full lg:w-1/2 flex items-center">

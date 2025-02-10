@@ -178,7 +178,7 @@ export default function HeroSection() {
                     </Link>
                   </Button>
                   <div className="flex flex-col items-center gap-1">
-                    <p className="text-sm text-[#F25A75] font-semibold">⚡ Nur noch 3 Slots für Suchaufträge verfügbar</p>
+                    <p className="text-sm text-gray-400">Nur noch 2 Slots für Suchaufträge im Februar verfügbar - Unsere Recruiter habe eine Kapazitätsgrenze für Projekte</p>
                   </div>
                 </div>
               </div>

@@ -18,7 +18,7 @@ import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 
-const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:
+const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:*
 
 Stellentitel: z.B. Senior Frontend Developer
 Tech Stack: z.B. React, TypeScript, Next.js
@@ -88,6 +88,7 @@ const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/He
 function TalentPreviewContent() {
   const searchParams = useSearchParams()
   const [email, setEmail] = useState(searchParams.get('email') || '')
+  const [firstName, setFirstName] = useState(searchParams.get('firstName') || '')
   const [description, setDescription] = useState(searchParams.get('description') || '')
   const [dataProcessingConsent, setDataProcessingConsent] = useState(searchParams.get('consent') === 'true')
   const [marketingConsent, setMarketingConsent] = useState(searchParams.get('marketing') === 'true')
@@ -111,6 +112,7 @@ function TalentPreviewContent() {
         },
         body: JSON.stringify({
           email,
+          firstname: firstName,
           description,
           dataProcessingConsent,
           marketingConsent,
@@ -219,16 +221,29 @@ function TalentPreviewContent() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-[#2D2C35] border-gray-600 text-white outline-none focus:ring-0 focus:border-gray-600 focus:outline-none"
-                    placeholder="Deine E-Mail für die Profile"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <Input
+                      id="firstName"
+                      type="text"
+                      required
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className="bg-[#2D2C35] border-gray-600 text-white outline-none focus:ring-0 focus:border-gray-600 focus:outline-none"
+                      placeholder="Dein Vorname*"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      id="email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="bg-[#2D2C35] border-gray-600 text-white outline-none focus:ring-0 focus:border-gray-600 focus:outline-none"
+                      placeholder="Deine E-Mail für die Profile*"
+                    />
+                  </div>
                 </div>
 
                 <div>

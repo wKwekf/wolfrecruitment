@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
   try {
-    const { email, description, dataProcessingConsent, marketingConsent } = await request.json()
+    const { email, firstname, description, dataProcessingConsent, marketingConsent } = await request.json()
 
     if (!process.env.HUBSPOT_API_KEY || !process.env.HUBSPOT_PORTAL_ID || !process.env.HUBSPOT_FORM_GUID) {
       console.error('Missing required environment variables')
@@ -17,6 +17,10 @@ export async function POST(request: Request) {
         {
           name: "email",
           value: email
+        },
+        {
+          name: "firstname",
+          value: firstname
         },
         {
           name: "job_description__lead_gen_",

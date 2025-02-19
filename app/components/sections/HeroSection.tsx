@@ -145,8 +145,9 @@ export default function HeroSection() {
           >
             <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-                <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
-                  In nur 7 Tagen zu deinem neuen AI-Mitarbeiter
+                <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight">
+                  <span className="text-[#f25a75] block">Dein AI-Team.</span>
+                  <span className="text-white block">In 7 Tagen.</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-6 sm:mb-8">
                   Verabschiede dich von langwierigen Bewerbungsprozessen – unser zielgerichteter Screening-Prozess liefert dir passgenaue, vorgeprüfte AI-Kandidaten, die sofort für dein Interview bereitstehen.

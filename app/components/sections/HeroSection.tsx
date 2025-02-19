@@ -166,8 +166,8 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
-                      Jetzt kostenfreies Erstgespräch buchen
+                    <Link href="/resources/talent-preview">
+                      Hol dir deine zwei Gratis-Profile
                       <motion.span
                         className="inline-block ml-2"
                         animate={{ x: isHovered ? 5 : 0 }}

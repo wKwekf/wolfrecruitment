@@ -63,28 +63,6 @@ const PricingCard = () => {
                 ))}
               </div>
             </CardContent>
-            
-            <CardFooter className="pt-4">
-              <Button 
-                variant="default"
-                size="lg"
-                className="w-full font-semibold"
-                asChild
-                onMouseEnter={() => setIsHoveredFlex(true)}
-                onMouseLeave={() => setIsHoveredFlex(false)}
-              >
-                <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
-                  Erstgespräch für Flex buchen
-                  <motion.span
-                    className="inline-block ml-2"
-                    animate={{ x: isHoveredFlex ? 5 : 0 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <ArrowRight className="h-6 w-6" />
-                  </motion.span>
-                </Link>
-              </Button>
-            </CardFooter>
           </Card>
 
           {/* Alliance Plan */}
@@ -138,50 +116,27 @@ const PricingCard = () => {
                 </div>
               </div>
             </CardContent>
-            
-            <CardFooter>
-              <Button 
-                variant="default"
-                size="lg"
-                className="w-full font-semibold"
-                asChild
-                onMouseEnter={() => setIsHoveredAlliance(true)}
-                onMouseLeave={() => setIsHoveredAlliance(false)}
-              >
-                <Link href="https://calendly.com/wolfdanielmayer/termin-finden">
-                  Erstgespräch für Alliance buchen
-                  <motion.span
-                    className="inline-block ml-2"
-                    animate={{ x: isHoveredAlliance ? 5 : 0 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <ArrowRight className="h-6 w-6" />
-                  </motion.span>
-                </Link>
-              </Button>
-            </CardFooter>
           </Card>
         </div>
 
-        {/* ROI Calculator Link */}
-        <div className="text-center mt-12">
-          <Link 
-            href="/resources/roi-calculator"
-            className="group inline-flex items-center text-lg text-white hover:text-[#F25A75] transition-colors"
-            onMouseEnter={() => setIsHoveredROI(true)}
-            onMouseLeave={() => setIsHoveredROI(false)}
+        <div className="flex flex-col items-center justify-center mt-12 space-y-8">
+          <Button 
+            variant="default" 
+            size="lg" 
+            className="shadow-lg relative z-20 px-8"
+            asChild
           >
-            Berechne hier deinen individuellen Return on Investment
-            <motion.span
-              className="inline-block ml-2"
-              animate={{ x: isHoveredROI ? 5 : 0 }}
-              transition={{ type: "spring", stiffness: 300 }}
+            <Link 
+              href="/resources/talent-preview"
+              className="inline-flex items-center"
             >
-              <ArrowRight className="h-5 w-5" />
-            </motion.span>
-          </Link>
-          <p className="text-gray-400 mt-2">
-            und finde heraus, wie viel du mit unseren Modellen sparen kannst
+              Hol dir zwei Gratis-Profile
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          
+          <p className="text-gray-400 text-center max-w-2xl">
+            Teste unser Angebot kostenlos und überzeuge dich selbst von der Qualität unserer AI-Experten
           </p>
         </div>
       </div>

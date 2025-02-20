@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Wie lange dauert es, bis wir erste Kandidaten sehen?",
-    answer: "Durch unser aktives Netzwerk von über 1000 AI-Experten können wir meist innerhalb von 7 Tagen erste passende Kandidaten präsentieren. Da wir die Qualifikationen und Verfügbarkeiten in unserem Netzwerk bereits kennen, sind wir besonders schnell."
+    answer: "Durch unseren aktiven Kandidatenpool können wir meist innerhalb von 7 Tagen erste passende Kandidaten präsentieren. Da wir die Qualifikationen und Verfügbarkeiten in unserem Netzwerk bereits kennen, sind wir besonders schnell."
   },
   {
     question: "Welche AI-Positionen könnt ihr besetzen?",

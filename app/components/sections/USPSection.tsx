@@ -26,7 +26,7 @@ const comparisonItems: ComparisonItem[] = [
     feature: 'Netzwerk',
     traditional: false,
     our: true,
-    description: '1100+ vorqualifizierte AI-Experten'
+    description: 'Vorqualifizierter Kandidatenpool'
   }
 ];
 
@@ -39,7 +39,7 @@ export default function USPSection() {
             Was uns von anderen<br />Recruitern unterscheidet
           </h2>
           <p className="text-xl text-[#121118]/80 max-w-3xl mx-auto">
-            Mit der Kombination aus 100% AI-Fokus, technischer Expertise und einem Netzwerk von 1100+ AI-Experten setzen wir neue Standards im Recruiting.
+            Mit der Kombination aus 100% AI-Fokus, technischer Expertise und unserem vorqualifizierten Kandidatenpool setzen wir neue Standards im Recruiting.
           </p>
         </div>
 

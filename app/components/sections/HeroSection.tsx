@@ -46,7 +46,7 @@ const testimonials = [
 const benefits = [
   "Erhalte in 7 Tagen passende AI-Experten bereit für Interviews",
   "Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten",
-  "Zugriff auf unser Netzwerk von 1100+ spezialisierten AI-Experten",
+  "Zugriff auf unseren spezialisierten Kandidatenpool"
 ]
 
 export default function HeroSection() {
@@ -145,7 +145,7 @@ export default function HeroSection() {
           >
             <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-                <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight">
+                <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight mb-6">
                   <span className="text-[#f25a75] block">Dein AI-Team.</span>
                   <span className="text-white block">In 7 Tagen.</span>
                 </h1>
@@ -162,7 +162,7 @@ export default function HeroSection() {
                   <Button
                     variant="default"
                     size="lg"
-                    className="font-semibold w-full sm:w-auto mb-4"
+                    className="font-semibold w-full sm:w-auto mb-4 bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors shadow-[0_0_20px_rgba(242,90,117,0.3)]"
                     asChild
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}

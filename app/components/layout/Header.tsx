@@ -24,8 +24,7 @@ interface NavigationLink {
 }
 
 const navigationLinks: NavigationLink[] = [
-  { name: 'Referenzen', href: '/#case-study' },
-  { name: 'Preise', href: '/#pricing' },
+  { name: 'Preise', href: '/preise' },
   { name: 'Ressourcen', 
     href: '#',
     type: 'dropdown',

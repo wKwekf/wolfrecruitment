@@ -33,7 +33,6 @@ const navigationLinks: NavigationLink[] = [
       { name: 'Kostenlose Profile', href: '/resources/talent-preview' },
     ]
   },
-  { name: 'Über uns', href: '/ueber-uns' },
 ]
 
 export default function Header() {

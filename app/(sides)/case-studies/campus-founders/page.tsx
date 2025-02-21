@@ -42,7 +42,7 @@ export default function CampusFoundersPage() {
                 {/* Left Column - Text Content */}
                 <div className="lg:w-1/2 lg:pr-8">
                   <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-medium mb-6 text-white">
-                    814% mehr Kandidaten durch <span className="text-[#F25A75]">AI-Recruiting</span>
+                    AI-Track-Lead angestellt in <span className="text-[#F25A75]">4 Wochen</span>
                   </h1>
                   <p className="text-xl text-white/80 font-medium leading-relaxed mb-8">
                     Wie wir für die Campus Founders den perfekten AI-Track-Lead in nur 4 Wochen fanden und dabei die Qualität der Kandidaten deutlich steigern konnten.
@@ -160,7 +160,7 @@ export default function CampusFoundersPage() {
                   Mit unserer Spezialisierung auf KI-Recruiting konnten wir einen effizienten Prozess umsetzen:
                 </p>
                 <ul className="list-disc list-inside space-y-4 text-lg text-gray-700">
-                  <li>Schnelle Identifikation passender Kandidaten durch unser KI-gestütztes Matching</li>
+                  <li>Schnelle Identifikation passender Kandidaten durch unser spezialisiertes Recruiting</li>
                   <li>Präsentation der ersten Profile bereits nach einer Woche</li>
                   <li>Sorgfältige Vorqualifizierung mit Fokus auf KI-Expertise und didaktische Fähigkeiten</li>
                   <li>Effiziente Koordination der Bewerbungsgespräche mit Top-Kandidaten</li>

@@ -3,9 +3,10 @@ import Footer from '@/app/components/layout/Footer'
 import HeroSection from '@/app/components/sections/HeroSection'
 import SecondSection from '@/app/components/sections/SecondSection'
 import ThirdSection from '@/app/components/sections/ThirdSection'
-import VideoSection from '@/app/components/sections/VideoSection'
+import CaseStudiesSection from '@/app/components/sections/CaseStudiesSection'
 import TestimonialSection from '@/app/components/sections/TestimonialSection'
 import FAQSection from '@/app/components/sections/FAQSection'
+import TeamSection from '@/app/components/sections/TeamSection'
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
           <HeroSection />
           <SecondSection />
           <ThirdSection />
-          <VideoSection />
+          <CaseStudiesSection />
+          <TeamSection />
           <TestimonialSection />
           <FAQSection />
         </main>

@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import React, { useState, useRef, useEffect, Suspense } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'

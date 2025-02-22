@@ -51,9 +51,13 @@ export default function CaseStudiesSection() {
   }
 
   const shouldShowCaseStudy = (study: typeof caseStudies[0]) => {
+    // If no filters are active, show everything
     if (activeFilters.length === 0) return true
+
+    // Check if the case study matches ANY of the active filters
     return activeFilters.some(filter => 
-      study.jobTitles.includes(filter) || study.industry === filter
+      study.jobTitles.includes(filter) || // Check if it's a matching job title
+      study.industry === filter           // Check if it's a matching industry
     )
   }
 

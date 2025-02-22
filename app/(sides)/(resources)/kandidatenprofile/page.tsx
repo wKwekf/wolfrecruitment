@@ -17,6 +17,7 @@ import {
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { Dialog, DialogContent } from "@/components/ui/dialog"
+import './styles.css'
 
 const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:*
 
@@ -70,18 +71,6 @@ const testimonials = [
   }
 ]
 
-const styles = `
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-  }
-  
-  .animate-shake {
-    animation: shake 0.3s ease-in-out;
-  }
-`
-
 const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
 
 // Create a separate component for the main content
@@ -116,8 +105,8 @@ function TalentPreviewContent() {
           description,
           dataProcessingConsent,
           marketingConsent,
-          source: window.location.href,
-          pageUri: window.location.pathname,
+          source: typeof window !== 'undefined' ? window.location.href : '',
+          pageUri: typeof window !== 'undefined' ? window.location.pathname : '',
         }),
       })
 
@@ -126,7 +115,9 @@ function TalentPreviewContent() {
       }
 
       // Redirect to success page with marketing consent status
-      window.location.href = `/kandidatenprofile/success?marketing=${marketingConsent}`
+      if (typeof window !== 'undefined') {
+        window.location.href = `/kandidatenprofile/success?marketing=${marketingConsent}`
+      }
     } catch (error) {
       console.error('Submission error:', error)
       alert('Es gab einen Fehler. Bitte versuche es später noch einmal.')
@@ -184,17 +175,6 @@ function TalentPreviewContent() {
 
   return (
     <section className="w-full bg-[#121118] min-h-screen">
-      <style jsx global>{`
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          25% { transform: translateX(-5px); }
-          75% { transform: translateX(5px); }
-        }
-        
-        .animate-shake {
-          animation: shake 0.3s ease-in-out;
-        }
-      `}</style>
       <div className="max-w-custom mx-auto px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-20">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Left Column - Content */}

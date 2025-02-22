@@ -167,7 +167,7 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href="/resources/talent-preview">
+                    <Link href="/kandidatenprofile">
                       Hol dir deine zwei Gratis-Profile
                       <motion.span
                         className="inline-block ml-2"

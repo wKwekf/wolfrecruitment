@@ -23,7 +23,7 @@ export default function RequestProfilesSection() {
                 className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white"
                 asChild
               >
-                <Link href="/resources/talent-preview" className="flex items-center gap-2">
+                <Link href="/kandidatenprofile" className="flex items-center gap-2">
                   Hol dir zwei Gratis-Profile
                   <ArrowRight className="h-5 w-5" />
                 </Link>

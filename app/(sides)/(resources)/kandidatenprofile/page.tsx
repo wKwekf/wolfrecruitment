@@ -126,7 +126,7 @@ function TalentPreviewContent() {
       }
 
       // Redirect to success page with marketing consent status
-      window.location.href = `/resources/talent-preview/success?marketing=${marketingConsent}`
+      window.location.href = `/kandidatenprofile/success?marketing=${marketingConsent}`
     } catch (error) {
       console.error('Submission error:', error)
       alert('Es gab einen Fehler. Bitte versuche es später noch einmal.')
@@ -183,7 +183,7 @@ function TalentPreviewContent() {
   }, [isVideoModalOpen])
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-[#121118] min-h-screen">
       <style jsx global>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0); }
@@ -215,7 +215,7 @@ function TalentPreviewContent() {
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
                     <span className="mr-4 flex-shrink-0 mt-1 text-white">✓</span>
-                    <p className="text-left text-base sm:text-lg">{benefit}</p>
+                    <p className="text-left text-base sm:text-lg text-white">{benefit}</p>
                   </div>
                 ))}
               </div>

@@ -127,7 +127,7 @@ const PricingCard = () => {
             asChild
           >
             <Link 
-              href="/resources/talent-preview"
+              href="/kandidatenprofile"
               className="inline-flex items-center"
             >
               Hol dir zwei Gratis-Profile

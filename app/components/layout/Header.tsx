@@ -29,8 +29,8 @@ const navigationLinks: NavigationLink[] = [
     href: '#',
     type: 'dropdown',
     items: [
-      { name: 'ROI-Rechner', href: '/resources/roi-calculator' },
-      { name: 'Kostenlose Profile', href: '/resources/talent-preview' },
+      { name: 'ROI-Rechner', href: '/roi-rechner' },
+      { name: 'Kostenlose Profile', href: '/kandidatenprofile' },
     ]
   },
 ]

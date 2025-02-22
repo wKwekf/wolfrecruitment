@@ -84,7 +84,6 @@ function TalentPreviewContent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [showControls, setShowControls] = useState(false)
-  const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)

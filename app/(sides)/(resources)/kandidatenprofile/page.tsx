@@ -244,17 +244,12 @@ function TalentPreviewContent() {
                       id="dataProcessing"
                       required
                       checked={dataProcessingConsent}
-                      onCheckedChange={(checked: boolean | 'indeterminate') => {
-                        if (typeof checked === 'boolean') {
-                          setDataProcessingConsent(checked)
-                        }
-                      }}
-                      className="mt-1 cursor-pointer"
+                      onCheckedChange={(checked) => setDataProcessingConsent(checked as boolean)}
+                      className="mt-1 cursor-pointer border-white data-[state=checked]:bg-[#F25A75] data-[state=checked]:border-[#F25A75]"
                     />
                     <Label 
                       htmlFor="dataProcessing" 
                       className="text-sm text-gray-300 cursor-pointer"
-                      onClick={() => setDataProcessingConsent(!dataProcessingConsent)}
                     >
                       Ich stimme der Verarbeitung meiner Daten gemäß der <a href="https://www.wolfai.de/datenschutz" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Datenschutzerklärung</a> zu.*
                     </Label>
@@ -264,17 +259,12 @@ function TalentPreviewContent() {
                     <Checkbox
                       id="marketing"
                       checked={marketingConsent}
-                      onCheckedChange={(checked: boolean | 'indeterminate') => {
-                        if (typeof checked === 'boolean') {
-                          setMarketingConsent(checked)
-                        }
-                      }}
-                      className="mt-1 cursor-pointer"
+                      onCheckedChange={(checked) => setMarketingConsent(checked as boolean)}
+                      className="mt-1 cursor-pointer border-white data-[state=checked]:bg-[#F25A75] data-[state=checked]:border-[#F25A75]"
                     />
                     <Label 
                       htmlFor="marketing" 
                       className="text-sm text-gray-300 cursor-pointer"
-                      onClick={() => setMarketingConsent(!marketingConsent)}
                     >
                       Ja, ich möchte weitere exklusive Einblicke zu AI-Recruiting, relevante Kandidatenprofile und Branchentrends per E-Mail erhalten. Ich bin damit einverstanden, dass Wolf mich zu relevanten Angeboten, Events oder individuellen Recruiting-Lösungen kontaktiert. Ich kann mich jederzeit abmelden.
                     </Label>

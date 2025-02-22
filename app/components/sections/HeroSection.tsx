@@ -45,8 +45,7 @@ const testimonials = [
 
 const benefits = [
   "Erhalte in 7 Tagen passende AI-Experten bereit für Interviews",
-  "Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten",
-  "Zugriff auf unseren spezialisierten Kandidatenpool"
+  "Google Cloud zertifizierte ML-Engineers prüfen jeden Kandidaten"
 ]
 
 export default function HeroSection() {
@@ -150,7 +149,7 @@ export default function HeroSection() {
                   <span className="text-white block">In 7 Tagen.</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-6 sm:mb-8">
-                  Verabschiede dich von langwierigen Bewerbungsprozessen – unser zielgerichteter Screening-Prozess liefert dir passgenaue, vorgeprüfte AI-Kandidaten, die sofort für dein Interview bereitstehen.
+                  Schluss mit unpassenden Bewerbungen. Unser intensiver Sourcing-Prozess liefert <span className="text-[#f25a75]">handverlesene AI-Experten</span> – von uns in <span className="text-[#f25a75]">25-minütigen Interviews</span> vorqualifiziert. Mit Interviewnotizen, technischer Bewertung und direkter Verfügbarkeit.
                 </p>
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start mb-4">

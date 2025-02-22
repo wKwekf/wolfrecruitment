@@ -149,7 +149,7 @@ export default function HeroSection() {
                   <span className="text-white block">In 7 Tagen.</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-6 sm:mb-8">
-                  Schluss mit unpassenden Bewerbungen. Unser intensiver Sourcing-Prozess liefert <span className="text-[#f25a75]">handverlesene AI-Experten</span> – von uns in <span className="text-[#f25a75]">25-minütigen Interviews</span> vorqualifiziert. Mit Interviewnotizen, technischer Bewertung und direkter Verfügbarkeit.
+                  Schluss mit unpassenden Bewerbungen. Wir liefern dir <span className="text-[#f25a75]">handverlesene AI-Experten</span> – persönlich von uns in intensiven Interviews vorqualifiziert. Mit ausführlicher Bewertung und sofort verfügbar für deine Gespräche.
                 </p>
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start mb-4">

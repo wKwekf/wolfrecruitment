@@ -217,27 +217,35 @@ const PricingCard = () => {
               {/* Payment Options Tabs */}
               <div className="space-y-4">
                 <h4 className="text-lg font-medium text-white">Zahlungsoption wählen:</h4>
-                <Tabs defaultValue="upfront" onValueChange={setPaymentOption} className="w-full">
-                  <TabsList className="grid grid-cols-2 w-full bg-[#252430] p-1 rounded-lg">
-                    <TabsTrigger 
-                      value="upfront" 
-                      className="flex items-center gap-1 py-3 data-[state=active]:bg-[#F25A75] data-[state=active]:text-white data-[state=active]:shadow-[0_0_15px_rgba(242,90,117,0.4)] data-[state=inactive]:bg-[#252430] data-[state=inactive]:text-gray-300 transition-all duration-200 rounded-md border-2 data-[state=active]:border-[#F25A75] data-[state=inactive]:border-transparent"
-                    >
-                      Mit Anzahlung
-                      <Badge className="bg-[#F25A75] ml-1 shadow-[0_0_10px_rgba(242,90,117,0.5)]">
-                        {formatCurrency(getSavings())} gespart
-                      </Badge>
-                    </TabsTrigger>
-                    <TabsTrigger 
-                      value="no-upfront" 
-                      className="flex items-center gap-1 py-3 data-[state=active]:bg-[#F25A75] data-[state=active]:text-white data-[state=active]:shadow-[0_0_15px_rgba(242,90,117,0.4)] data-[state=inactive]:bg-[#252430] data-[state=inactive]:text-gray-300 transition-all duration-200 rounded-md border-2 data-[state=active]:border-[#F25A75] data-[state=inactive]:border-transparent"
-                    >
-                      Ohne Anzahlung
-                      <Badge className="bg-gray-600 ml-1">Keine Vorabkosten</Badge>
-                    </TabsTrigger>
-                  </TabsList>
-                  
-                  <TabsContent value="upfront" className="space-y-6 mt-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <button
+                    onClick={() => setPaymentOption('upfront')}
+                    className={`flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 transition-all duration-200 ${
+                      paymentOption === 'upfront' 
+                        ? 'bg-[#F25A75] text-white border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
+                        : 'bg-[#252430] text-gray-300 border-transparent hover:border-gray-600'
+                    }`}
+                  >
+                    Mit Anzahlung
+                    <Badge className="bg-[#F25A75] shadow-[0_0_10px_rgba(242,90,117,0.5)]">
+                      {formatCurrency(getSavings())} gespart
+                    </Badge>
+                  </button>
+                  <button
+                    onClick={() => setPaymentOption('no-upfront')}
+                    className={`flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 transition-all duration-200 ${
+                      paymentOption === 'no-upfront' 
+                        ? 'bg-[#F25A75] text-white border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
+                        : 'bg-[#252430] text-gray-300 border-transparent hover:border-gray-600'
+                    }`}
+                  >
+                    Ohne Anzahlung
+                    <Badge className="bg-gray-600">Keine Vorabkosten</Badge>
+                  </button>
+                </div>
+                
+                {paymentOption === 'upfront' ? (
+                  <div className="space-y-6 mt-4">
                     <div className="bg-[#252430] p-4 rounded-lg">
                       <div className="flex items-start mb-2">
                         <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -269,9 +277,9 @@ const PricingCard = () => {
                         <span>24 Monate</span>
                       </div>
                     </div>
-                  </TabsContent>
-                  
-                  <TabsContent value="no-upfront" className="space-y-6 mt-4">
+                  </div>
+                ) : (
+                  <div className="space-y-6 mt-4">
                     <div className="bg-[#252430] p-4 rounded-lg">
                       <p className="text-white">
                         <span className="font-semibold">Keine Vorabkosten</span> - du zahlst erst, wenn wir erfolgreich vermittelt haben
@@ -300,8 +308,8 @@ const PricingCard = () => {
                         <span>24 Monate</span>
                       </div>
                     </div>
-                  </TabsContent>
-                </Tabs>
+                  </div>
+                )}
               </div>
               
               {/* Features */}

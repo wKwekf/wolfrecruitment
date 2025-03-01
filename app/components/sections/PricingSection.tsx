@@ -262,7 +262,6 @@ const PricingCard = () => {
                           <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
                         </p>
                       </div>
-                      <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>
                     </div>
                     
                     <div className="space-y-4">
@@ -302,7 +301,6 @@ const PricingCard = () => {
                           <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
                         </p>
                       </div>
-                      <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>
                     </div>
                     
                     <div className="space-y-4">

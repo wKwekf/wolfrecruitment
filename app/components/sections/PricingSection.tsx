@@ -57,7 +57,7 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
 };
 
 const PricingCard = () => {
-  const [paymentMonths, setPaymentMonths] = useState(1);
+  const [paymentMonths, setPaymentMonths] = useState(6);
   const [paymentOption, setPaymentOption] = useState('upfront');
   const [salary, setSalary] = useState(80000);
   const [inputSalary, setInputSalary] = useState('80000');
@@ -253,7 +253,16 @@ const PricingCard = () => {
                           <span className="font-semibold">100% Geld-zurück-Garantie</span> auf die Anzahlung, wenn du mit unseren Kandidatenvorschlägen nicht zufrieden bist
                         </p>
                       </div>
-                      <p className="text-gray-300 text-sm ml-7">Niedrigere Gesamtgebühr</p>
+                    </div>
+                    
+                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936] hover:border-[#F25A75] transition-colors">
+                      <div className="flex items-start mb-2">
+                        <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <p className="text-white">
+                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Sollte der vermittelte Kandidat vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+                        </p>
+                      </div>
+                      <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>
                     </div>
                     
                     <div className="space-y-4">
@@ -284,7 +293,16 @@ const PricingCard = () => {
                       <p className="text-white">
                         <span className="font-semibold">Keine Vorabkosten</span> - du zahlst erst, wenn wir erfolgreich vermittelt haben
                       </p>
-                      <p className="text-gray-300 text-sm mt-1">Standardgebühr (ab 30% vom Jahresgehalt)</p>
+                    </div>
+                    
+                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936] hover:border-[#F25A75] transition-colors">
+                      <div className="flex items-start mb-2">
+                        <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <p className="text-white">
+                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Sollte der vermittelte Kandidat vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+                        </p>
+                      </div>
+                      <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>
                     </div>
                     
                     <div className="space-y-4">

@@ -57,7 +57,7 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
 };
 
 const PricingCard = () => {
-  const [paymentMonths, setPaymentMonths] = useState(6);
+  const [paymentMonths, setPaymentMonths] = useState(12);
   const [paymentOption, setPaymentOption] = useState('upfront');
   const [salary, setSalary] = useState(80000);
   const [inputSalary, setInputSalary] = useState('80000');
@@ -255,7 +255,7 @@ const PricingCard = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936] hover:border-[#F25A75] transition-colors">
+                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936]">
                       <div className="flex items-start mb-2">
                         <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         <p className="text-white">
@@ -295,7 +295,7 @@ const PricingCard = () => {
                       </p>
                     </div>
                     
-                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936] hover:border-[#F25A75] transition-colors">
+                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936]">
                       <div className="flex items-start mb-2">
                         <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         <p className="text-white">

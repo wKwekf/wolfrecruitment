@@ -259,7 +259,7 @@ const PricingCard = () => {
                       <div className="flex items-start mb-2">
                         <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         <p className="text-white">
-                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Sollte der vermittelte Kandidat vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
                         </p>
                       </div>
                       <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>
@@ -299,7 +299,7 @@ const PricingCard = () => {
                       <div className="flex items-start mb-2">
                         <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         <p className="text-white">
-                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Sollte der vermittelte Kandidat vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
                         </p>
                       </div>
                       <p className="text-gray-300 text-sm ml-7">Minimiertes Risiko bei längeren Zahlungszeiträumen</p>

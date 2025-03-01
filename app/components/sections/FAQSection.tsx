@@ -11,15 +11,15 @@ import { motion } from "framer-motion"
 const faqs = [
   {
     question: "Was ist euer Preismodell?",
-    answer: "Wir bieten zwei flexible Modelle an: AI-Talent Flex mit 30% vom Bruttojahresgehalt als Einmalzahlung bei erfolgreicher Vermittlung, und AI-Talent Alliance mit 26% vom Bruttojahresgehalt. Bei Alliance leisten Sie eine Anzahlung von 2.990€ bei Projektstart, der Rest wird bei erfolgreicher Vermittlung fällig. Die Alliance-Option bietet zusätzliche Vorteile wie eine 7-Tage-Garantie für erste Kandidatenvorstellung und priorisierten Zugriff auf unser Netzwerk."
+    answer: "Wir bieten flexible Zahlungsoptionen, die zu deinen Bedürfnissen passen. Du kannst zwischen einer Zahlung mit oder ohne Anzahlung wählen. Mit Anzahlung (2.990€) profitierst du von einer niedrigeren Gesamtgebühr. Beide Optionen können in Raten über einen Zeitraum von bis zu 24 Monaten bezahlt werden. Die genaue monatliche Rate hängt vom Jahresgehalt des Kandidaten und der gewählten Laufzeit ab. Unser Kündigungsschutz ist bei allen Zahlungsoptionen inklusive."
   },
   {
-    question: "Kann ich zwischen den Preismodellen wechseln?",
-    answer: "Bei einer neuen Position kannst du frei zwischen beiden Modellen wählen. Während der Besetzung einer Position ist ein Wechsel von Flex zu Alliance möglich - andersherum jedoch nicht. Das bedeutet, wenn du mit Flex startest und die Vorteile des Alliance-Modells nutzen möchtest, können wir das für dich anpassen. Die bereits geleisteten Zahlungen werden dabei berücksichtigt."
+    question: "Was beinhaltet euer Kündigungsschutz?",
+    answer: "Unser Kündigungsschutz bietet dir doppelte Sicherheit: Während der Probezeit erhältst du eine kostenlose Nachbesetzung, falls der Kandidat ausscheidet. Nach der Probezeit reduzieren wir bei Ratenzahlung die verbleibenden Raten um 50%, sollte der vermittelte Kandidat vor Ablauf deiner Zahlungsperiode kündigen. Dieses Sicherheitspaket minimiert dein finanzielles Risiko erheblich und ist in allen unseren Zahlungsmodellen inklusive."
   },
   {
-    question: "Warum ist das Alliance-Modell günstiger als Flex?",
-    answer: "Das Alliance-Modell basiert auf einer engeren Partnerschaft mit klarem Commitment von beiden Seiten. Die initiale Anzahlung von 2.990€ ermöglicht es uns, von Anfang an mehr Ressourcen für deine Suche einzusetzen. Unsere Erfahrung zeigt, dass Recruiting-Prozesse deutlich erfolgreicher verlaufen, wenn beide Parteien von Anfang an verbindlich zusammenarbeiten. Diese Effizienzvorteile geben wir in Form eines reduzierten Gesamtpreises und zusätzlicher Premium-Services an unsere Alliance-Partner weiter."
+    question: "Warum ist die Option mit Anzahlung günstiger?",
+    answer: "Die Option mit Anzahlung basiert auf einer engeren Partnerschaft mit klarem Commitment von beiden Seiten. Die initiale Anzahlung von 2.990€ ermöglicht es uns, von Anfang an mehr Ressourcen für deine Suche einzusetzen. Unsere Erfahrung zeigt, dass Recruiting-Prozesse deutlich erfolgreicher verlaufen, wenn beide Parteien von Anfang an verbindlich zusammenarbeiten. Diese Effizienzvorteile geben wir in Form eines reduzierten Gesamtpreises an dich weiter."
   },
   {
     question: "Wie findet ihr die passenden AI-Experten für uns?",

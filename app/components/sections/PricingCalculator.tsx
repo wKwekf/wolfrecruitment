@@ -220,7 +220,7 @@ export const PricingCalculator = () => {
               onBlur={handleSalaryBlur}
               onKeyDown={handleKeyDown}
               className="w-full bg-[#252430] border-gray-700 text-white text-xl h-14 pl-4 pr-10 rounded-lg"
-              placeholder="Gehalt eingeben"
+              placeholder="80.000"
             />
             <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">€</span>
           </div>

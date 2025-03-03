@@ -63,6 +63,10 @@ export const PricingCalculator = () => {
   const [inputSalary, setInputSalary] = useState('80000');
   const sectionRef = useRef<HTMLElement>(null);
   
+  // Gehaltsgrenzen
+  const MIN_SALARY = 5000;
+  const MAX_SALARY = 3000000;
+  
   // Base percentage rates
   const baseUpfrontRate = 26;
   const baseNoUpfrontRate = 30;
@@ -153,12 +157,39 @@ export const PricingCalculator = () => {
   
   // Update salary when input is complete
   const handleSalaryBlur = () => {
-    const parsedValue = parseInt(inputSalary);
-    if (!isNaN(parsedValue) && parsedValue > 0) {
-      setSalary(parsedValue);
-    } else {
-      setInputSalary(salary.toString());
+    updateSalary();
+  };
+  
+  // Handle Enter key press
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      updateSalary();
+      // Fokus vom Input-Feld entfernen
+      (e.target as HTMLInputElement).blur();
     }
+  };
+  
+  // Zentrale Funktion zum Aktualisieren des Gehalts mit Grenzen
+  const updateSalary = () => {
+    let parsedValue = parseInt(inputSalary);
+    
+    if (isNaN(parsedValue)) {
+      // Wenn keine gültige Zahl, zurück zum vorherigen Wert
+      setInputSalary(salary.toString());
+      return;
+    }
+    
+    // Gehaltsgrenzen anwenden
+    if (parsedValue < MIN_SALARY) {
+      parsedValue = MIN_SALARY;
+    } else if (parsedValue > MAX_SALARY) {
+      parsedValue = MAX_SALARY;
+    }
+    
+    // Gehalt und Eingabefeld aktualisieren
+    setSalary(parsedValue);
+    setInputSalary(parsedValue.toString());
   };
 
   useEffect(() => {
@@ -178,8 +209,8 @@ export const PricingCalculator = () => {
       transition={{ duration: 0.7, delay: 0.2 }}
     >
       {/* Einstellungen - Oben */}
-      <div className="mb-12 flex flex-col items-center">
-        <div className="flex items-center justify-center mb-4 w-full max-w-md">
+      <div className="mb-8 flex flex-col items-center">
+        <div className="flex items-center justify-center mb-3 w-full max-w-md">
           <div className="relative flex-1">
             <Input
               id="salary-input"
@@ -187,6 +218,7 @@ export const PricingCalculator = () => {
               value={inputSalary}
               onChange={handleSalaryChange}
               onBlur={handleSalaryBlur}
+              onKeyDown={handleKeyDown}
               className="w-full bg-[#252430] border-gray-700 text-white text-xl h-14 pl-4 pr-10 rounded-lg"
               placeholder="Gehalt eingeben"
             />
@@ -197,14 +229,14 @@ export const PricingCalculator = () => {
           </div>
         </div>
         
-        <p className="text-gray-400 text-center mb-8">
+        <p className="text-gray-400 text-center mb-6">
           Unsere Vermittlungsgebühr wird als Prozentsatz des Jahresgehalts berechnet
         </p>
       </div>
       
       {/* Zahlungsoption - Auswahl */}
-      <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
-        <h3 className="font-medium text-white mb-4">Zahlungsoption:</h3>
+      <div className="mb-6 bg-[#1D1C25] p-5 rounded-xl">
+        <h3 className="font-medium text-white mb-3">Zahlungsoption:</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Option 1: Mit Anzahlung */}
@@ -278,8 +310,8 @@ export const PricingCalculator = () => {
       </div>
       
       {/* Zahlungszeitraum - Slider */}
-      <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
-        <div className="flex items-center justify-between mb-4">
+      <div className="mb-6 bg-[#1D1C25] p-5 rounded-xl">
+        <div className="flex items-center justify-between mb-3">
           <h3 className="font-medium text-white">Zahlungszeitraum:</h3>
           <span className="text-white font-medium">
             {paymentMonths === 1 ? 'Einmalzahlung' : `${paymentMonths} Monate`}
@@ -302,19 +334,9 @@ export const PricingCalculator = () => {
         </div>
       </div>
       
-      {/* Kündigungsschutz */}
-      <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
-        <div className="flex items-start">
-          <ShieldCheck className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-          <p className="text-white">
-            <span className="font-medium">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
-          </p>
-        </div>
-      </div>
-      
       {/* Ergebnis - Ein Gesamtbetrag unten */}
-      <div className="mb-8 bg-[#252430] p-8 rounded-xl border-2 border-[#F25A75] shadow-[0_0_20px_rgba(242,90,117,0.3)]">
-        <h3 className="text-xl font-medium text-white mb-4 text-center">Deine Kosten</h3>
+      <div className="mb-6 bg-[#252430] p-6 rounded-xl border-2 border-[#F25A75] shadow-[0_0_20px_rgba(242,90,117,0.3)]">
+        <h3 className="text-xl font-medium text-white mb-3 text-center">Deine Kosten</h3>
         
         <div className="flex flex-col items-center justify-center">
           <div className="text-center mb-2">
@@ -333,7 +355,7 @@ export const PricingCalculator = () => {
             </span>
           </div>
           
-          <p className="text-gray-300 text-center mb-4">
+          <p className="text-gray-300 text-center mb-3">
             {paymentOption === 'upfront' 
               ? `2.990 € Anzahlung + ${paymentMonths > 1 ? `${paymentMonths} Monatsraten` : 'Restzahlung'} nach erfolgreicher Anstellung`
               : `Zahlung in ${paymentMonths > 1 ? `${paymentMonths} Monatsraten` : 'einer Rate'} nach erfolgreicher Anstellung`
@@ -346,8 +368,18 @@ export const PricingCalculator = () => {
         </div>
       </div>
       
+      {/* Kündigungsschutz - jetzt über dem CTA Button */}
+      <div className="mb-6 bg-[#1D1C25] p-4 rounded-xl max-w-3xl mx-auto">
+        <div className="flex items-start">
+          <ShieldCheck className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+          <p className="text-white">
+            <span className="font-medium">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+          </p>
+        </div>
+      </div>
+      
       {/* CTA Button */}
-      <div className="flex justify-center mb-12">
+      <div className="flex justify-center mb-8">
         <Button 
           variant="default" 
           size="lg" 
@@ -365,10 +397,10 @@ export const PricingCalculator = () => {
       </div>
       
       {/* Inclusive Services - Ganz unten */}
-      <div className="mt-12">
-        <h3 className="font-platform text-xl font-medium text-white mb-6">Inklusive Services:</h3>
+      <div className="mt-8">
+        <h3 className="font-platform text-xl font-medium text-white mb-4">Inklusive Services:</h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
             <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
             <div>

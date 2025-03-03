@@ -19,13 +19,29 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
   max?: number;
   step?: number;
 }) => {
+  // Berechnen des prozentualen Anteils für die ersten Positionen mit besserer Ausrichtung
+  const getProgressWidth = () => {
+    const percent = ((value[0] - min) / (max - min)) * 100;
+    
+    // Spezialbehandlung für die ersten Positionen, um die Ausrichtung zu verbessern
+    if (value[0] === 1) {
+      // Bei Minimalwert (Einmalzahlung) - minimaler Balken
+      return '10px'; // Nur eine minimale Breite zeigen
+    } else if (value[0] === 2) {
+      // Korrektur für den zweiten Monat
+      return `calc(${percent}% + 10px)`;
+    }
+    
+    return `${percent}%`;
+  };
+
   return (
     <div className="relative py-5">
       <div className="absolute top-1/2 left-0 right-0 h-3 -mt-1.5 rounded-full bg-gray-700"></div>
       <div 
         className="absolute top-1/2 left-0 h-3 -mt-1.5 rounded-full bg-[#F25A75]" 
         style={{ 
-          width: `${Math.max(3, ((value[0] - min) / (max - min)) * 100)}%` 
+          width: getProgressWidth() 
         }}
       ></div>
       <Slider
@@ -39,17 +55,17 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
       />
       <style jsx global>{`
         [data-radix-slider-thumb] {
-          height: 32px !important;
-          width: 32px !important;
+          height: 85px !important;
+          width: 85px !important;
           background-color: white !important;
-          border: 3px solid #F25A75 !important;
-          box-shadow: 0 0 15px rgba(242, 90, 117, 0.6) !important;
+          border: 6px solid #F25A75 !important;
+          box-shadow: 0 0 30px rgba(242, 90, 117, 0.85) !important;
           transition: all 0.2s ease !important;
         }
         
         [data-radix-slider-thumb]:hover {
-          transform: scale(1.15) !important;
-          box-shadow: 0 0 20px rgba(242, 90, 117, 0.8) !important;
+          transform: scale(1.1) !important;
+          box-shadow: 0 0 35px rgba(242, 90, 117, 1) !important;
         }
       `}</style>
     </div>

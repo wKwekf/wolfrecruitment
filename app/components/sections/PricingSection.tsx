@@ -39,8 +39,8 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
       />
       <style jsx global>{`
         [data-radix-slider-thumb] {
-          height: 28px !important;
-          width: 28px !important;
+          height: 32px !important;
+          width: 32px !important;
           background-color: white !important;
           border: 3px solid #F25A75 !important;
           box-shadow: 0 0 15px rgba(242, 90, 117, 0.6) !important;
@@ -57,8 +57,8 @@ const CustomSlider = ({ value, onValueChange, min = 1, max = 24, step = 1 }: {
 };
 
 const PricingCard = () => {
-  const [paymentMonths, setPaymentMonths] = useState(12);
-  const [paymentOption, setPaymentOption] = useState('upfront');
+  const [paymentMonths, setPaymentMonths] = useState(1);
+  const [paymentOption, setPaymentOption] = useState('no-upfront');
   const [salary, setSalary] = useState(80000);
   const [inputSalary, setInputSalary] = useState('80000');
   const sectionRef = useRef<HTMLElement>(null);
@@ -69,22 +69,61 @@ const PricingCard = () => {
   
   // Progressive rate increases based on payment months
   const getProgressiveRate = (baseRate: number, months: number) => {
-    if (months <= 3) return baseRate;
-    if (months <= 6) return baseRate + 2;
-    if (months <= 12) return baseRate + 4;
-    if (months <= 18) return baseRate + 6;
-    return baseRate + 8; // 19-24 months
+    if (months <= 3) return 0;
+    if (months <= 6) return 2;
+    if (months <= 12) return 4;
+    if (months <= 18) return 6;
+    return 8; // 19-24 months
   };
   
   // Calculate the adjusted rate based on payment terms
   const getAdjustedRate = () => {
     const baseRate = paymentOption === 'upfront' ? baseUpfrontRate : baseNoUpfrontRate;
-    return getProgressiveRate(baseRate, paymentMonths);
+    return baseRate + getProgressiveRate(0, paymentMonths);
   };
   
-  // Calculate the monthly rate percentage
-  const getMonthlyRatePercentage = () => {
-    return getAdjustedRate() / paymentMonths;
+  // Calculate adjusted rate for upfront option
+  const getUpfrontRate = () => {
+    return baseUpfrontRate + getProgressiveRate(0, paymentMonths);
+  };
+  
+  // Calculate adjusted rate for no-upfront option
+  const getNoUpfrontRate = () => {
+    return baseNoUpfrontRate + getProgressiveRate(0, paymentMonths);
+  };
+  
+  // Calculate total fee based on salary
+  const getTotalFee = () => (salary * getAdjustedRate()) / 100;
+  
+  // Calculate total fee for upfront option
+  const getUpfrontTotalFee = () => (salary * getUpfrontRate()) / 100;
+  
+  // Calculate total fee for no-upfront option
+  const getNoUpfrontTotalFee = () => (salary * getNoUpfrontRate()) / 100;
+  
+  // Calculate monthly payment
+  const getMonthlyPayment = () => {
+    const totalFee = getTotalFee();
+    return totalFee / paymentMonths;
+  };
+  
+  // Calculate monthly payment for upfront option
+  const getUpfrontMonthlyPayment = () => {
+    // Berechne die Gesamtgebühr ohne Anzahlung
+    const totalFee = getUpfrontTotalFee() - getUpfrontPayment();
+    // Teile durch die Anzahl der Monate
+    return paymentMonths > 1 ? totalFee / paymentMonths : totalFee;
+  };
+  
+  // Calculate monthly payment for no-upfront option
+  const getNoUpfrontMonthlyPayment = () => {
+    const totalFee = getNoUpfrontTotalFee();
+    return paymentMonths > 1 ? totalFee / paymentMonths : totalFee;
+  };
+  
+  // Calculate upfront payment amount (only for upfront option)
+  const getUpfrontPayment = () => {
+    return 2990; // Fester Betrag von 2.990 € als Anzahlung
   };
   
   // Format number as currency
@@ -96,19 +135,10 @@ const PricingCard = () => {
     }).format(amount);
   };
   
-  // Calculate total fee based on salary
-  const getTotalFee = () => (salary * getAdjustedRate()) / 100;
-  
-  // Calculate monthly payment
-  const getMonthlyPayment = () => {
-    const totalFee = getTotalFee();
-    return totalFee / paymentMonths;
-  };
-  
   // Calculate savings with upfront payment
   const getSavings = () => {
-    const upfrontTotal = (salary * getProgressiveRate(baseUpfrontRate, paymentMonths)) / 100;
-    const noUpfrontTotal = (salary * getProgressiveRate(baseNoUpfrontRate, paymentMonths)) / 100;
+    const upfrontTotal = (salary * getUpfrontRate()) / 100;
+    const noUpfrontTotal = (salary * getNoUpfrontRate()) / 100;
     return noUpfrontTotal - upfrontTotal;
   };
   
@@ -162,271 +192,263 @@ const PricingCard = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <Card className="relative border-2 border-white rounded-xl overflow-hidden bg-[#1D1C25] text-white shadow-[0_0_15px_-3px_rgba(255,255,255,0.3)] mb-12">
-            <CardHeader className="space-y-1 pb-4">
-              <div className="flex items-center justify-between">
-                <h3 className="font-platform text-2xl sm:text-3xl font-medium text-white">AI-Talent Recruiting</h3>
+          {/* Einstellungen - Oben */}
+          <div className="mb-12 flex flex-col items-center">
+            <div className="flex items-center justify-center mb-4 w-full max-w-md">
+              <div className="relative flex-1">
+                <Input
+                  id="salary-input"
+                  type="text"
+                  value={inputSalary}
+                  onChange={handleSalaryChange}
+                  onBlur={handleSalaryBlur}
+                  className="w-full bg-[#252430] border-gray-700 text-white text-xl h-14 pl-4 pr-10 rounded-lg"
+                  placeholder="Gehalt eingeben"
+                />
+                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">€</span>
               </div>
-              
-              <div className="mt-4 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                <div>
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold text-white">
-                      {paymentMonths > 1 
-                        ? formatCurrency(getMonthlyPayment())
-                        : formatCurrency(getTotalFee())
-                      }
-                    </span>
-                    <span className="text-gray-300 ml-2">
-                      {paymentMonths > 1 ? 'pro Monat' : 'Gesamtkosten'}
-                    </span>
-                  </div>
-                  <p className="text-base text-gray-300 mt-1">
-                    {paymentOption === 'upfront' 
-                      ? `${formatCurrency(upfrontPayment)} Anzahlung + ${paymentMonths > 1 ? `${paymentMonths} Monatsraten nach erfolgreicher Anstellung` : 'Restzahlung nach erfolgreicher Anstellung'}`
-                      : `Zahlung in ${paymentMonths > 1 ? `${paymentMonths} Monatsraten` : 'einer Rate'} nach erfolgreicher Anstellung`}
-                  </p>
-                  <p className="text-sm text-gray-400 mt-1">
-                    Gesamtgebühr: {getAdjustedRate()}% vom Jahresgehalt
-                  </p>
-                </div>
-                
-                <div className="text-right">
-                  <div className="flex items-center justify-end mb-2 space-x-2">
-                    <label htmlFor="salary-input" className="text-sm text-gray-400">Jahresgehalt:</label>
-                    <div className="relative">
-                      <Input
-                        id="salary-input"
-                        type="text"
-                        value={inputSalary}
-                        onChange={handleSalaryChange}
-                        onBlur={handleSalaryBlur}
-                        className="w-32 bg-[#252430] border-gray-700 text-white text-right pr-8"
-                      />
-                      <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">€</span>
-                    </div>
-                  </div>
-                  <p className="text-sm font-medium text-gray-300">
-                    Basierend auf {formatCurrency(salary)} Jahresgehalt
-                  </p>
-                </div>
+              <div className="ml-4 text-xl font-medium text-white">
+                Jahresgehalt des Kandidaten
               </div>
-            </CardHeader>
+            </div>
             
-            <CardContent className="space-y-8">
-              {/* Payment Options Tabs */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-medium text-white">Zahlungsoption wählen:</h4>
-                <div className="grid grid-cols-2 gap-3">
-                  <button
-                    onClick={() => setPaymentOption('upfront')}
-                    className={`flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 transition-all duration-200 ${
-                      paymentOption === 'upfront' 
-                        ? 'bg-[#F25A75] text-white border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
-                        : 'bg-[#252430] text-gray-300 border-transparent hover:border-gray-600'
-                    }`}
-                  >
-                    Mit Anzahlung
-                    <Badge className="bg-[#F25A75] shadow-[0_0_10px_rgba(242,90,117,0.5)]">
-                      {formatCurrency(getSavings())} gespart
-                    </Badge>
-                  </button>
-                  <button
-                    onClick={() => setPaymentOption('no-upfront')}
-                    className={`flex items-center justify-center gap-2 py-3 px-4 rounded-md border-2 transition-all duration-200 ${
-                      paymentOption === 'no-upfront' 
-                        ? 'bg-[#F25A75] text-white border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
-                        : 'bg-[#252430] text-gray-300 border-transparent hover:border-gray-600'
-                    }`}
-                  >
-                    Ohne Anzahlung
-                    <Badge className="bg-gray-600">Keine Vorabkosten</Badge>
-                  </button>
-                </div>
-                
-                {paymentOption === 'upfront' ? (
-                  <div className="space-y-6 mt-4">
-                    <div className="bg-[#252430] p-4 rounded-lg">
-                      <div className="flex items-start mb-2">
-                        <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-white">
-                          <span className="font-semibold">100% Geld-zurück-Garantie</span> auf die Anzahlung, wenn du mit unseren Kandidatenvorschlägen nicht zufrieden bist
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936]">
-                      <div className="flex items-start mb-2">
-                        <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-white">
-                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <h5 className="text-white">Zahlungszeitraum:</h5>
-                        <span className="text-white font-medium">
-                          {paymentMonths === 1 ? '1 Zahlung' : `${paymentMonths} Monatsraten`}
-                        </span>
-                      </div>
-                      
-                      <CustomSlider 
-                        value={[paymentMonths]} 
-                        onValueChange={(value) => setPaymentMonths(value[0])}
-                      />
-                      
-                      <div className="flex justify-between text-xs text-gray-400">
-                        <span>Einmalzahlung</span>
-                        <span>6 Monate</span>
-                        <span>12 Monate</span>
-                        <span>18 Monate</span>
-                        <span>24 Monate</span>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="space-y-6 mt-4">
-                    <div className="bg-[#252430] p-4 rounded-lg">
-                      <p className="text-white">
-                        <span className="font-semibold">Keine Vorabkosten</span> - du zahlst erst, wenn wir erfolgreich vermittelt haben
-                      </p>
-                    </div>
-                    
-                    <div className="bg-[#252430] p-4 rounded-lg border border-[#2a2936]">
-                      <div className="flex items-start mb-2">
-                        <ShieldCheck className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <p className="text-white">
-                          <span className="font-semibold">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
-                        </p>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <h5 className="text-white">Zahlungszeitraum:</h5>
-                        <span className="text-white font-medium">
-                          {paymentMonths === 1 ? '1 Zahlung' : `${paymentMonths} Monatsraten`}
-                        </span>
-                      </div>
-                      
-                      <CustomSlider 
-                        value={[paymentMonths]} 
-                        onValueChange={(value) => setPaymentMonths(value[0])}
-                      />
-                      
-                      <div className="flex justify-between text-xs text-gray-400">
-                        <span>Einmalzahlung</span>
-                        <span>6 Monate</span>
-                        <span>12 Monate</span>
-                        <span>18 Monate</span>
-                        <span>24 Monate</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Features */}
-              <div>
-                <h4 className="text-lg font-medium text-white mb-4">Inklusive Services:</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Persönlicher Recruiting Partner</span>
-                      <p className="text-gray-400 text-sm mt-1">Dein dedizierter Ansprechpartner für den gesamten Recruiting-Prozess</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Kandidaten in 7 Tagen</span>
-                      <p className="text-gray-400 text-sm mt-1">Garantierte Vorstellung erster qualifizierter Kandidaten innerhalb einer Woche</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Individuelles Assessment</span>
-                      <p className="text-gray-400 text-sm mt-1">Maßgeschneiderte Bewertungskriterien für maximale Vergleichbarkeit und Eignung</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Strategische Beratung</span>
-                      <p className="text-gray-400 text-sm mt-1">Wöchentliche 30-minütige Sessions zur Optimierung deiner Recruiting-Strategie</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Proaktives Talent-Sourcing</span>
-                      <p className="text-gray-400 text-sm mt-1">Kontinuierliche Suche nach Top-Talenten speziell für deine Anforderungen</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Unbegrenzte Kandidaten</span>
-                      <p className="text-gray-400 text-sm mt-1">Keine Limitierung bei der Anzahl der vorgestellten Profile bis zur erfolgreichen Besetzung</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Kick-Off Workshop</span>
-                      <p className="text-gray-400 text-sm mt-1">Intensive Analyse deiner Anforderungen für passgenaues Matching</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
-                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <span className="text-white font-medium">Detaillierte Analysen</span>
-                      <p className="text-gray-400 text-sm mt-1">Umfassende Reports zu Kandidaten-Feedback und Markttrends</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
+            <p className="text-gray-400 text-center mb-8">
+              Unsere Vermittlungsgebühr wird als Prozentsatz des Jahresgehalts berechnet
+            </p>
+          </div>
+          
+          {/* Zahlungsoption - Auswahl */}
+          <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
+            <h3 className="font-medium text-white mb-4">Zahlungsoption:</h3>
             
-            <CardFooter className="pt-4 pb-6 flex justify-center">
-              <Button 
-                variant="default" 
-                size="lg" 
-                className="shadow-lg relative z-20 px-8"
-                asChild
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Option 1: Mit Anzahlung */}
+              <div 
+                className={`p-4 rounded-lg cursor-pointer transition-all duration-200 ${
+                  paymentOption === 'upfront' 
+                    ? 'bg-[#252430] border-2 border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
+                    : 'bg-[#252430] border border-gray-700 hover:border-white'
+                }`}
+                onClick={() => setPaymentOption('upfront')}
               >
-                <Link 
-                  href="/kandidatenprofile"
-                  className="inline-flex items-center"
-                >
-                  Hol dir zwei Gratis-Profile
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex flex-col items-center justify-center mt-8 space-y-8"
-        >
-          <p className="text-gray-400 text-center max-w-2xl">
-            Teste unser Angebot kostenlos und überzeuge dich selbst von der Qualität unserer AI-Experten
-          </p>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-lg font-medium text-white">Mit Anzahlung</h4>
+                  <Badge className="bg-[#F25A75] shadow-[0_0_10px_rgba(242,90,117,0.5)]">
+                    {formatCurrency(getSavings())} gespart
+                  </Badge>
+                </div>
+                
+                <p className="text-sm text-gray-300">
+                  {formatCurrency(getUpfrontPayment())} Anzahlung + Restzahlung nach erfolgreicher Anstellung
+                </p>
+                
+                <p className="text-sm text-gray-300 mt-1">
+                  Gesamtgebühr: {getUpfrontRate()}% vom Jahresgehalt
+                </p>
+                
+                <div className="mt-3 bg-[#1D1C25] p-3 rounded-lg">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-white text-sm">
+                      <span className="font-medium">100% Geld-zurück-Garantie</span> auf die Anzahlung, wenn du mit unseren Kandidatenvorschlägen nicht zufrieden bist
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Option 2: Ohne Anzahlung */}
+              <div 
+                className={`p-4 rounded-lg cursor-pointer transition-all duration-200 ${
+                  paymentOption === 'no-upfront' 
+                    ? 'bg-[#252430] border-2 border-[#F25A75] shadow-[0_0_15px_rgba(242,90,117,0.4)]' 
+                    : 'bg-[#252430] border border-gray-700 hover:border-white'
+                }`}
+                onClick={() => setPaymentOption('no-upfront')}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-lg font-medium text-white">Ohne Anzahlung</h4>
+                  <Badge className="bg-[#252430] text-gray-300 border border-gray-700">
+                    Keine Vorabkosten
+                  </Badge>
+                </div>
+                
+                <p className="text-sm text-gray-300">
+                  Zahlung in einer Rate nach erfolgreicher Anstellung
+                </p>
+                
+                <p className="text-sm text-gray-300 mt-1">
+                  Gesamtgebühr: {getNoUpfrontRate()}% vom Jahresgehalt
+                </p>
+                
+                <div className="mt-3 bg-[#1D1C25] p-3 rounded-lg">
+                  <div className="flex items-start">
+                    <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                    <p className="text-white text-sm">
+                      <span className="font-medium">Keine Vorabkosten</span> - du zahlst erst, wenn wir erfolgreich vermittelt haben
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Zahlungszeitraum - Slider */}
+          <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-medium text-white">Zahlungszeitraum:</h3>
+              <span className="text-white font-medium">
+                {paymentMonths === 1 ? 'Einmalzahlung' : `${paymentMonths} Monate`}
+              </span>
+            </div>
+            
+            <CustomSlider
+              value={[paymentMonths]}
+              onValueChange={(value) => setPaymentMonths(value[0])}
+              min={1}
+              max={24}
+            />
+            
+            <div className="flex justify-between text-sm text-gray-400 mt-2">
+              <span>Einmalzahlung</span>
+              <span>6 Monate</span>
+              <span>12 Monate</span>
+              <span>18 Monate</span>
+              <span>24 Monate</span>
+            </div>
+          </div>
+          
+          {/* Kündigungsschutz */}
+          <div className="mb-8 bg-[#1D1C25] p-6 rounded-xl">
+            <div className="flex items-start">
+              <ShieldCheck className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+              <p className="text-white">
+                <span className="font-medium">Kündigungsschutz inklusive:</span> Kostenlose Nachbesetzung während der Probezeit. Sollte der vermittelte Kandidat nach der Probezeit, aber vor Ablauf deiner Ratenzahlung kündigen, reduzieren wir die verbleibenden Raten um 50%
+              </p>
+            </div>
+          </div>
+          
+          {/* Ergebnis - Ein Gesamtbetrag unten */}
+          <div className="mb-8 bg-[#252430] p-8 rounded-xl border-2 border-[#F25A75] shadow-[0_0_20px_rgba(242,90,117,0.3)]">
+            <h3 className="text-xl font-medium text-white mb-4 text-center">Deine Kosten</h3>
+            
+            <div className="flex flex-col items-center justify-center">
+              <div className="text-center mb-2">
+                <span className="text-5xl font-bold text-white">
+                  {paymentOption === 'upfront' 
+                    ? (paymentMonths > 1 
+                        ? formatCurrency(getUpfrontMonthlyPayment()) 
+                        : formatCurrency(getUpfrontTotalFee()))
+                    : (paymentMonths > 1 
+                        ? formatCurrency(getNoUpfrontMonthlyPayment()) 
+                        : formatCurrency(getNoUpfrontTotalFee()))
+                  }
+                </span>
+                <span className="text-xl text-gray-300 ml-2">
+                  {paymentMonths > 1 ? 'pro Monat' : 'einmalig'}
+                </span>
+              </div>
+              
+              <p className="text-gray-300 text-center mb-4">
+                {paymentOption === 'upfront' 
+                  ? `2.990 € Anzahlung + ${paymentMonths > 1 ? `${paymentMonths} Monatsraten` : 'Restzahlung'} nach erfolgreicher Anstellung`
+                  : `Zahlung in ${paymentMonths > 1 ? `${paymentMonths} Monatsraten` : 'einer Rate'} nach erfolgreicher Anstellung`
+                }
+              </p>
+              
+              <p className="text-gray-300 text-center">
+                Vermittlungsgebühr: {paymentOption === 'upfront' ? getUpfrontRate() : getNoUpfrontRate()}% vom Jahresgehalt des Kandidaten
+              </p>
+            </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="flex justify-center mb-12">
+            <Button 
+              variant="default" 
+              size="lg" 
+              className="shadow-lg relative z-20 px-8"
+              asChild
+            >
+              <Link 
+                href="/kandidatenprofile"
+                className="inline-flex items-center"
+              >
+                Hol dir zwei Gratis-Profile
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+          
+          {/* Inclusive Services - Ganz unten */}
+          <div className="mt-12">
+            <h3 className="font-platform text-xl font-medium text-white mb-6">Inklusive Services:</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Persönlicher Recruiting Partner</span>
+                  <p className="text-gray-400 text-sm mt-1">Dein dedizierter Ansprechpartner für den gesamten Recruiting-Prozess</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Kandidaten in 7 Tagen</span>
+                  <p className="text-gray-400 text-sm mt-1">Garantierte Vorstellung erster qualifizierter Kandidaten innerhalb einer Woche</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Individuelles Assessment</span>
+                  <p className="text-gray-400 text-sm mt-1">Maßgeschneiderte Bewertungskriterien für maximale Vergleichbarkeit und Eignung</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Strategische Beratung</span>
+                  <p className="text-gray-400 text-sm mt-1">Wöchentliche 30-minütige Sessions zur Optimierung deiner Recruiting-Strategie</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Proaktives Talent-Sourcing</span>
+                  <p className="text-gray-400 text-sm mt-1">Kontinuierliche Suche nach Top-Talenten speziell für deine Anforderungen</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Unbegrenzte Kandidaten</span>
+                  <p className="text-gray-400 text-sm mt-1">Keine Limitierung bei der Anzahl der vorgestellten Profile bis zur erfolgreichen Besetzung</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Kick-Off Workshop</span>
+                  <p className="text-gray-400 text-sm mt-1">Intensive Analyse deiner Anforderungen für passgenaues Matching</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start bg-[#1D1C25] border border-[#2a2936] p-3 rounded-lg hover:border-[#F25A75] transition-colors">
+                <Check className="h-5 w-5 text-[#F25A75] mr-3 mt-0.5 flex-shrink-0" />
+                <div>
+                  <span className="text-white font-medium">Detaillierte Analysen</span>
+                  <p className="text-gray-400 text-sm mt-1">Umfassende Reports zu Kandidaten-Feedback und Markttrends</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

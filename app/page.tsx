@@ -7,6 +7,8 @@ import CaseStudiesSection from '@/app/components/sections/CaseStudiesSection'
 import TestimonialSection from '@/app/components/sections/TestimonialSection'
 import FAQSection from '@/app/components/sections/FAQSection'
 import TeamSection from '@/app/components/sections/TeamSection'
+// TestAnimationSection temporär auskommentiert
+// import TestAnimationSection from '@/app/components/sections/TestAnimationSection'
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
           <HeroSection />
           <SecondSection />
           <ThirdSection />
+          {/* TestAnimationSection temporär auskommentiert */}
+          {/* <TestAnimationSection /> */}
           <CaseStudiesSection />
           <TeamSection />
           <TestimonialSection />

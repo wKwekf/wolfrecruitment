@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-[#121118] text-foreground font-sans;
   }
   h1,
   h2,

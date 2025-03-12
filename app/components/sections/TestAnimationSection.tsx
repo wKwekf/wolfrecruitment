@@ -3,10 +3,16 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import Image from 'next/image'
 
 export default function TestAnimationSection() {
   // State für die Sichtbarkeit
   const [isVisible, setIsVisible] = useState(false)
+  
+  // Refs müssen vor jeder bedingten Rückgabe deklariert werden
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
   
   // Überprüfe beim Laden, ob die Komponente angezeigt werden soll
   useEffect(() => {
@@ -15,16 +21,11 @@ export default function TestAnimationSection() {
     setIsVisible(false)
   }, [])
   
-  // Wenn nicht sichtbar, nichts rendern
-  if (!isVisible) {
-    return null
-  }
-
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLImageElement>(null)
-
+  // GSAP-Effekt muss auch vor der bedingten Rückgabe deklariert werden
   useEffect(() => {
+    // Wenn nicht sichtbar, nichts tun
+    if (!isVisible) return
+    
     // Only run on client side
     if (typeof window === 'undefined') return
 
@@ -34,9 +35,8 @@ export default function TestAnimationSection() {
     // Make sure elements are available
     if (!sectionRef.current || !containerRef.current || !imageRef.current) return
     
-    // Wait for the image to load to get accurate dimensions
-    const img = imageRef.current
-    
+    // Da wir jetzt ein div statt eines img-Elements verwenden, 
+    // können wir die Animation direkt starten
     const setupAnimation = () => {
       // HIER KANNST DU MIT DEN WERTEN SPIELEN:
       // Erhöhe diesen Wert, um weiter nach links zu scrollen
@@ -81,19 +81,19 @@ export default function TestAnimationSection() {
       })
     }
     
-    // If image is already loaded
-    if (img.complete) {
-      setupAnimation()
-    } else {
-      // Wait for image to load
-      img.onload = setupAnimation
-    }
+    // Starte die Animation direkt
+    setupAnimation()
     
     // Cleanup
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill())
     }
-  }, [])
+  }, [isVisible])
+  
+  // Wenn nicht sichtbar, nichts rendern
+  if (!isVisible) {
+    return null
+  }
 
   return (
     <section className="bg-[#FFFFFF] text-black w-full">
@@ -122,20 +122,28 @@ export default function TestAnimationSection() {
             paddingTop: '1%'
           }}
         >
-          <img 
+          {/* Verwende next/image statt img-Tag */}
+          <div 
             ref={imageRef}
-            src="/svg/fiverr_flow.svg" 
-            alt="Process Flow Diagram" 
-            className="h-full w-auto object-contain"
+            className="relative h-full"
             style={{ 
               maxHeight: '70%',
-              transform: 'scale(0.84)', // Reduced by 30% from 1.2
+              transform: 'scale(0.84)',
               transformOrigin: 'center 45%',
               marginLeft: '4vw',
               marginTop: '20vh'
             }}
-            id="flowImage"
-          />
+          >
+            <Image 
+              src="/svg/fiverr_flow.svg" 
+              alt="Process Flow Diagram" 
+              width={1000}
+              height={500}
+              className="h-full w-auto object-contain"
+              id="flowImage"
+              priority
+            />
+          </div>
         </div>
       </div>
       

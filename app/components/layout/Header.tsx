@@ -194,14 +194,16 @@ export default function Header() {
           <header className="bg-[#F5F5F5]/30 text-[#1A1921] rounded-full w-full max-w-6xl backdrop-blur-lg h-16 flex items-center">
             <div className="px-6 sm:px-8 w-full">
               <div className="flex justify-between items-center">
-                <Link href="/" className="flex items-center">
-                  <Image
-                    src="/logo.png"
-                    alt="Wolf Logo"
-                    width={120}
-                    height={40}
-                  />
-                </Link>
+                <div className="flex-shrink-0">
+                  <Link href="/" className="flex items-center">
+                    <Image
+                      src="/logo.png"
+                      alt="Wolf Logo"
+                      width={120}
+                      height={40}
+                    />
+                  </Link>
+                </div>
                 <div className={`flex items-center ${!showButton && isRootPage ? 'w-full justify-end' : ''}`}>
                   <div 
                     className="hidden md:flex space-x-4 lg:space-x-6"

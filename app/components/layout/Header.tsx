@@ -241,8 +241,8 @@ export default function Header() {
                           className="inline-flex rounded-full bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors h-10"
                           asChild
                         >
-                          <Link href="/kandidatenprofile">
-                            Hol dir zwei Gratis-Profile
+                          <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat">
+                            Kennenlern-Gespräch vereinbaren
                           </Link>
                         </Button>
                       </div>
@@ -258,8 +258,8 @@ export default function Header() {
                     className="rounded-full bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors"
                     asChild
                   >
-                    <Link href="/kandidatenprofile">
-                      Hol dir zwei Gratis-Profile
+                    <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat">
+                      Kennenlern-Gespräch
                     </Link>
                   </Button>
                 </div>

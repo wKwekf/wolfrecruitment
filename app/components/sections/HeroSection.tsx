@@ -166,8 +166,8 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href="/kandidatenprofile">
-                      Hol dir deine zwei Gratis-Profile
+                    <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat">
+                      Jetzt Kennenlern-Gespräch buchen
                       <motion.span
                         className="inline-block ml-2"
                         animate={{ x: isHovered ? 5 : 0 }}
@@ -177,7 +177,7 @@ export default function HeroSection() {
                       </motion.span>
                     </Link>
                   </Button>
-                  <p className="text-sm text-gray-400 text-center max-w-lg">Nur noch 4 Slots für Suchaufträge im März verfügbar - Unsere Recruiter haben eine Kapazitätsgrenze für Projekte</p>
+                  <p className="text-sm text-gray-400 text-center max-w-lg">Nur noch 1 Slot für Suchaufträge im März verfügbar - Unsere Recruiter haben eine Kapazitätsgrenze für Projekte</p>
                 </div>
               </div>
               <div className="relative w-full lg:w-1/2 flex items-center">

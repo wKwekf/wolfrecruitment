@@ -81,7 +81,6 @@ function TalentPreviewContent() {
   const [email, setEmail] = useState(searchParams.get('email') || '')
   const [firstName, setFirstName] = useState(searchParams.get('firstName') || '')
   const [description, setDescription] = useState(searchParams.get('description') || '')
-  const [dataProcessingConsent, setDataProcessingConsent] = useState(searchParams.get('consent') === 'true')
   const [marketingConsent, setMarketingConsent] = useState(searchParams.get('marketing') === 'true')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
@@ -104,7 +103,7 @@ function TalentPreviewContent() {
           email,
           firstname: firstName,
           description,
-          dataProcessingConsent,
+          dataProcessingConsent: true,
           marketingConsent,
           source: typeof window !== 'undefined' ? window.location.href : '',
           pageUri: typeof window !== 'undefined' ? window.location.pathname : '',
@@ -239,20 +238,9 @@ function TalentPreviewContent() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Checkbox
-                      id="dataProcessing"
-                      required
-                      checked={dataProcessingConsent}
-                      onCheckedChange={(checked) => setDataProcessingConsent(checked as boolean)}
-                      className="mt-1 cursor-pointer border-white data-[state=checked]:bg-[#F25A75] data-[state=checked]:border-[#F25A75]"
-                    />
-                    <Label 
-                      htmlFor="dataProcessing" 
-                      className="text-sm text-gray-300 cursor-pointer"
-                    >
-                      Ich stimme der Verarbeitung meiner Daten gemäß der <a href="https://www.wolfai.de/datenschutz" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Datenschutzerklärung</a> zu.*
-                    </Label>
+                  <div className="text-sm text-gray-300 mb-2">
+                    <span>Informationen zur Verarbeitung deiner Daten findest du in unserer </span>
+                    <a href="https://www.wolfai.de/datenschutz" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Datenschutzerklärung</a>.
                   </div>
 
                   <div className="flex items-start space-x-3">
@@ -274,16 +262,6 @@ function TalentPreviewContent() {
                 <div className="flex justify-center">
                   <Button
                     type="submit"
-                    onClick={(e) => {
-                      if (!dataProcessingConsent) {
-                        e.preventDefault();
-                        const btn = e.currentTarget;
-                        btn.classList.add('animate-shake', 'bg-red-500/50');
-                        setTimeout(() => {
-                          btn.classList.remove('animate-shake', 'bg-red-500/50');
-                        }, 500);
-                      }
-                    }}
                     className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white font-semibold py-4 px-6 text-lg transition-colors duration-200"
                   >
                     {isSubmitting ? 'Wird gesendet...' : 'Jetzt kostenfrei zwei Profile erhalten'}

@@ -23,7 +23,7 @@ module.exports = {
   	extend: {
   		fontFamily: {
   			sans: ['var(--font-figtree)', ...fontFamily.sans],
-  			platform: ['Platform', ...fontFamily.sans]
+  			platform: ['var(--font-figtree)', ...fontFamily.sans]
   		},
   		colors: {
   			background: 'hsl(var(--background))',

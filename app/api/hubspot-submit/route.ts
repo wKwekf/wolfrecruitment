@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       legalConsentOptions: {
         consent: {
           consentToProcess: dataProcessingConsent,
-          text: "Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.",
+          text: "Informationen zur Verarbeitung der Daten wurden in der Datenschutzerklärung bereitgestellt.",
           communications: [
             {
               value: marketingConsent,

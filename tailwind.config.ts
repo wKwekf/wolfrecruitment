@@ -32,6 +32,9 @@ module.exports = {
   		maxWidth: {
   			custom: '1320px'
   		},
+      letterSpacing: {
+        'heading': '-0.03em', // -1% letter spacing for headings
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {

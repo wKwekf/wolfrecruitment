@@ -144,7 +144,7 @@ export default function HeroSection() {
           >
             <div className="w-full flex flex-col lg:flex-row gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
-                <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight mb-6">
+                <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-tight tracking-heading mb-6">
                   <span className="text-[#f25a75] block">Dein AI-Team.</span>
                   <span className="text-white block">In 7 Tagen.</span>
                 </h1>

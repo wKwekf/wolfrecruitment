@@ -12,7 +12,7 @@ export default function RequestProfilesSection() {
         <div className="max-w-custom mx-auto px-4">
           <div className="bg-[#121118] rounded-[32px] px-8 py-12 md:px-12 md:py-16 shadow-xl">
             <div className="flex flex-col items-center text-center">
-              <h2 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-medium mb-6 text-white">
+              <h2 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight font-medium tracking-heading mb-6 text-white">
                 Starte jetzt mit uns
               </h2>
               <p className="text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-2xl">

@@ -10,7 +10,7 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'Wolf - AI-Recruiting Experten',
+  title: 'Wolf - Recruiting ausschließlich für AI-Positionen',
   description: 'Wir finden die AI-Experten, die andere übersehen.',
   icons: {
     icon: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: 'Wolf - AI-Recruiting Experten',
+    title: 'Wolf - Recruiting ausschließlich für AI-Positionen',
     description: 'In 7 Tagen zu deinen passenden AI-Experten. Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.',
     type: 'website',
     url: 'https://wolfai.de',
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
         url: 'https://wolfai.de/logos/Logo_Wolf_Preview.png',
         width: 1200,
         height: 630,
-        alt: 'Wolf - AI-Recruiting Experten'
+        alt: 'Wolf - Recruiting ausschließlich für AI-Positionen'
       }
     ],
     siteName: 'Wolf'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wolf - AI-Recruiting Experten',
+    title: 'Wolf - Recruiting ausschließlich für AI-Positionen',
     description: 'In 7 Tagen zu deinen passenden AI-Experten. Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.',
     images: ['https://wolfai.de/logos/Logo_Wolf_Preview.png'],
   },

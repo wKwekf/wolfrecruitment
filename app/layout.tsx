@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: 'https://wolfai.de',
     images: [
       {
-        url: '/videos/Thumbnail/BayernLB_Thumbnail.png',
+        url: '/logo_black.png',
         width: 1200,
         height: 630,
         alt: 'Wolf - AI-Recruiting Experten'
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wolf - AI-Recruiting Experten',
     description: 'In 7 Tagen zu deinen passenden AI-Experten. Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.',
-    images: ['/videos/Thumbnail/BayernLB_Thumbnail.png'],
+    images: ['/logo_black.png'],
   },
   metadataBase: new URL('https://wolfai.de')
 }

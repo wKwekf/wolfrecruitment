@@ -215,7 +215,7 @@ export const PricingCalculator = () => {
           className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white shadow-[0_0_20px_rgba(242,90,117,0.3)]"
           asChild
         >
-          <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat">
+          <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
             Jetzt Plattform-Demo buchen
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

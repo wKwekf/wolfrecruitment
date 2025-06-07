@@ -23,7 +23,7 @@ export default function RequestProfilesSection() {
                 className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white"
                 asChild
               >
-                <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat" className="flex items-center gap-2">
+                <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat" className="flex items-center gap-2">
                   Kennenlern-Gespräch vereinbaren
                   <Calendar className="h-5 w-5" />
                 </Link>

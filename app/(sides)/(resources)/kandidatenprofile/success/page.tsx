@@ -116,7 +116,7 @@ function TalentPreviewSuccessContent() {
                     asChild
                     size="lg"
                   >
-                    <a href="https://calendly.com/wolfdanielmayer/termin-finden">
+                    <a href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
                       Jetzt kostenlose AI-Recruiting Beratung sichern
                     </a>
                   </Button>

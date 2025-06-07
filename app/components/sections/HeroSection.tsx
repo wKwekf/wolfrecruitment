@@ -76,7 +76,7 @@ export default function HeroSection() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href="https://calendly.com/wolfdanielgonzalezgarcia/quickchat">
+                    <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
                       Jetzt starten
                       <motion.span
                         className="inline-block ml-2"

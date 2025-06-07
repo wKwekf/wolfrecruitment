@@ -26,7 +26,7 @@ export default function DatenschutzPage() {
               <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
               
               <h4 className="text-lg font-semibold mt-4 mb-2">Wofür nutzen wir Ihre Daten?</h4>
-              <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+              <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Wenn Sie sich als Kandidat bewerben oder Profile anfordern, nutzen wir Ihre Daten zur Bearbeitung Ihrer Anfrage und zur Vermittlung von Positionen.</p>
               
               <h4 className="text-lg font-semibold mt-4 mb-2">Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
               <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
@@ -40,10 +40,10 @@ export default function DatenschutzPage() {
             <section>
               <h2 className="text-2xl font-semibold mb-4">2. Hosting</h2>
               <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
-              <h3 className="text-xl font-semibold mt-4 mb-2">Hetzner</h3>
-              <p>Anbieter ist die Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen (nachfolgend Hetzner).</p>
-              <p>Details entnehmen Sie der Datenschutzerklärung von Hetzner: <a href="https://www.hetzner.com/de/rechtliches/datenschutz" className="text-blue-600 hover:underline">https://www.hetzner.com/de/rechtliches/datenschutz</a>.</p>
-              <p>Die Verwendung von Hetzner erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
+              <h3 className="text-xl font-semibold mt-4 mb-2">Vercel</h3>
+              <p>Anbieter ist die Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA (nachfolgend Vercel).</p>
+              <p>Details entnehmen Sie der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy-policy" className="text-blue-600 hover:underline">https://vercel.com/legal/privacy-policy</a>.</p>
+              <p>Die Verwendung von Vercel erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
               
               <h3 className="text-xl font-semibold mt-4 mb-2">Auftragsverarbeitung</h3>
               <p>Wir haben einen Vertrag über Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gewährleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
@@ -59,9 +59,9 @@ export default function DatenschutzPage() {
               <h3 className="text-xl font-semibold mt-4 mb-2">Hinweis zur verantwortlichen Stelle</h3>
               <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
               <p>wolfrecruitment GmbH<br />
-              Hans-Durach-Str. 15<br />
-              82008 Unterhaching</p>
-              <p>Telefon: [Telefonnummer der verantwortlichen Stelle]<br />
+              Nördliche Münchner Str. 47<br />
+              82031 Grünwald</p>
+              <p>Telefon: +49 89 322 096 412<br />
               E-Mail: hello@wolfai.de</p>
               <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
               
@@ -107,18 +107,19 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="text-2xl font-semibold mb-4">4. Datenerfassung auf dieser Website</h2>
-              <h3 className="text-xl font-semibold mb-2">Cookies</h3>
-              <p>Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt.</p>
-              <p>Cookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p>
-              <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren würden (z. B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies können zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p>
-              <p>Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z. B. für die Warenkorbfunktion) oder zur Optimierung der Website (z. B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG); die Einwilligung ist jederzeit widerrufbar.</p>
-              <p>Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
-              <p>Welche Cookies und Dienste auf dieser Website eingesetzt werden, können Sie dieser Datenschutzerklärung entnehmen.</p>
               
-              <h3 className="text-xl font-semibold mt-4 mb-2">Kontaktformular</h3>
-              <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-              <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p>
-              <p>Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.</p>
+              <h3 className="text-xl font-semibold mb-2">Server-Log-Dateien</h3>
+              <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+              <ul className="list-disc list-inside ml-4 mt-2">
+                <li>Browsertyp und Browserversion</li>
+                <li>verwendetes Betriebssystem</li>
+                <li>Referrer URL</li>
+                <li>Hostname des zugreifenden Rechners</li>
+                <li>Uhrzeit der Serveranfrage</li>
+                <li>IP-Adresse</li>
+              </ul>
+              <p className="mt-2">Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.</p>
+              <p>Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Log-Files erfasst werden.</p>
               
               <h3 className="text-xl font-semibold mt-4 mb-2">Anfrage per E-Mail, Telefon oder Telefax</h3>
               <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
@@ -127,26 +128,77 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">5. Newsletter</h2>
-              <h3 className="text-xl font-semibold mb-2">Newsletterdaten</h3>
-              <p>Wenn Sie den auf der Website angebotenen Newsletter beziehen möchten, benötigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben. Diese Daten verwenden wir ausschließlich für den Versand der angeforderten Informationen und geben diese nicht an Dritte weiter.</p>
-              <p>Die Verarbeitung der in das Newsletteranmeldeformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen, etwa über den „Austragen"-Link im Newsletter. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
-              <p>Die von Ihnen zum Zwecke des Newsletter-Bezugs bei uns hinterlegten Daten werden von uns bis zu Ihrer Austragung aus dem Newsletter bei uns bzw. dem Newsletterdiensteanbieter gespeichert und nach der Abbestellung des Newsletters oder nach Zweckfortfall aus der Newsletterverteilerliste gelöscht. Wir behalten uns vor, E-Mail-Adressen aus unserem Newsletterverteiler nach eigenem Ermessen im Rahmen unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO zu löschen oder zu sperren.</p>
-              <p>Daten, die zu anderen Zwecken bei uns gespeichert wurden, bleiben hiervon unberührt.</p>
-              <p>Nach Ihrer Austragung aus der Newsletterverteilerliste wird Ihre E-Mail-Adresse bei uns bzw. dem Newsletterdiensteanbieter ggf. in einer Blacklist gespeichert, sofern dies zur Verhinderung künftiger Mailings erforderlich ist. Die Daten aus der Blacklist werden nur für diesen Zweck verwendet und nicht mit anderen Daten zusammengeführt. Dies dient sowohl Ihrem Interesse als auch unserem Interesse an der Einhaltung der gesetzlichen Vorgaben beim Versand von Newslettern (berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO). Die Speicherung in der Blacklist ist zeitlich nicht befristet. Sie können der Speicherung widersprechen, sofern Ihre Interessen unser berechtigtes Interesse überwiegen.</p>
+              <h2 className="text-2xl font-semibold mb-4">5. Bewerbermanagement und Recruiting</h2>
+              
+              <h3 className="text-xl font-semibold mb-2">Datenverarbeitung im Rahmen des Bewerbermanagements</h3>
+              <p>Wir bieten Ihnen die Möglichkeit, sich bei uns zu bewerben (z. B. per E-Mail, postalisch oder via Online-Bewerberformular). Im Folgenden informieren wir Sie über Umfang, Zweck und Verwendung Ihrer im Rahmen des Bewerbungsprozesses erhobenen personenbezogenen Daten. Wir versichern, dass die Erhebung, Verarbeitung und Nutzung Ihrer Daten in Übereinstimmung mit geltendem Datenschutzrecht und allen weiteren gesetzlichen Bestimmungen erfolgt und Ihre Daten streng vertraulich behandelt werden.</p>
+              
+              <h4 className="text-lg font-semibold mt-4 mb-2">Umfang und Zweck der Datenerhebung</h4>
+              <p>Wenn Sie uns eine Bewerbung zukommen lassen, verarbeiten wir Ihre damit verbundenen personenbezogenen Daten (z. B. Kontakt- und Kommunikationsdaten, Bewerbungsunterlagen, Notizen im Rahmen von Bewerbungsgesprächen etc.), soweit dies zur Entscheidung über die Begründung eines Beschäftigungsverhältnisses erforderlich ist. Rechtsgrundlage hierfür ist § 26 BDSG nach deutschem Recht (Anbahnung eines Beschäftigungsverhältnisses), Art. 6 Abs. 1 lit. b DSGVO (allgemeine Vertragsanbahnung) und – sofern Sie eine Einwilligung erteilt haben – Art. 6 Abs. 1 lit. a DSGVO. Die Einwilligung ist jederzeit widerrufbar. Ihre personenbezogenen Daten werden innerhalb unseres Unternehmens ausschließlich an Personen weitergegeben, die an der Bearbeitung Ihrer Bewerbung beteiligt sind.</p>
+              <p>Sofern die Bewerbung erfolgreich ist, werden die von Ihnen eingereichten Daten auf Grundlage von § 26 BDSG und Art. 6 Abs. 1 lit. b DSGVO zum Zwecke der Durchführung des Beschäftigungsverhältnisses in unseren Datenverarbeitungssystemen gespeichert.</p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Eigenentwickeltes Kandidatenmanagement-System</h3>
+              <p>Wir nutzen ein eigenentwickeltes Kandidatenmanagement-System (basierend auf Convex) zur Verwaltung von Bewerberdaten. In diesem System werden folgende Daten verarbeitet:</p>
+              <ul className="list-disc list-inside ml-4 mt-2">
+                <li>Bewerbungsvideos und Interviewaufzeichnungen</li>
+                <li>Lebensläufe und Bewerbungsunterlagen</li>
+                <li>Kommentare und Bewertungen (Scorecards)</li>
+                <li>Interviewdaten und -termine</li>
+                <li>Informationen zu offenen Positionen</li>
+                <li>Gehaltsvorstellungen und -verhandlungen</li>
+                <li>Feedback und Kommunikationsverlauf</li>
+              </ul>
+              <p className="mt-2">Die Daten werden ausschließlich zum Zweck der Personalvermittlung und -auswahl verwendet. Der Zugriff ist auf autorisierte Mitarbeiter beschränkt.</p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Attio CRM</h3>
+              <p>Wir verwenden Attio als unser Customer Relationship Management (CRM) System und Applicant Tracking System (ATS). Attio ist ein Dienst der Attio Ltd., Großbritannien. In Attio werden Kontaktdaten von Bewerbern und Unternehmen sowie der Kommunikationsverlauf gespeichert.</p>
+              <p>Weitere Informationen zum Datenschutz bei Attio finden Sie unter: <a href="https://attio.com/legal/privacy" className="text-blue-600 hover:underline">https://attio.com/legal/privacy</a></p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Aufbewahrungsdauer der Daten</h3>
+              <p>Sofern wir nach Abschluss des Bewerbungsverfahrens kein Arbeitsverhältnis mit Ihnen eingehen, werden die von Ihnen übermittelten Daten nach Ablauf der Aufbewahrungsfrist gelöscht. Die Aufbewahrungsfrist beträgt maximal sechs Monate nach Beendigung des Bewerbungsverfahrens. Dies gilt nicht, sofern gesetzliche Bestimmungen einer Löschung entgegenstehen, die weitere Speicherung zum Zwecke der Beweisführung erforderlich ist oder Sie in eine längere Speicherung ausdrücklich eingewilligt haben.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold mb-4">6. Plugins und Tools</h2>
+              <h2 className="text-2xl font-semibold mb-4">6. Newsletter</h2>
+              <h3 className="text-xl font-semibold mb-2">Newsletterdaten</h3>
+              <p>Wenn Sie den auf der Website angebotenen Newsletter beziehen möchten, benötigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben.</p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Beehiiv</h3>
+              <p>Der Versand unserer Newsletter erfolgt mittels „Beehiiv", einer Newsletterversandplattform des US-amerikanischen Anbieters Beehiiv, Inc. Die Datenschutzbestimmungen des Versanddienstleisters können Sie hier einsehen: <a href="https://www.beehiiv.com/privacy" className="text-blue-600 hover:underline">https://www.beehiiv.com/privacy</a>.</p>
+              <p>Die von Ihnen zum Zwecke des Newsletter-Bezugs bei uns hinterlegten Daten werden von uns bis zu Ihrer Austragung aus dem Newsletter bei uns bzw. dem Newsletterdiensteanbieter gespeichert und nach der Abbestellung des Newsletters oder nach Zweckfortfall aus der Newsletterverteilerliste gelöscht. Wir behalten uns vor, E-Mail-Adressen aus unserem Newsletterverteiler nach eigenem Ermessen im Rahmen unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO zu löschen oder zu sperren.</p>
+              <p>Die Verarbeitung der in das Newsletteranmeldeformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen, etwa über den „Austragen"-Link im Newsletter. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">7. Plugins und Tools</h2>
+              
               <h3 className="text-xl font-semibold mb-2">Google Fonts</h3>
               <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.</p>
               <p>Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse diese Website aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der einheitlichen Darstellung des Schriftbildes auf seiner Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p>
               <p>Wenn Ihr Browser Google Fonts nicht unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.</p>
               <p>Weitere Informationen zu Google Fonts finden Sie unter <a href="https://developers.google.com/fonts/faq" className="text-blue-600 hover:underline">https://developers.google.com/fonts/faq</a> und in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy?hl=de" className="text-blue-600 hover:underline">https://policies.google.com/privacy?hl=de</a>.</p>
               <p>Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework" (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link: <a href="https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active" className="text-blue-600 hover:underline">https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active</a></p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Calendly</h3>
+              <p>Wir nutzen auf unserer Website Calendly, einen Online-Terminplanungsdienst der Calendly LLC, 3423 Piedmont Road NE, Atlanta, GA 30305, USA. Calendly ermöglicht es Ihnen, Termine mit uns zu vereinbaren.</p>
+              <p>Wenn Sie einen Termin über Calendly buchen, werden folgende Daten erhoben:</p>
+              <ul className="list-disc list-inside ml-4 mt-2">
+                <li>Name und E-Mail-Adresse</li>
+                <li>Terminpräferenzen</li>
+                <li>Weitere Informationen, die Sie im Buchungsformular angeben</li>
+              </ul>
+              <p className="mt-2">Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung/Durchführung). Weitere Informationen zum Datenschutz bei Calendly finden Sie unter: <a href="https://calendly.com/pages/privacy" className="text-blue-600 hover:underline">https://calendly.com/pages/privacy</a></p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Vercel Analytics</h3>
+              <p>Diese Website nutzt Vercel Analytics zur statistischen Auswertung der Besucherzugriffe. Anbieter ist die Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.</p>
+              <p>Vercel Analytics verwendet keine Cookies und erfasst anonymisierte Daten über Websitebesuche, Seitenaufrufe, verwendete Browser und Betriebssysteme. Eine Identifizierung einzelner Personen ist nicht möglich.</p>
+              <p>Die Nutzung von Vercel Analytics erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der anonymisierten Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren.</p>
+              
+              <h3 className="text-xl font-semibold mt-4 mb-2">Videos auf Vercel</h3>
+              <p>Wir hosten Videos direkt über Vercel Blob Storage. Beim Abspielen der Videos werden keine Daten an Drittanbieter übertragen. Die Videos werden ausschließlich von unseren eigenen Servern bzw. den Servern von Vercel ausgeliefert.</p>
             </section>
 
-            <p className="mt-8 text-sm text-gray-600">Quelle: <a href="https://www.e-recht24.de" className="text-blue-600 hover:underline">https://www.e-recht24.de</a></p>
+            <p className="mt-8 text-sm text-gray-600">Stand: Januar 2025</p>
           </div>
         </div>
       </main>

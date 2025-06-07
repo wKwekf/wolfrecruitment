@@ -124,50 +124,50 @@ export default function HeroSection() {
                     {/* Platform Content */}
                     <div className="relative aspect-[16/10] bg-gray-900">
                       {activeTab === 'video' && (
-                        <div className="absolute inset-0 p-6">
-                          <div className="flex h-full gap-4">
-                            {/* Questions List - Left Side */}
-                            <div className="w-80 space-y-3">
-                              <h4 className="text-sm font-medium text-gray-400 mb-3">Knockout-Fragen für Sarah Schneider</h4>
+                        <div className="absolute inset-0 p-3 sm:p-6">
+                          <div className="flex flex-col lg:flex-row h-full gap-3 sm:gap-4">
+                            {/* Questions List - Top on mobile, Left on desktop */}
+                            <div className="w-full lg:w-80 space-y-2 sm:space-y-3 max-h-[40%] lg:max-h-full overflow-y-auto lg:overflow-visible">
+                              <h4 className="text-xs sm:text-sm font-medium text-gray-400 mb-2 sm:mb-3">Knockout-Fragen für Sarah Schneider</h4>
                               
                               {/* Question 1 */}
-                              <div className="bg-gray-800 rounded-lg p-4 border-2 border-[#f25a75]/30 cursor-pointer hover:border-[#f25a75]/50 transition-colors">
-                                <span className="text-sm font-medium text-white block mb-2">Frage 1: ML-Systeme in Produktion</span>
-                                <p className="text-xs text-gray-400">"Beschreiben Sie ein ML-System, das Sie in Produktion gebracht haben"</p>
+                              <div className="bg-gray-800 rounded-lg p-3 sm:p-4 border-2 border-[#f25a75]/30 cursor-pointer hover:border-[#f25a75]/50 transition-colors">
+                                <span className="text-xs sm:text-sm font-medium text-white block mb-1 sm:mb-2">Frage 1: ML-Systeme in Produktion</span>
+                                <p className="text-[10px] sm:text-xs text-gray-400">"Beschreiben Sie ein ML-System, das Sie in Produktion gebracht haben"</p>
                               </div>
                               
                               {/* Question 2 */}
-                              <div className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
-                                <span className="text-sm font-medium text-white block mb-2">Frage 2: Architektur-Entscheidungen</span>
-                                <p className="text-xs text-gray-400">"Wie würden Sie eine skalierbare ML-Pipeline designen?"</p>
+                              <div className="bg-gray-800 rounded-lg p-3 sm:p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
+                                <span className="text-xs sm:text-sm font-medium text-white block mb-1 sm:mb-2">Frage 2: Architektur-Entscheidungen</span>
+                                <p className="text-[10px] sm:text-xs text-gray-400">"Wie würden Sie eine skalierbare ML-Pipeline designen?"</p>
                               </div>
                               
-                              {/* Question 3 */}
-                              <div className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
-                                <span className="text-sm font-medium text-white block mb-2">Frage 3: Teamarbeit & Kommunikation</span>
-                                <p className="text-xs text-gray-400">"Beispiel einer erfolgreichen Zusammenarbeit mit Stakeholdern"</p>
+                              {/* Question 3 - Hidden on mobile to save space */}
+                              <div className="hidden sm:block bg-gray-800 rounded-lg p-3 sm:p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
+                                <span className="text-xs sm:text-sm font-medium text-white block mb-1 sm:mb-2">Frage 3: Teamarbeit & Kommunikation</span>
+                                <p className="text-[10px] sm:text-xs text-gray-400">"Beispiel einer erfolgreichen Zusammenarbeit mit Stakeholdern"</p>
                               </div>
                             </div>
                             
-                            {/* Video Area - Right Side */}
-                            <div className="flex-1 bg-black rounded-lg flex items-center justify-center relative overflow-hidden">
+                            {/* Video Area - Bottom on mobile, Right on desktop */}
+                            <div className="flex-1 bg-black rounded-lg flex items-center justify-center relative overflow-hidden min-h-[60%] lg:min-h-0">
                               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" />
                               <div className="relative z-10 text-center">
-                                <div className="w-20 h-20 bg-[#f25a75]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                  <Play className="w-10 h-10 text-[#f25a75]" />
+                                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#f25a75]/20 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                                  <Play className="w-8 h-8 sm:w-10 sm:h-10 text-[#f25a75]" />
                                 </div>
-                                <p className="text-gray-400">Sarah Schneider</p>
-                                <p className="text-sm text-gray-500">ML Engineer • 3 Jahre</p>
-                                <p className="text-xs text-gray-600 mt-2">Antwort zu Frage 1</p>
+                                <p className="text-sm sm:text-base text-gray-400">Sarah Schneider</p>
+                                <p className="text-[10px] sm:text-xs text-gray-500">ML Engineer • 3 Jahre</p>
+                                <p className="text-[10px] sm:text-xs text-gray-600 mt-1 sm:mt-2">Antwort zu Frage 1</p>
                               </div>
                               {/* Video Controls */}
-                              <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur rounded px-3 py-2">
-                                <div className="flex items-center gap-3">
-                                  <Play className="w-4 h-4 text-white" />
+                              <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4 bg-black/50 backdrop-blur rounded px-2 sm:px-3 py-1 sm:py-2">
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                  <Play className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                                   <div className="flex-1 h-1 bg-gray-700 rounded-full">
                                     <div className="w-1/3 h-full bg-[#f25a75] rounded-full" />
                                   </div>
-                                  <span className="text-xs text-gray-400">2:45 / 8:30</span>
+                                  <span className="text-[10px] sm:text-xs text-gray-400">2:45 / 8:30</span>
                                 </div>
                               </div>
                             </div>
@@ -176,65 +176,65 @@ export default function HeroSection() {
                       )}
 
                       {activeTab === 'scorecard' && (
-                        <div className="absolute inset-0 p-6">
-                          <div className="bg-gray-800 rounded-lg p-6 h-full">
-                            <h3 className="text-lg font-semibold mb-4">AI Technical Proficiency Assessment</h3>
-                            <div className="space-y-4">
-                              <div className="mb-4">
-                                <div className="flex justify-between items-center mb-1">
-                                  <span className="text-sm text-gray-300">ML Pipeline Design</span>
-                                  <div className="flex gap-1">
+                        <div className="absolute inset-0 p-3 sm:p-6">
+                          <div className="bg-gray-800 rounded-lg p-3 sm:p-6 h-full overflow-y-auto">
+                            <h3 className="text-sm sm:text-lg font-semibold mb-3 sm:mb-4">AI Technical Proficiency Assessment</h3>
+                            <div className="space-y-3 sm:space-y-4">
+                              <div>
+                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-1">
+                                  <span className="text-xs sm:text-sm text-gray-300">ML Pipeline Design</span>
+                                  <div className="flex gap-0.5 sm:gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
-                                      <svg key={star} className={`w-5 h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                                      <svg key={star} className={`w-3 h-3 sm:w-5 sm:h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                       </svg>
                                     ))}
                                   </div>
                                 </div>
-                                <p className="text-xs text-gray-400 italic">"Exzellentes Verständnis von End-to-End ML Workflows und Best Practices"</p>
+                                <p className="text-[10px] sm:text-xs text-gray-400 italic">"Exzellentes Verständnis von End-to-End ML Workflows und Best Practices"</p>
                               </div>
-                              <div className="mb-4">
-                                <div className="flex justify-between items-center mb-1">
-                                  <span className="text-sm text-gray-300">Python/TensorFlow</span>
-                                  <div className="flex gap-1">
+                              <div>
+                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-1">
+                                  <span className="text-xs sm:text-sm text-gray-300">Python/TensorFlow</span>
+                                  <div className="flex gap-0.5 sm:gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
-                                      <svg key={star} className={`w-5 h-5 ${star <= 4 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                                      <svg key={star} className={`w-3 h-3 sm:w-5 sm:h-5 ${star <= 4 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                       </svg>
                                     ))}
                                   </div>
                                 </div>
-                                <p className="text-xs text-gray-400 italic">"Solide Kenntnisse, könnte von mehr Erfahrung mit Custom Layers profitieren"</p>
+                                <p className="text-[10px] sm:text-xs text-gray-400 italic">"Solide Kenntnisse, könnte von mehr Erfahrung mit Custom Layers profitieren"</p>
                               </div>
-                              <div className="mb-4">
-                                <div className="flex justify-between items-center mb-1">
-                                  <span className="text-sm text-gray-300">MLOps Experience</span>
-                                  <div className="flex gap-1">
+                              <div>
+                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-1">
+                                  <span className="text-xs sm:text-sm text-gray-300">MLOps Experience</span>
+                                  <div className="flex gap-0.5 sm:gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
-                                      <svg key={star} className={`w-5 h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                                      <svg key={star} className={`w-3 h-3 sm:w-5 sm:h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                       </svg>
                                     ))}
                                   </div>
                                 </div>
-                                <p className="text-xs text-gray-400 italic">"Beeindruckende Erfahrung mit Kubernetes, MLflow und CI/CD für ML"</p>
+                                <p className="text-[10px] sm:text-xs text-gray-400 italic">"Beeindruckende Erfahrung mit Kubernetes, MLflow und CI/CD für ML"</p>
                               </div>
-                              <div className="mb-4">
-                                <div className="flex justify-between items-center mb-1">
-                                  <span className="text-sm text-gray-300">Communication Skills</span>
-                                  <div className="flex gap-1">
+                              <div>
+                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-1">
+                                  <span className="text-xs sm:text-sm text-gray-300">Communication Skills</span>
+                                  <div className="flex gap-0.5 sm:gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
-                                      <svg key={star} className={`w-5 h-5 ${star <= 4 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                                      <svg key={star} className={`w-3 h-3 sm:w-5 sm:h-5 ${star <= 4 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                       </svg>
                                     ))}
                                   </div>
                                 </div>
-                                <p className="text-xs text-gray-400 italic">"Klar strukturiert, kann komplexe Konzepte gut erklären"</p>
+                                <p className="text-[10px] sm:text-xs text-gray-400 italic">"Klar strukturiert, kann komplexe Konzepte gut erklären"</p>
                               </div>
                             </div>
-                            <div className="mt-6 pt-6 border-t border-gray-700">
-                              <p className="text-sm text-gray-400">
+                            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-700">
+                              <p className="text-xs sm:text-sm text-gray-400">
                                 Bewertet von: <span className="text-white">Dr. Markus Schmidt, ML Engineer</span>
                               </p>
                             </div>

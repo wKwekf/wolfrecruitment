@@ -126,9 +126,31 @@ export default function HeroSection() {
                       {activeTab === 'video' && (
                         <div className="absolute inset-0 p-6">
                           <div className="flex h-full gap-4">
-                            {/* Main Video Area */}
+                            {/* Questions List - Left Side */}
+                            <div className="w-80 space-y-3">
+                              <h4 className="text-sm font-medium text-gray-400 mb-3">Knockout-Fragen für Sarah Schneider</h4>
+                              
+                              {/* Question 1 */}
+                              <div className="bg-gray-800 rounded-lg p-4 border-2 border-[#f25a75]/30 cursor-pointer hover:border-[#f25a75]/50 transition-colors">
+                                <span className="text-sm font-medium text-white block mb-2">Frage 1: ML-Systeme in Produktion</span>
+                                <p className="text-xs text-gray-400">"Beschreiben Sie ein ML-System, das Sie in Produktion gebracht haben"</p>
+                              </div>
+                              
+                              {/* Question 2 */}
+                              <div className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
+                                <span className="text-sm font-medium text-white block mb-2">Frage 2: Architektur-Entscheidungen</span>
+                                <p className="text-xs text-gray-400">"Wie würden Sie eine skalierbare ML-Pipeline designen?"</p>
+                              </div>
+                              
+                              {/* Question 3 */}
+                              <div className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
+                                <span className="text-sm font-medium text-white block mb-2">Frage 3: Teamarbeit & Kommunikation</span>
+                                <p className="text-xs text-gray-400">"Beispiel einer erfolgreichen Zusammenarbeit mit Stakeholdern"</p>
+                              </div>
+                            </div>
+                            
+                            {/* Video Area - Right Side */}
                             <div className="flex-1 bg-black rounded-lg flex items-center justify-center relative overflow-hidden">
-                              {/* Placeholder for platform screenshot */}
                               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" />
                               <div className="relative z-10 text-center">
                                 <div className="w-20 h-20 bg-[#f25a75]/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -136,6 +158,7 @@ export default function HeroSection() {
                                 </div>
                                 <p className="text-gray-400">Sarah Schneider</p>
                                 <p className="text-sm text-gray-500">ML Engineer • 3 Jahre</p>
+                                <p className="text-xs text-gray-600 mt-2">Antwort zu Frage 1</p>
                               </div>
                               {/* Video Controls */}
                               <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur rounded px-3 py-2">
@@ -144,28 +167,7 @@ export default function HeroSection() {
                                   <div className="flex-1 h-1 bg-gray-700 rounded-full">
                                     <div className="w-1/3 h-full bg-[#f25a75] rounded-full" />
                                   </div>
-                                  <span className="text-xs text-gray-400">0:08 / 0:24</span>
-                                </div>
-                              </div>
-                            </div>
-                            {/* Sidebar */}
-                            <div className="w-64 hidden lg:block space-y-3">
-                              <div className="bg-gray-800 rounded-lg p-3">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 bg-gray-700 rounded-full" />
-                                  <div>
-                                    <p className="text-sm font-medium">Max Müller</p>
-                                    <p className="text-xs text-gray-400">Data Scientist</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="bg-gray-800 rounded-lg p-3">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 bg-gray-700 rounded-full" />
-                                  <div>
-                                    <p className="text-sm font-medium">Anna Schmidt</p>
-                                    <p className="text-xs text-gray-400">MLOps Engineer</p>
-                                  </div>
+                                  <span className="text-xs text-gray-400">2:45 / 8:30</span>
                                 </div>
                               </div>
                             </div>

@@ -10,60 +10,64 @@ import { motion } from "framer-motion"
 
 const faqs = [
   {
-    question: "Was ist euer Preismodell?",
-    answer: "Wir bieten flexible Zahlungsoptionen, die zu deinen Bedürfnissen passen. Du kannst zwischen einer Zahlung mit oder ohne Anzahlung wählen. Mit Anzahlung (2.990€) profitierst du von einer niedrigeren Gesamtgebühr. Beide Optionen können in Raten über einen Zeitraum von bis zu 24 Monaten bezahlt werden. Die genaue monatliche Rate hängt vom Jahresgehalt des Kandidaten und der gewählten Laufzeit ab. Unser Kündigungsschutz ist bei allen Zahlungsoptionen inklusive."
+    question: "Wie funktioniert die Wolf Plattform?",
+    answer: "Unsere Recruiter sourcen Kandidaten aus eigenen und öffentlichen Quellen. Dann führen unsere AI-Experten technische Interviews durch, bei denen sie deine vordefinierten Fragen stellen und Skills anhand spezieller Scorecards bewerten. Diese Interviews werden aufgezeichnet - 'See before you meet them'. Du erhältst Zugang zur Plattform mit allen Videos, Bewertungen und kannst deine Pipeline im Kanban-Board verwalten. Alles in einer integrierten Lösung."
   },
   {
-    question: "Was beinhaltet euer Kündigungsschutz?",
-    answer: "Unser Kündigungsschutz bietet dir doppelte Sicherheit: Während der Probezeit erhältst du eine kostenlose Nachbesetzung, falls der Kandidat ausscheidet. Nach der Probezeit reduzieren wir bei Ratenzahlung die verbleibenden Raten um 50%, sollte der vermittelte Kandidat vor Ablauf deiner Zahlungsperiode kündigen. Dieses Sicherheitspaket minimiert dein finanzielles Risiko erheblich und ist in allen unseren Zahlungsmodellen inklusive."
+    question: "Was kostet die Nutzung der Wolf Plattform?",
+    answer: "Unser transparentes Preismodell: 4.990€ Starthonorar pro Position + 19% Erfolgshonorar bei Einstellung. Die ersten 7 Tage kannst du kostenlos testen. Besonders fair: Unsere Erfolgsgarantie - sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar mit den tatsächlichen Leistungen (135€/Stunde Kommunikation, 500€/Kandidat) und erstatten die Differenz."
   },
   {
-    question: "Warum ist die Option mit Anzahlung günstiger?",
-    answer: "Die Option mit Anzahlung basiert auf einer engeren Partnerschaft mit klarem Commitment von beiden Seiten. Die initiale Anzahlung von 2.990€ ermöglicht es uns, von Anfang an mehr Ressourcen für deine Suche einzusetzen. Unsere Erfahrung zeigt, dass Recruiting-Prozesse deutlich erfolgreicher verlaufen, wenn beide Parteien von Anfang an verbindlich zusammenarbeiten. Diese Effizienzvorteile geben wir in Form eines reduzierten Gesamtpreises an dich weiter."
+    question: "Was sind Video-Interviews und wie laufen sie ab?",
+    answer: "Unsere Experten führen strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 8-10 minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz."
   },
   {
-    question: "Wie findet ihr die passenden AI-Experten für uns?",
-    answer: "Unsere Stärke liegt in der Kombination aus regionaler und technischer Spezialisierung: Jeder unserer Recruiter ist Experte für seinen lokalen Markt und gleichzeitig vollständig auf AI-Recruiting spezialisiert. Diese doppelte Fokussierung - sowohl geografisch als auch technologisch - ermöglicht es uns, die AI-Landschaft in jeder Region genau zu kennen und die wirklich passenden Experten für eure spezifischen Anforderungen zu identifizieren. Durch den kontinuierlichen Austausch mit Kandidaten und Unternehmen bauen wir unser Netzwerk stetig aus und bleiben nah am Puls der AI-Entwicklung."
+    question: "Wer führt die technischen Interviews und Bewertungen durch?",
+    answer: "Zwei Expertenebenen: Alle unsere Recruiter sind Google Cloud zertifizierte ML-Engineers. Zusätzlich haben wir für technische Interviews echte AI-Practitioners, die täglich AI-Systeme bauen. Diese führen die technischen Interviews für dich durch - unser Anspruch ist es, dir diese aufwändige Arbeit komplett abzunehmen. Jede Bewertung erfolgt mit nachvollziehbaren Scorecards."
   },
   {
-    question: "Wie lange dauert es, bis wir erste Kandidaten sehen?",
-    answer: "Durch unseren aktiven Kandidatenpool können wir meist innerhalb von 7 Tagen erste passende Kandidaten präsentieren. Da wir die Qualifikationen und Verfügbarkeiten in unserem Netzwerk bereits kennen, sind wir besonders schnell."
+    question: "Wie schnell erhalten wir qualifizierte Kandidaten?",
+    answer: "Unsere 7-Tage-Garantie ist kein leeres Versprechen: Von deinem Briefing bis zu den ersten Video-Interviews und Bewertungen vergehen maximal 7 Tage. Da wir einen aktiven Pool von AI-Experten pflegen und unsere Plattform den Prozess digitalisiert, sind wir 4-6x schneller als traditionelle Recruiter."
   },
   {
-    question: "Welche AI-Positionen könnt ihr besetzen?",
-    answer: "Wir decken das gesamte Spektrum ab: ML Engineers, Data Scientists, AI Researchers, AI-Architekten und Technical Leads. Unsere Expertise liegt besonders in der Vermittlung von Experten für Machine Learning, Deep Learning, Natural Language Processing und Computer Vision."
+    question: "Welche AI-Rollen könnt ihr über die Plattform besetzen?",
+    answer: "Die Plattform ist für alle AI-Positionen optimiert: ML Engineers, MLOps Engineers, AI Solution Architects, Data Scientists, AI Researchers, Computer Vision Engineers und NLP-Spezialisten. Unsere Bewertungskriterien sind rollenspezifisch angepasst - ein MLOps Engineer wird anders evaluiert als ein AI Researcher."
   },
   {
-    question: "Wie stellt ihr die Qualität der Kandidaten sicher?",
-    answer: "Als Google-zertifizierte ML-Engineers können wir die technischen Fähigkeiten direkt und fundiert evaluieren. Wir führen detaillierte technische Gespräche und nutzen unsere Praxiserfahrung, um die tatsächliche Expertise in verschiedenen AI-Technologien und Frameworks zu bewerten."
+    question: "Wie stellt die Plattform die Qualität der Kandidaten sicher?",
+    answer: "Dreifache Qualitätssicherung: 1) Nur vorqualifizierte Kandidaten aus unserem Netzwerk erhalten Zugang. 2) Video-Interviews zeigen echte Kommunikation und Problemlösungsfähigkeiten. 3) Technische Bewertung durch Fachexperten mit nachvollziehbaren Scorecards. Diese Kombination filtert unqualifizierte Bewerber effektiv aus."
   },
   {
-    question: "Wie unterstützt ihr beim Onboarding?",
-    answer: "Wir begleiten den gesamten Integrationsprozess - von der Vertragsgestaltung bis zu den ersten Monaten der Zusammenarbeit. Mit regelmäßigen Check-ins stellen wir sicher, dass sowohl ihr als auch der neue Mitarbeiter optimal unterstützt werdet."
+    question: "Was passiert nach der 7-tägigen Testphase?",
+    answer: "Nach der kostenlosen Testphase kannst du entscheiden: Bei Fortsetzung zahlst du das Starthonorar von 4.990€ und nutzt die Plattform für den kompletten Hiring-Prozess. Erst bei erfolgreicher Einstellung wird das Erfolgshonorar von 19% fällig. Unsere Erfolgsgarantie sichert dich ab: Keine Einstellung binnen 90 Tagen = Rückerstattung der Differenz zwischen Starthonorar und tatsächlichen Leistungen."
   },
   {
-    question: "Arbeitet ihr auch mit Start-ups zusammen?",
-    answer: "Ja, wir unterstützen Unternehmen jeder Größe. Für Start-ups und Scale-ups bieten wir speziell angepasste Lösungen, die eure spezifischen Anforderungen und Budgets berücksichtigen. Unsere Erfahrung zeigt, dass gerade innovative Start-ups oft besonders interessant für Top-AI-Talente sind."
+    question: "Kann ich die Plattform auch für mein bestehendes Team nutzen?",
+    answer: "Ja! Viele Kunden nutzen Wolf auch für Team-Erweiterungen und Nachbesetzungen. Die Plattform speichert alle vergangenen Suchen, sodass du bei Bedarf schnell auf bewährte Kandidaten zurückgreifen kannst. Einige Teams haben eine 'Bench' von vorqualifizierten Kandidaten für zukünftige Projekte."
   },
   {
-    question: "Wie geht ihr mit der Flut an unqualifizierten AI-Bewerbungen um?",
-    answer: "Der AI-Boom führt zu einer Vielzahl von Bewerbungen von Kandidaten, die nicht über die erforderliche Expertise verfügen. Als ML-Engineers können wir präzise zwischen echten AI-Experten und Quereinsteigern unterscheiden. Unser technischer Hintergrund ermöglicht es uns, die tatsächlichen Fähigkeiten der Kandidaten genau zu evaluieren und nur Top-Performer mit nachgewiesener AI-Expertise vorzustellen."
+    question: "Wie geht die Plattform mit Datenschutz um?",
+    answer: "Höchste Standards: Die Plattform ist DSGVO-konform, alle Daten werden in deutschen Rechenzentren gespeichert. Kandidaten stimmen der Video-Aufzeichnung explizit zu. Du kontrollierst, wer in deinem Team Zugang hat. Nach Abschluss des Prozesses können Daten auf Wunsch vollständig gelöscht werden."
   },
   {
-    question: "Beratet ihr auch bei der Gestaltung von AI-Teams?",
-    answer: "Ja, basierend auf unserer Erfahrung aus über 750 Tech-Vermittlungen unterstützen wir euch bei der strategischen Aufstellung eurer AI-Teams. Wir helfen bei der Definition von Rollen, Teamstrukturen und Entwicklungspfaden."
+    question: "Unterstützt die Plattform auch Remote-Hiring?",
+    answer: "Perfekt dafür gemacht! Video-Interviews funktionieren ortsunabhängig, unsere Pipeline umfasst Kandidaten aus ganz DACH und Europa. Die Plattform zeigt Standort und Remote-Präferenzen jedes Kandidaten. Viele unserer erfolgreichsten Placements sind Remote-Positionen."
   },
   {
-    question: "Wie stellt ihr sicher, dass die Experten langfristig bei uns bleiben?",
-    answer: "Wir legen besonderen Wert auf Cultural Fit und die langfristigen Karriereziele der Kandidaten. Durch unsere gründliche Analyse eurer Unternehmenskultur und der Entwicklungsmöglichkeiten können wir eine nachhaltige Passung sicherstellen."
+    question: "Was unterscheidet Wolf von anderen Recruiting-Plattformen?",
+    answer: "Drei Kern-Unterschiede: 1) 100% AI-Fokus - keine Vermischung mit anderen Tech-Rollen. 2) Video-first statt CV-first - du siehst Menschen, nicht Papier. 3) Echte Fachexpertise - ML-Engineers bewerten ML-Engineers. Diese Kombination gibt es nur bei Wolf."
   },
   {
-    question: "Vermittelt ihr auch internationale AI-Experten?",
-    answer: "Ja, wir haben Erfahrung in der Vermittlung internationaler Talente und unterstützen bei Visa-Angelegenheiten, Relocation und kultureller Integration. Unser Netzwerk erstreckt sich über ganz Europa und darüber hinaus."
+    question: "Kann ich mehrere Positionen gleichzeitig besetzen?",
+    answer: "Absolut! Die Plattform ist für Skalierung gebaut. Du kannst multiple Pipelines parallel führen, verschiedene Rollen mit spezifischen Anforderungen definieren und dein Team kann kollaborativ bewerten. Viele Kunden bauen ihre kompletten AI-Teams über Wolf auf."
   },
   {
-    question: "Wie läuft die erste Kontaktaufnahme ab?",
-    answer: "Nach einem unverbindlichen Erstgespräch, in dem wir eure spezifischen Anforderungen und Ziele kennenlernen, erstellen wir ein maßgeschneidertes Konzept. Innerhalb weniger Tage präsentieren wir euch erste passende Profile und begleiten euch durch den gesamten Prozess bis zur erfolgreichen Einstellung."
+    question: "Wie läuft der Start mit der Wolf Plattform ab?",
+    answer: "Simpel: 1) Kostenloses Erstgespräch (30 Min) zur Definition deiner Anforderungen. 2) Plattform-Zugang innerhalb von 24h. 3) Briefing der Kandidaten-Fragen. 4) Erste Video-Interviews nach max. 7 Tagen. Du kannst sofort loslegen - keine langen Implementierungen oder Trainings nötig."
+  },
+  {
+    question: "Was ist die Erfolgsgarantie?",
+    answer: "Unsere Erfolgsgarantie schützt deine Investition: Sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar (4.990€) mit den tatsächlich erbrachten Leistungen - 135€ pro Stunde Kommunikation und 500€ pro vorgestelltem Kandidaten. Die Differenz erstatten wir dir zurück. Nach 90 Tagen arbeiten wir auf Wunsch weiter, aber die Rückerstattungsoption ist auf diesen Zeitraum begrenzt."
   }
 ]
 

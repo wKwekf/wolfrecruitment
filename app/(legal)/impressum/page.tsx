@@ -15,8 +15,8 @@ export default function ImpressumPage() {
             <section>
               <h2 className="text-2xl font-medium mb-4 text-[#121118]">Angaben gemäß § 5 TMG</h2>
               <p>wolfrecruitment GmbH</p>
-              <p>Hans-Durach-Str. 15</p>
-              <p>Unterhaching</p>
+              <p>Nördliche Münchner Str. 47</p>
+              <p>82031 Grünwald</p>
             </section>
 
             <section>
@@ -26,7 +26,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="text-2xl font-medium mb-4 text-[#121118]">Vertreten durch</h2>
-              <p>Wolf-Daniel González García</p>
+              <p>Geschäftsführer: Wolf-Daniel González García</p>
             </section>
 
             <section>
@@ -37,7 +37,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="text-2xl font-medium mb-4 text-[#121118]">Umsatzsteuer-Identifikationsnummer</h2>
-              <p>DE350662723</p>
+              <p>DE367766469</p>
             </section>
 
             <section>

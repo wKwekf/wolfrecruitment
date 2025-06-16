@@ -1,11 +1,15 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar } from 'lucide-react'
+import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-dialog"
 
 export default function RequestProfilesSection() {
+  const [dialogOpen, setDialogOpen] = useState(false)
+  
   return (
     <div className="w-full bg-white">
       <section className="py-20">
@@ -20,18 +24,25 @@ export default function RequestProfilesSection() {
               </p>
               <Button 
                 size="lg"
-                className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white"
-                asChild
+                className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white flex items-center gap-2"
+                onClick={() => setDialogOpen(true)}
               >
-                <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat" className="flex items-center gap-2">
-                  Kennenlern-Gespräch vereinbaren
-                  <Calendar className="h-5 w-5" />
-                </Link>
+                Kennenlern-Gespräch vereinbaren
+                <Calendar className="h-5 w-5" />
               </Button>
             </div>
           </div>
         </div>
       </section>
+      
+      <CustomerCandidateDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onCustomerSelect={() => {
+          setDialogOpen(false);
+          window.location.href = "https://calendly.com/d/cvzz-69b-hc9/quick-chat";
+        }}
+      />
     </div>
   )
 } 

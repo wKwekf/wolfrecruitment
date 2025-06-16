@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from 'lucide-react'
 import gsap from 'gsap'
+import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-dialog"
 
 interface NavigationLink {
   name: string;
@@ -42,6 +43,7 @@ export default function Header() {
   const prevShowButtonRef = useRef(showButton)
   const [isRootPage, setIsRootPage] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   useEffect(() => {
     // Close dropdown when route changes
@@ -239,11 +241,9 @@ export default function Header() {
                           variant="default"
                           size="default"
                           className="inline-flex rounded-full bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors h-10"
-                          asChild
+                          onClick={() => setDialogOpen(true)}
                         >
-                          <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
-                            Kennenlern-Gespräch vereinbaren
-                          </Link>
+                          Kennenlern-Gespräch vereinbaren
                         </Button>
                       </div>
                     )}
@@ -256,11 +256,9 @@ export default function Header() {
                     variant="default"
                     size="sm"
                     className="rounded-full bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors"
-                    asChild
+                    onClick={() => setDialogOpen(true)}
                   >
-                    <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
-                      Kennenlern-Gespräch
-                    </Link>
+                    Kennenlern-Gespräch
                   </Button>
                 </div>
               </div>
@@ -268,6 +266,15 @@ export default function Header() {
           </header>
         </div>
       </div>
+      
+      <CustomerCandidateDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onCustomerSelect={() => {
+          setDialogOpen(false);
+          window.location.href = "https://calendly.com/d/cvzz-69b-hc9/quick-chat";
+        }}
+      />
     </>
   )
 }

@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-dialog"
 
 const heroVideoUrl = "https://wtgrng5vpllrzskd.public.blob.vercel-storage.com/HeroVideo-gDnCFNF5RFvRnSSGUgnDe7zLuN2Laf.mp4"
 
@@ -49,6 +50,7 @@ function TalentPreviewSuccessContent() {
   const showMarketingMessage = searchParams.get('marketing') === 'true'
   const videoRef = useRef<HTMLVideoElement>(null)
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -113,12 +115,10 @@ function TalentPreviewSuccessContent() {
                 </p>
                 <div className="flex flex-col space-y-4">
                   <Button 
-                    asChild
                     size="lg"
+                    onClick={() => setDialogOpen(true)}
                   >
-                    <a href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
-                      Jetzt kostenlose AI-Recruiting Beratung sichern
-                    </a>
+                    Jetzt kostenlose AI-Recruiting Beratung sichern
                   </Button>
                 </div>
               </div>
@@ -178,6 +178,15 @@ function TalentPreviewSuccessContent() {
           </div>
         </div>
       </div>
+      
+      <CustomerCandidateDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onCustomerSelect={() => {
+          setDialogOpen(false);
+          window.location.href = "https://calendly.com/d/cvzz-69b-hc9/quick-chat";
+        }}
+      />
     </section>
   )
 }

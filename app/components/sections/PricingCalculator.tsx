@@ -8,10 +8,12 @@ import { Check, ArrowRight, ShieldCheck, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
+import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-dialog";
 
 export const PricingCalculator = () => {
   const [salary, setSalary] = useState(100000);
   const [inputSalary, setInputSalary] = useState('100000');
+  const [dialogOpen, setDialogOpen] = useState(false);
   
   // Konstante Preise
   const startHonorar = 4990;
@@ -213,15 +215,22 @@ export const PricingCalculator = () => {
         <Button 
           size="lg" 
           className="bg-[#F25A75] hover:bg-[#F25A75]/90 text-white shadow-[0_0_20px_rgba(242,90,117,0.3)]"
-          asChild
+          onClick={() => setDialogOpen(true)}
         >
-          <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
-            Jetzt Plattform-Demo buchen
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          Jetzt Plattform-Demo buchen
+          <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
         <p className="text-gray-400 mt-4">7 Tage kostenlos testen • Keine Kreditkarte erforderlich</p>
       </div>
+      
+      <CustomerCandidateDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        onCustomerSelect={() => {
+          setDialogOpen(false);
+          window.location.href = "https://calendly.com/d/cvzz-69b-hc9/quick-chat";
+        }}
+      />
     </motion.div>
   );
 };

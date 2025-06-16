@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Users, BarChart3, Zap } from 'lucide-react'
 import Link from 'next/link'
+import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-dialog"
 
 const logos = [
   { name: 'Siemens', src: '/logos/Siemens.png' },
@@ -26,6 +27,7 @@ export default function HeroSection() {
   const [isHovered, setIsHovered] = useState(false)
   const [activeTab, setActiveTab] = useState('video')
   const [isPaused, setIsPaused] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   // Auto-rotate tabs every 5 seconds
   useEffect(() => {
@@ -72,20 +74,18 @@ export default function HeroSection() {
                     variant="default"
                     size="lg"
                     className="font-semibold mb-6 bg-[#F25A75] hover:bg-[#F25A75]/90 transition-colors shadow-[0_0_20px_rgba(242,90,117,0.3)]"
-                    asChild
+                    onClick={() => setDialogOpen(true)}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href="https://calendly.com/d/cvzz-69b-hc9/quick-chat">
-                      Jetzt starten
-                      <motion.span
-                        className="inline-block ml-2"
-                        animate={{ x: isHovered ? 5 : 0 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <ArrowRight className="h-5 w-5" />
-                      </motion.span>
-                    </Link>
+                    Jetzt starten
+                    <motion.span
+                      className="inline-block ml-2"
+                      animate={{ x: isHovered ? 5 : 0 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <ArrowRight className="h-5 w-5" />
+                    </motion.span>
                   </Button>
                 </div>
 
@@ -352,6 +352,15 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </div>
+        
+        <CustomerCandidateDialog
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+          onCustomerSelect={() => {
+            setDialogOpen(false);
+            window.location.href = "https://calendly.com/d/cvzz-69b-hc9/quick-chat";
+          }}
+        />
     </section>
   )
 }

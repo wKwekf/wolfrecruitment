@@ -9,7 +9,7 @@ export default function PricingSection() {
           Transparente Preise, faire Partnerschaft
         </h1>
         <p className="text-lg sm:text-xl mb-8 text-white text-center">
-          4.990€ Starthonorar + 19% Erfolgshonorar. Mit Erfolgsgarantie.
+          4.990€ Starthonorar + 20% Erfolgshonorar. Mit Erfolgsgarantie.
         </p>
         
         {/* Client Component für interaktive Elemente */}

@@ -17,7 +17,7 @@ export const PricingCalculator = () => {
   
   // Konstante Preise
   const startHonorar = 4990;
-  const erfolgsHonorarProzent = 19;
+  const erfolgsHonorarProzent = 20;
   
   // Berechne Erfolgshonorar
   const erfolgsHonorar = (salary * erfolgsHonorarProzent) / 100;

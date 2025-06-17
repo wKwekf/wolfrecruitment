@@ -26,6 +26,7 @@ interface NavigationLink {
 }
 
 const navigationLinks: NavigationLink[] = [
+  { name: 'Plattform', href: 'https://app.wolfai.de' },
   { name: 'Preise', href: '/preise' },
   { name: 'Ressourcen', 
     href: '#',
@@ -155,11 +156,14 @@ export default function Header() {
       )
     }
 
+    const isExternal = link.href.startsWith('http://') || link.href.startsWith('https://')
+    
     return (
       <Link
         href={link.href}
         onClick={(e) => link.href.startsWith('/#') ? handleScroll(e, link.href) : undefined}
         className="hover:text-gray-300 font-semibold"
+        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {link.name}
       </Link>

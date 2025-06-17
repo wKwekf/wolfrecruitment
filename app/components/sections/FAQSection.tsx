@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Was kostet die Nutzung der Wolf Plattform?",
-    answer: "Unser transparentes Preismodell: 4.990€ Starthonorar pro Position + 19% Erfolgshonorar bei Einstellung. Die ersten 7 Tage kannst du kostenlos testen. Besonders fair: Unsere Erfolgsgarantie - sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar mit den tatsächlichen Leistungen (135€/Stunde Kommunikation, 500€/Kandidat) und erstatten die Differenz."
+    answer: "Unser transparentes Preismodell: 4.990€ Starthonorar pro Position + 20% Erfolgshonorar bei Einstellung. Die ersten 7 Tage kannst du kostenlos testen. Besonders fair: Unsere Erfolgsgarantie - sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar mit den tatsächlichen Leistungen (135€/Stunde Kommunikation, 500€/Kandidat) und erstatten die Differenz."
   },
   {
     question: "Was sind Video-Interviews und wie laufen sie ab?",
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: "Was passiert nach der 7-tägigen Testphase?",
-    answer: "Nach der kostenlosen Testphase kannst du entscheiden: Bei Fortsetzung zahlst du das Starthonorar von 4.990€ und nutzt die Plattform für den kompletten Hiring-Prozess. Erst bei erfolgreicher Einstellung wird das Erfolgshonorar von 19% fällig. Unsere Erfolgsgarantie sichert dich ab: Keine Einstellung binnen 90 Tagen = Rückerstattung der Differenz zwischen Starthonorar und tatsächlichen Leistungen."
+    answer: "Nach der kostenlosen Testphase kannst du entscheiden: Bei Fortsetzung zahlst du das Starthonorar von 4.990€ und nutzt die Plattform für den kompletten Hiring-Prozess. Erst bei erfolgreicher Einstellung wird das Erfolgshonorar von 20% fällig. Unsere Erfolgsgarantie sichert dich ab: Keine Einstellung binnen 90 Tagen = Rückerstattung der Differenz zwischen Starthonorar und tatsächlichen Leistungen."
   },
   {
     question: "Kann ich die Plattform auch für mein bestehendes Team nutzen?",

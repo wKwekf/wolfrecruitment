@@ -43,7 +43,7 @@ export default function SecondSection() {
               </ul>
 
               <blockquote className="text-base sm:text-lg italic text-gray-300 pl-4 border-l-2 border-[#F25A75] mb-4">
-                "Für uns gilt: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting, jeder Recruiter arbeitet nur in einer definierten Region, und unsere ML-Zertifizierung garantiert technisches Verständnis. Genau so finden wir die AI-Experten, die andere übersehen."
+                "Für uns gilt: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting mit einem zweistufigen System: ML-zertifizierte Recruiter koordinieren den Prozess in ihrer Region, während unsere eigenen ML-Engineers die technischen Interviews führen. Diese Kombination aus lokalem Netzwerk und echter technischer Expertise findet die AI-Experten, die andere übersehen."
               </blockquote>
               <div className="w-80 h-24 relative -mt-2">
                 <Image

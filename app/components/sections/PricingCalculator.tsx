@@ -220,7 +220,6 @@ export const PricingCalculator = () => {
           Jetzt Plattform-Demo buchen
           <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
-        <p className="text-gray-400 mt-4">7 Tage kostenlos testen • Keine Kreditkarte erforderlich</p>
       </div>
       
       <CustomerCandidateDialog

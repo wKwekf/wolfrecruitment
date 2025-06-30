@@ -67,7 +67,7 @@ export default function HeroSection() {
                   </h1>
                   
                   <p className="text-xl text-gray-300 mb-8">
-                    Wolf ist die videobasierte Hiring-Plattform für AI-Talente. 7 Tage kostenlos testen.
+                    Wolf ist die videobasierte Hiring-Plattform für AI-Talente.
                   </p>
 
                   <Button

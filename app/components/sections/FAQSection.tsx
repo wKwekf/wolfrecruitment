@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "Was sind Video-Interviews und wie laufen sie ab?",
-    answer: "Unsere Experten führen strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 8-10 minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz."
+    answer: "Unsere ML-Engineers führen 30-minütige strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden und vollständige Scorecards ausgefüllt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 30-minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz, während die detaillierten Scorecards eine objektive Bewertung ermöglichen."
   },
   {
     question: "Wer führt die technischen Interviews und Bewertungen durch?",

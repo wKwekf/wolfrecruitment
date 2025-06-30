@@ -27,7 +27,6 @@ interface NavigationLink {
 
 const navigationLinks: NavigationLink[] = [
   { name: 'Plattform', href: 'https://app.wolfai.de' },
-  { name: 'Preise', href: '/preise' },
   { name: 'Ressourcen', 
     href: '#',
     type: 'dropdown',

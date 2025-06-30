@@ -5,7 +5,6 @@ import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { Switch } from '@/components/ui/switch'
 import { motion } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info, Edit2, Check } from 'lucide-react'
@@ -20,7 +19,6 @@ export default function ROICalculatorPage() {
   const [roi, setRoi] = useState<number>(0)
   const [isNegativeRoi, setIsNegativeRoi] = useState<boolean>(false)
   const [customValueFactor, setCustomValueFactor] = useState<boolean>(false)
-  const [isAllianceModel, setIsAllianceModel] = useState<boolean>(true)
   const [confirmedValueFactor, setConfirmedValueFactor] = useState<number | ''>(2)
 
   const calculateROI = useCallback(() => {
@@ -32,17 +30,16 @@ export default function ROICalculatorPage() {
     const dailyValue = (Number(salary) * Number(confirmedValueFactor)) / 365;
     const timeSaved = Number(usualHiringTime) - (hiringTimeAfterCandidate + 7);
     const valueSaved = dailyValue * timeSaved;
-    const percentage = isAllianceModel ? 0.26 : 0.30;
-    const cost = Number(salary) * percentage;
+    const cost = Number(salary) * 0.20 + 4990; // 20% success fee + 4990€ start fee
     const calculatedRoi = valueSaved - cost;
     
     setIsNegativeRoi(calculatedRoi < 0);
     setRoi(Math.max(0, calculatedRoi));
-  }, [salary, confirmedValueFactor, usualHiringTime, hiringTimeAfterCandidate, isAllianceModel])
+  }, [salary, confirmedValueFactor, usualHiringTime, hiringTimeAfterCandidate])
 
   useEffect(() => {
     calculateROI()
-  }, [salary, confirmedValueFactor, usualHiringTime, hiringTimeAfterCandidate, isAllianceModel, calculateROI])
+  }, [salary, confirmedValueFactor, usualHiringTime, hiringTimeAfterCandidate, calculateROI])
 
   const valueFactorOptions = [1.5, 2, 2.5, 3, 4, 5]
 
@@ -76,7 +73,6 @@ export default function ROICalculatorPage() {
                         <li>Wähle den Wertschöpfungsfaktor (wie viel Mehrwert generiert die Position)</li>
                         <li>Passe eure durchschnittliche Einstellungszeit an</li>
                         <li>Schätze eure interne Entscheidungszeit nach Profilerhalt</li>
-                        <li>Wähle zwischen Alliance und Flex Modell</li>
                       </ol>
                       <p className="text-gray-300">Der Rechner zeigt dir dann den geschätzten ROI basierend auf der Zeitersparnis und dem gewählten Modell.</p>
                     </div>
@@ -86,16 +82,7 @@ export default function ROICalculatorPage() {
             </div>
           </div>
           <Card className="w-full max-w-3xl mx-auto bg-[#1D1C25] text-white border-2 border-gray-200 rounded-xl overflow-hidden relative">
-            <div className="absolute top-6 sm:top-4 right-4 flex items-center space-x-2">
-              <span className={`text-base ${!isAllianceModel ? 'text-[#F25A75]' : 'text-gray-400'}`}>Flex</span>
-              <Switch
-                checked={isAllianceModel}
-                onCheckedChange={setIsAllianceModel}
-                className={`data-[state=checked]:bg-[#F25A75] ${!isAllianceModel ? 'bg-gray-400' : ''}`}
-              />
-              <span className={`text-base ${isAllianceModel ? 'text-[#F25A75]' : 'text-gray-400'}`}>Alliance</span>
-            </div>
-            <CardHeader className="pt-14 sm:pt-10">
+            <CardHeader className="pt-6 sm:pt-8">
               <h2 className="font-platform text-2xl sm:text-3xl font-medium text-white text-center">ROI-Rechner</h2>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -316,9 +303,6 @@ export default function ROICalculatorPage() {
                   </motion.p>
                 )}
                 <p className="text-base sm:text-lg text-gray-400 mt-2">
-                  Basierend auf dem {isAllianceModel ? 'Alliance' : 'Flex'} Modell
-                </p>
-                <p className="text-base sm:text-lg text-gray-400">
                   Zeitersparnis: {Number(usualHiringTime) - (hiringTimeAfterCandidate + 7)} Tage
                 </p>
               </div>

@@ -14,10 +14,6 @@ const faqs = [
     answer: "Unsere Recruiter sourcen Kandidaten aus eigenen und öffentlichen Quellen. Dann führen unsere AI-Experten technische Interviews durch, bei denen sie deine vordefinierten Fragen stellen und Skills anhand spezieller Scorecards bewerten. Diese Interviews werden aufgezeichnet - 'See before you meet them'. Du erhältst Zugang zur Plattform mit allen Videos, Bewertungen und kannst deine Pipeline im Kanban-Board verwalten. Alles in einer integrierten Lösung."
   },
   {
-    question: "Was kostet die Nutzung der Wolf Plattform?",
-    answer: "Unser transparentes Preismodell: 4.990€ Starthonorar pro Position + 20% Erfolgshonorar bei Einstellung. Besonders fair: Unsere Erfolgsgarantie - sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar mit den tatsächlichen Leistungen (135€/Stunde Kommunikation, 500€/Kandidat) und erstatten die Differenz."
-  },
-  {
     question: "Was sind Video-Interviews und wie laufen sie ab?",
     answer: "Unsere ML-Engineers führen 30-minütige strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden und vollständige Scorecards ausgefüllt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 30-minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz, während die detaillierten Scorecards eine objektive Bewertung ermöglichen."
   },
@@ -63,7 +59,7 @@ const faqs = [
   },
   {
     question: "Was ist die Erfolgsgarantie?",
-    answer: "Unsere Erfolgsgarantie schützt deine Investition: Sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir das Starthonorar (4.990€) mit den tatsächlich erbrachten Leistungen - 135€ pro Stunde Kommunikation und 500€ pro vorgestelltem Kandidaten. Die Differenz erstatten wir dir zurück. Nach 90 Tagen arbeiten wir auf Wunsch weiter, aber die Rückerstattungsoption ist auf diesen Zeitraum begrenzt."
+    answer: "Unsere Erfolgsgarantie schützt deine Investition: Sollte es innerhalb von 90 Tagen zu keiner Einstellung kommen, verrechnen wir unsere Leistungen fair ab. Nach 90 Tagen arbeiten wir auf Wunsch weiter, aber die Garantie ist auf diesen Zeitraum begrenzt. Details besprechen wir gerne in einem persönlichen Gespräch."
   }
 ]
 

@@ -10,9 +10,12 @@ import { CustomerCandidateDialog } from "@/app/components/ui/customer-candidate-
 
 const logos = [
   { name: 'Siemens', src: '/logos/Siemens.png' },
+  { name: 'YOKOGAWA', src: '/logos/YOKOGAWA.png', scale: 1.2 },
   { name: 'Nike', src: '/logos/Nike.png' },
-  { name: 'Santander', src: '/logos/Santander.png' },
   { name: 'BayernLB', src: '/logos/Bayernlb.png' },
+  { name: 'HYVE', src: '/logos/HYVE.png', scale: 1.1 },
+  { name: 'Santander', src: '/logos/Santander.png' },
+  { name: 'CampusFounders', src: '/logos/CampusFounders.png', scale: 1.2 },
   { name: 'Covestro', src: '/logos/Covestro.png' },
   { name: 'DEPT', src: '/logos/DEPT.png' }
 ]
@@ -299,11 +302,15 @@ export default function HeroSection() {
           {/* Trust Logos */}
           <div className="mt-16 text-center">
             <p className="text-sm text-gray-400 mb-6">
-              WIR HELFEN DEN ERFOLGREICHSTEN UNTERNEHMEN SCHNELLER EINZUSTELLEN
+              VON STARTUPS BIS ENTERPRISE – SKIP THE SCREENING, HIRE AI-TALENT
             </p>
             <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
               {logos.map((logo) => (
-                <div key={logo.name} className="w-24 h-10 relative opacity-60 hover:opacity-100 transition-opacity">
+                <div 
+                  key={logo.name} 
+                  className="w-24 h-10 relative opacity-60 hover:opacity-100 transition-opacity"
+                  style={{ transform: logo.scale ? `scale(${logo.scale})` : undefined }}
+                >
                   <Image
                     src={logo.src}
                     alt={`${logo.name} logo`}

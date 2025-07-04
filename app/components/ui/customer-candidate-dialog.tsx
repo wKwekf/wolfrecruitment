@@ -89,7 +89,7 @@ export function CustomerCandidateDialog({
                 <Mail className="h-6 w-6 text-[#F25A75] flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-gray-300 mb-3">
-                    Vielen Dank für dein Interesse an Wolf! Als spezialisierte AI-Recruiting Plattform arbeiten wir ausschließlich im Auftrag unserer Kunden.
+                    Vielen Dank für dein Interesse an Wolf! Als spezialisierte Tech-Recruiting Plattform arbeiten wir ausschließlich im Auftrag unserer Kunden.
                   </p>
                   <p className="text-gray-300 mb-4">
                     Wenn du dich als Kandidat bei uns bewerben möchtest, sende bitte deine Unterlagen an:

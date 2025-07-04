@@ -10,8 +10,8 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'Wolf | Hire World-Class Cloud & DevOps Engineers',
-  description: 'Wir finden die Cloud & DevOps-Experten, die andere übersehen.',
+  title: 'Wolf | Video-First Tech Recruiting',
+  description: 'Wir finden die Tech-Talente, die andere übersehen. Video-Interviews, geprüfte Kandidaten, 7-Tage-Garantie.',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: 'Recruiting ausschließlich für Cloud & DevOps-Positionen',
-    description: 'In 7 Tagen zu deinen passenden Cloud & DevOps-Experten. Geprüfte Kandidaten, die deine Infrastruktur sofort voranbringen.',
+    title: 'Wolf | Video-First Tech Recruiting',
+    description: 'Die videobasierte Recruiting-Plattform für Tech-Talente in DACH. Engineers interviewen Engineers. 7-Tage-Garantie.',
     type: 'website',
     url: 'https://wolfai.de',
     images: [
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
         url: 'https://wolfai.de/Logo_Wolf_Preview.png',
         width: 1200,
         height: 630,
-        alt: 'Wolf - Recruiting ausschließlich für Cloud & DevOps-Positionen'
+        alt: 'Wolf - Video-First Tech Recruiting'
       }
     ],
     siteName: 'Wolf'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Recruiting ausschließlich für Cloud & DevOps-Positionen',
-    description: 'In 7 Tagen zu deinen passenden Cloud & DevOps-Experten. Geprüfte Kandidaten, die deine Infrastruktur sofort voranbringen.',
+    title: 'Wolf | Video-First Tech Recruiting',
+    description: 'Die videobasierte Recruiting-Plattform für Tech-Talente in DACH. Engineers interviewen Engineers. 7-Tage-Garantie.',
     images: ['https://wolfai.de/Logo_Wolf_Preview.png'],
   },
   metadataBase: new URL('https://wolfai.de')

@@ -14,7 +14,7 @@ const comparisonItems: ComparisonItem[] = [
     feature: 'Spezialisierung',
     traditional: false,
     our: true,
-    description: '100% Fokus auf AI-Recruiting, keine Kompromisse'
+    description: '100% Fokus auf Tech-Recruiting, keine Kompromisse'
   },
   {
     feature: 'Geschwindigkeit',
@@ -39,7 +39,7 @@ export default function USPSection() {
             Was uns von anderen<br />Recruitern unterscheidet
           </h2>
           <p className="text-xl text-[#121118]/80 max-w-3xl mx-auto">
-            Mit der Kombination aus 100% AI-Fokus, technischer Expertise und unserem vorqualifizierten Kandidatenpool setzen wir neue Standards im Recruiting.
+            Mit der Kombination aus 100% Tech-Fokus, technischer Expertise und unserem vorqualifizierten Kandidatenpool setzen wir neue Standards im Recruiting.
           </p>
         </div>
 

@@ -8,10 +8,9 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const challenges = [
-  "Kaum Bewerbungen trotz attraktiver Stellenausschreibungen",
-  "Die besten Cloud & DevOps Engineers sind bereits vergeben und nicht aktiv suchend",
-  "Monatelange Vakanzen, die deine digitale Transformation ausbremsen",
-  "Der Konkurrenzkampf mit Tech-Giganten um die wenigen verfügbaren Experten"
+  "Top 20% Engineers sind nie auf dem Markt",
+  "Traditionelle Recruiter verstehen Tech-Skills nicht",
+  "Monatelange Prozesse für mittlmäßige Kandidaten"
 ]
 
 export default function SecondSection() {
@@ -26,7 +25,7 @@ export default function SecondSection() {
               transition={{ duration: 0.5 }}
               className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight lg:leading-[68px] font-medium mb-4 sm:mb-6"
             >
-              Warum Recruiting für Cloud & DevOps so schwierig ist
+              Engineers für Engineers
             </motion.h1>
             
             <motion.div
@@ -35,7 +34,7 @@ export default function SecondSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mb-6 sm:mb-8"
             >
-              <h3 className="text-lg sm:text-xl mb-3 sm:mb-4">Als Verantwortlicher für HR oder IT kennst du diese Situation:</h3>
+              <h3 className="text-lg sm:text-xl mb-3 sm:mb-4">Die Realität des Tech-Recruitings in DACH:</h3>
               <ul className="space-y-2 sm:space-y-3 list-disc pl-4 sm:pl-5 mb-6 sm:mb-8">
                 {challenges.map((challenge, index) => (
                   <li key={index} className="text-base sm:text-lg">{challenge}</li>
@@ -43,7 +42,7 @@ export default function SecondSection() {
               </ul>
 
               <blockquote className="text-base sm:text-lg italic text-gray-300 pl-4 border-l-2 border-[#F25A75] mb-4">
-                "Für uns gilt: Wir kennen jeden Senior Cloud & DevOps Engineer im DACH-Raum - auch die, die nicht aktiv suchen. Unser zweistufiges System funktioniert: Spezialisierte Tech-Recruiter mit tiefem Netzwerk sprechen passive Kandidaten direkt an, während echte DevOps-Engineers aus unserem Team die technische Passung in Video-Interviews prüfen. So erreichen wir die 20% Top-Performer, die niemals auf Stellenanzeigen reagieren würden."
+                "Bei Wolf interviewen Engineers andere Engineers. Kein HR-Gespräch, keine generischen Fragen. Echte technische Diskussionen auf Augenhöhe. Alles on Video, damit du siehst, wie dein nächster Hire wirklich tickt. Exklusiv für DACH - wo wir die Sprache, Kultur und den Markt verstehen."
               </blockquote>
               <div className="w-80 h-24 relative -mt-2">
                 <Image

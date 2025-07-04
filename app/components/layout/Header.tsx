@@ -175,7 +175,7 @@ export default function Header() {
         <div className="max-w-custom mx-auto px-4 sm:px-8">
           <div className="flex justify-center items-center">
             <div className="flex items-center gap-2 text-sm font-medium">
-              <span className="text-gray-400">100% FOKUS AUF CLOUD & DEVOPS</span>
+              <span className="text-gray-400">100% TECH-FOKUS</span>
               <span className="text-gray-600">•</span>
               <span className="text-gray-400">NUR SENIOR ENGINEERS (3+ JAHRE)</span>
               <span className="text-gray-600">•</span>

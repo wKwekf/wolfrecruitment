@@ -77,7 +77,7 @@ function TalentPreviewSuccessContent() {
                 {showMarketingMessage ? (
                   <>
                     Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
-                    damit wir dir die Profile zusenden und dich über die neuesten Cloud & DevOps-Recruiting Trends informieren können.
+                    damit wir dir die Profile zusenden und dich über die neuesten Tech-Recruiting Trends informieren können.
                   </>
                 ) : (
                   <>
@@ -109,16 +109,16 @@ function TalentPreviewSuccessContent() {
               <div className="space-y-6">
                 <h3 className="text-lg sm:text-xl mb-3 sm:mb-4">Brauchst du Recruiting-Unterstützung?</h3>
                 <p className="text-base sm:text-lg text-gray-300">
-                  Wenn du über die kostenlosen Profile hinaus Unterstützung bei der Besetzung deiner Cloud & DevOps-Positionen brauchst, 
-                  sind wir gerne für dich da. Unser Team hat jahrelange Erfahrung in der Cloud & DevOps-Branche und versteht die 
-                  spezifischen Anforderungen deiner Vakanzen.
+                  Wenn du über die kostenlosen Profile hinaus Unterstützung bei der Besetzung deiner Tech-Positionen brauchst, 
+                  sind wir gerne für dich da. Unser Team besteht aus Engineers, die Engineers verstehen - 
+                  und genau wissen, was du brauchst.
                 </p>
                 <div className="flex flex-col space-y-4">
                   <Button 
                     size="lg"
                     onClick={() => setDialogOpen(true)}
                   >
-                    Jetzt kostenlose Cloud & DevOps-Recruiting Beratung sichern
+                    Jetzt kostenlose Tech-Recruiting Beratung sichern
                   </Button>
                 </div>
               </div>

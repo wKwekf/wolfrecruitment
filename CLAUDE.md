@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 14 website for Wolf, a German AI recruiting company. The site uses TypeScript, Tailwind CSS, and the App Router pattern.
+This is a Next.js 14 website for Wolf, a German Cloud & DevOps recruiting company. The site uses TypeScript, Tailwind CSS, and the App Router pattern.
 
 ## Commands
 

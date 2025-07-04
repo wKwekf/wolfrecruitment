@@ -42,15 +42,15 @@ export default function CampusFoundersPage() {
                 {/* Left Column - Text Content */}
                 <div className="lg:w-1/2 lg:pr-8">
                   <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-medium mb-6 text-white">
-                    AI-Track-Lead angestellt in <span className="text-[#F25A75]">4 Wochen</span>
+                    Technical Track Lead angestellt in <span className="text-[#F25A75]">4 Wochen</span>
                   </h1>
                   <p className="text-xl text-white/80 font-medium leading-relaxed mb-8">
-                    Wie wir für die Campus Founders den perfekten AI-Track-Lead in nur 4 Wochen fanden und dabei die Qualität der Kandidaten deutlich steigern konnten.
+                    Wie wir für die Campus Founders den perfekten Technical Track Lead in nur 4 Wochen fanden und dabei die Qualität der Kandidaten deutlich steigern konnten.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
                     <div className="bg-[#1E1D24] px-4 py-2 rounded-lg">
-                      <span className="text-white">AI-Track-Lead</span>
+                      <span className="text-white">Technical Track Lead</span>
                     </div>
                     <div className="bg-[#1E1D24] px-4 py-2 rounded-lg">
                       <span className="text-white">Startup-Inkubator</span>
@@ -150,19 +150,19 @@ export default function CampusFoundersPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-[#121118]">Die Herausforderung</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Die Campus Founders suchten nach einem AI-Track-Lead – einer Schlüsselposition, die als Schnittstelle zwischen KI-Fachwelt und Business-/Bildungswelt fungieren sollte. Die besondere Herausforderung lag darin, jemanden zu finden, der nicht nur tiefgreifendes KI-Wissen mitbringt, sondern auch die Fähigkeit besitzt, dieses Wissen effektiv in Bildungsprogramme zu übersetzen.
+                  Die Campus Founders suchten nach einem Technical Track Lead – einer Schlüsselposition, die als Schnittstelle zwischen technischer Fachwelt und Business-/Bildungswelt fungieren sollte. Die besondere Herausforderung lag darin, jemanden zu finden, der nicht nur tiefgreifendes technisches Wissen mitbringt, sondern auch die Fähigkeit besitzt, dieses Wissen effektiv in Bildungsprogramme zu übersetzen.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-[#121118]">Unser Ansatz</h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Mit unserer Spezialisierung auf KI-Recruiting konnten wir einen effizienten Prozess umsetzen:
+                  Mit unserer Spezialisierung auf Tech-Recruiting konnten wir einen effizienten Prozess umsetzen:
                 </p>
                 <ul className="list-disc list-inside space-y-4 text-lg text-gray-700">
                   <li>Schnelle Identifikation passender Kandidaten durch unser spezialisiertes Recruiting</li>
                   <li>Präsentation der ersten Profile bereits nach einer Woche</li>
-                  <li>Sorgfältige Vorqualifizierung mit Fokus auf KI-Expertise und didaktische Fähigkeiten</li>
+                  <li>Sorgfältige Vorqualifizierung mit Fokus auf technische Expertise und didaktische Fähigkeiten</li>
                   <li>Effiziente Koordination der Bewerbungsgespräche mit Top-Kandidaten</li>
                 </ul>
               </div>
@@ -170,7 +170,7 @@ export default function CampusFoundersPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-[#121118]">Das Ergebnis</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Innerhalb von nur 4 Wochen konnten wir die Position erfolgreich besetzen. Von den 15 präsentierten Kandidaten wurden die besten zum Gespräch eingeladen, wobei die finale Kandidatin perfekt zur Position passte. Die hohe Matching-Qualität führte zu großer Zufriedenheit bei allen Beteiligten, und die Campus Founders konnten ihr AI-Programm wie geplant starten.
+                  Innerhalb von nur 4 Wochen konnten wir die Position erfolgreich besetzen. Von den 15 präsentierten Kandidaten wurden die besten zum Gespräch eingeladen, wobei die finale Kandidatin perfekt zur Position passte. Die hohe Matching-Qualität führte zu großer Zufriedenheit bei allen Beteiligten, und die Campus Founders konnten ihr Tech-Programm wie geplant starten.
                 </p>
               </div>
             </div>

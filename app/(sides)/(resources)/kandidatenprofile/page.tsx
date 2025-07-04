@@ -23,8 +23,8 @@ import './styles.css'
 
 const PLACEHOLDER_TEXT = `Beschreibe kurz deine offene Stelle:*
 
-Stellentitel: z.B. Senior Frontend Developer
-Tech Stack: z.B. React, TypeScript, Next.js
+Stellentitel: z.B. Senior DevOps Engineer
+Tech Stack: z.B. Kubernetes, Terraform, AWS/GCP
 Standort: Remote/Berlin/etc.`
 
 const benefits = [
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: "Was macht eure Profile besonders?",
-    answer: "Unsere Profile sind handverlesen von Recruitern, die selbst einen technischen Hintergrund haben. Wir kennen den AI-Markt und können die Qualifikationen der Kandidaten präzise einschätzen."
+    answer: "Unsere Profile sind handverlesen von Recruitern, die selbst einen technischen Hintergrund haben. Wir kennen den Cloud & DevOps-Markt und können die Qualifikationen der Kandidaten präzise einschätzen."
   }
 ]
 
@@ -183,7 +183,7 @@ function TalentPreviewContent() {
               <div className="space-y-4">
                 <div className="text-white font-semibold">IT'S FREE (FOR NOW...)</div>
                 <h1 className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
-                  Erhalte zwei kostenfreie Profile für deine AI-Position
+                  Erhalte zwei kostenfreie Profile für deine Cloud & DevOps-Position
                 </h1>
                 <p className="text-xl text-gray-300">
                   Sag uns, wen du suchst - und wir schicken dir zwei handverlesene Profile von passenden Kandidaten. 
@@ -254,7 +254,7 @@ function TalentPreviewContent() {
                       htmlFor="marketing" 
                       className="text-sm text-gray-300 cursor-pointer"
                     >
-                      Ja, ich möchte weitere exklusive Einblicke zu AI-Recruiting, relevante Kandidatenprofile und Branchentrends per E-Mail erhalten. Ich bin damit einverstanden, dass Wolf mich zu relevanten Angeboten, Events oder individuellen Recruiting-Lösungen kontaktiert. Ich kann mich jederzeit abmelden.
+                      Ja, ich möchte weitere exklusive Einblicke zu Cloud & DevOps-Recruiting, relevante Kandidatenprofile und Branchentrends per E-Mail erhalten. Ich bin damit einverstanden, dass Wolf mich zu relevanten Angeboten, Events oder individuellen Recruiting-Lösungen kontaktiert. Ich kann mich jederzeit abmelden.
                     </Label>
                   </div>
                 </div>

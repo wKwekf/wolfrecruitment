@@ -173,21 +173,16 @@ export default function Header() {
     <>
       <div className="bg-[#1E1D24] text-white py-2">
         <div className="max-w-custom mx-auto px-4 sm:px-8">
-          <div className="flex justify-end items-center gap-6">
-            <Link 
-              href="tel:+498932209412"
-              className="flex items-center gap-2 hover:text-gray-300 transition-colors text-sm"
-            >
-              <Phone className="h-4 w-4" strokeWidth={2.5} />
-              +49 89 322 096 412
-            </Link>
-            <Link 
-              href="mailto:hello@wolfai.de"
-              className="flex items-center gap-2 hover:text-gray-300 transition-colors text-sm"
-            >
-              <Mail className="h-4 w-4" strokeWidth={2.5} />
-              hello@wolfai.de
-            </Link>
+          <div className="flex justify-center items-center">
+            <div className="flex items-center gap-2 text-sm font-medium">
+              <span className="text-gray-400">100% FOKUS AUF CLOUD & DEVOPS</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-gray-400">NUR SENIOR ENGINEERS (3+ JAHRE)</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-gray-400">EXKLUSIV IN D-A-CH</span>
+              <span className="text-gray-600">•</span>
+              <span className="text-gray-400">7-TAGE-GARANTIE</span>
+            </div>
           </div>
         </div>
       </div>

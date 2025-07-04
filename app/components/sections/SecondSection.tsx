@@ -8,10 +8,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const challenges = [
-  "Zahlreiche Bewerbungen ohne substantielle AI-Expertise",
-  "Wertvolle Zeit in Gesprächen, die nicht zielführend sind",
-  "Die Schwierigkeit, technische Qualifikationen präzise zu bewerten",
-  "Das Wissen, dass andere Recruiting-Wege dir nicht die gewünschten Bewerber bringen"
+  "Kaum Bewerbungen trotz attraktiver Stellenausschreibungen",
+  "Die besten Cloud & DevOps Engineers sind bereits vergeben und nicht aktiv suchend",
+  "Monatelange Vakanzen, die deine digitale Transformation ausbremsen",
+  "Der Konkurrenzkampf mit Tech-Giganten um die wenigen verfügbaren Experten"
 ]
 
 export default function SecondSection() {
@@ -26,7 +26,7 @@ export default function SecondSection() {
               transition={{ duration: 0.5 }}
               className="font-platform text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight lg:leading-[68px] font-medium mb-4 sm:mb-6"
             >
-              Warum Recruiting für AI so schwierig ist
+              Warum Recruiting für Cloud & DevOps so schwierig ist
             </motion.h1>
             
             <motion.div
@@ -43,7 +43,7 @@ export default function SecondSection() {
               </ul>
 
               <blockquote className="text-base sm:text-lg italic text-gray-300 pl-4 border-l-2 border-[#F25A75] mb-4">
-                "Für uns gilt: Absolute Fokussierung. Wir machen ausschließlich AI-Recruiting mit einem zweistufigen System: ML-zertifizierte Recruiter koordinieren den Prozess in ihrer Region, während unsere eigenen ML-Engineers die technischen Interviews führen. Diese Kombination aus lokalem Netzwerk und echter technischer Expertise findet die AI-Experten, die andere übersehen."
+                "Für uns gilt: Wir kennen jeden Senior Cloud & DevOps Engineer im DACH-Raum - auch die, die nicht aktiv suchen. Unser zweistufiges System funktioniert: Spezialisierte Tech-Recruiter mit tiefem Netzwerk sprechen passive Kandidaten direkt an, während echte DevOps-Engineers aus unserem Team die technische Passung in Video-Interviews prüfen. So erreichen wir die 20% Top-Performer, die niemals auf Stellenanzeigen reagieren würden."
               </blockquote>
               <div className="w-80 h-24 relative -mt-2">
                 <Image

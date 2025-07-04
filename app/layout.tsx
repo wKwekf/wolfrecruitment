@@ -10,8 +10,8 @@ const figtree = Figtree({
 })
 
 export const metadata: Metadata = {
-  title: 'Recruiting ausschließlich für AI-Positionen',
-  description: 'Wir finden die AI-Experten, die andere übersehen.',
+  title: 'Wolf | Hire World-Class Cloud & DevOps Engineers',
+  description: 'Wir finden die Cloud & DevOps-Experten, die andere übersehen.',
   icons: {
     icon: [
       { url: '/favicon/favicon.ico' },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     ]
   },
   openGraph: {
-    title: 'Recruiting ausschließlich für AI-Positionen',
-    description: 'In 7 Tagen zu deinen passenden AI-Experten. Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.',
+    title: 'Recruiting ausschließlich für Cloud & DevOps-Positionen',
+    description: 'In 7 Tagen zu deinen passenden Cloud & DevOps-Experten. Geprüfte Kandidaten, die deine Infrastruktur sofort voranbringen.',
     type: 'website',
     url: 'https://wolfai.de',
     images: [
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
         url: 'https://wolfai.de/Logo_Wolf_Preview.png',
         width: 1200,
         height: 630,
-        alt: 'Wolf - Recruiting ausschließlich für AI-Positionen'
+        alt: 'Wolf - Recruiting ausschließlich für Cloud & DevOps-Positionen'
       }
     ],
     siteName: 'Wolf'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Recruiting ausschließlich für AI-Positionen',
-    description: 'In 7 Tagen zu deinen passenden AI-Experten. Geprüfte Kandidaten, die deine AI-Vision sofort voranbringen.',
+    title: 'Recruiting ausschließlich für Cloud & DevOps-Positionen',
+    description: 'In 7 Tagen zu deinen passenden Cloud & DevOps-Experten. Geprüfte Kandidaten, die deine Infrastruktur sofort voranbringen.',
     images: ['https://wolfai.de/Logo_Wolf_Preview.png'],
   },
   metadataBase: new URL('https://wolfai.de')

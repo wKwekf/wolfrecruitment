@@ -42,18 +42,18 @@ export default function BayernLBPage() {
                 {/* Left Column - Text Content */}
                 <div className="lg:w-1/2 lg:pr-8">
                   <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-medium mb-6 text-white">
-                    2 AI-Experten <span className="text-[#F25A75]">angestellt</span> in 6 Wochen
+                    2 Tech-Experten <span className="text-[#F25A75]">angestellt</span> in 6 Wochen
                   </h1>
                   <p className="text-xl text-white/80 font-medium leading-relaxed mb-8">
-                    Wie wir der BayernLB halfen, ihr KI-Team mit einem ML-Engineer und MLOps-Engineer aufzubauen und dabei die perfekte Passgenauigkeit erreichten.
+                    Wie wir der BayernLB halfen, ihr Tech-Team mit spezialisierten Engineering-Positionen zu verstärken und dabei die perfekte Passgenauigkeit erreichten.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
                     <div className="bg-[#1E1D24] px-4 py-2 rounded-lg">
-                      <span className="text-white">ML-Engineer</span>
+                      <span className="text-white">Senior Engineer</span>
                     </div>
                     <div className="bg-[#1E1D24] px-4 py-2 rounded-lg">
-                      <span className="text-white">MLOps-Engineer</span>
+                      <span className="text-white">Platform Engineer</span>
                     </div>
                     <div className="bg-[#1E1D24] px-4 py-2 rounded-lg">
                       <span className="text-white">6 Wochen Besetzung</span>
@@ -138,7 +138,7 @@ export default function BayernLBPage() {
                     <p className="text-[#121118] text-lg font-bold">Wochen bis zur<br />Besetzung</p>
                   </div>
                 </div>
-                <p className="text-[#121118] text-lg mt-6 text-center">Die BayernLB suchte nach zwei KI-Experten - wir lieferten beide Positionen in nur 6 Wochen.</p>
+                <p className="text-[#121118] text-lg mt-6 text-center">Die BayernLB suchte nach zwei spezialisierten Engineers - wir lieferten beide Positionen in nur 6 Wochen.</p>
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function BayernLBPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-[#121118]">Die Herausforderung</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Die BayernLB stand vor der Aufgabe, ihr KI-Team mit zwei Schlüsselpositionen zu verstärken: einem ML-Engineer und einem MLOps-Engineer. Diese Positionen waren entscheidend für den Aufbau einer robusten KI-Infrastruktur und die Entwicklung innovativer KI-Lösungen. Die besondere Herausforderung bestand darin, Experten zu finden, die sowohl technische Expertise als auch Erfahrung im Finanzsektor mitbringen.
+                  Die BayernLB stand vor der Aufgabe, ihr Tech-Team mit zwei Schlüsselpositionen zu verstärken: einem Senior Engineer und einem Platform Engineer. Diese Positionen waren entscheidend für den Aufbau einer robusten technischen Infrastruktur und die Entwicklung innovativer digitaler Lösungen. Die besondere Herausforderung bestand darin, Experten zu finden, die sowohl technische Expertise als auch Erfahrung im Finanzsektor mitbringen.
                 </p>
               </div>
 
@@ -170,7 +170,7 @@ export default function BayernLBPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-[#121118]">Das Ergebnis</h2>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Innerhalb von sechs Wochen konnten beide Positionen erfolgreich besetzt werden. Der ML-Engineer wurde nach vier Wochen eingestellt, der MLOps-Engineer folgte zwei Wochen später. Beide Kandidaten brachten nicht nur die gewünschte technische Expertise mit, sondern auch wertvolle Erfahrungen aus dem Finanzsektor, was ihre Integration in das bestehende Team erheblich beschleunigte.
+                  Innerhalb von sechs Wochen konnten beide Positionen erfolgreich besetzt werden. Der Senior Engineer wurde nach vier Wochen eingestellt, der Platform Engineer folgte zwei Wochen später. Beide Kandidaten brachten nicht nur die gewünschte technische Expertise mit, sondern auch wertvolle Erfahrungen aus dem Finanzsektor, was ihre Integration in das bestehende Team erheblich beschleunigte.
                 </p>
               </div>
             </div>

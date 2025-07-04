@@ -149,7 +149,7 @@ export default function ROISection() {
                       sideOffset={5} 
                       className="bg-[#2D2C35] text-white border border-gray-600 rounded-lg px-4 py-2 max-w-xs shadow-lg"
                     >
-                      <p className="text-base">Die durchschnittliche Wertschöpfung eines IT-Mitarbeiters liegt zwischen 2 und 2,5 und kann je nach Unternehmen deutlich höher sein.</p>
+                      <p className="text-base">Die durchschnittliche Wertschöpfung eines Cloud & DevOps-Engineers liegt zwischen 2,5 und 3,5 aufgrund ihrer kritischen Rolle in der Infrastruktur.</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -243,7 +243,7 @@ export default function ROISection() {
                         sideOffset={5}
                         className="bg-[#2D2C35] text-white border border-gray-600 rounded-lg px-4 py-2 max-w-xs shadow-lg"
                       >
-                        <p className="text-base">Die durchschnittliche Einstellungszeit in der IT-Branche beträgt 121 Tage.</p>
+                        <p className="text-base">Die durchschnittliche Einstellungszeit für Cloud & DevOps-Experten beträgt 121 Tage.</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>

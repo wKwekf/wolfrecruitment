@@ -58,18 +58,19 @@ export default function HeroSection() {
           >
             {/* Code snippet */}
             <div className="inline-flex items-center gap-2 mb-8 text-[#f25a75] text-sm font-mono">
-              <span>df['candidates'].apply(video_interview)</span>
+              <span>kubectl apply -f candidates.yaml</span>
             </div>
             
             {/* Centered headline */}
             <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight mb-6 max-w-6xl mx-auto">
-              <span className="text-white block">Geprüfte AI-Experten.</span>
-              <span className="text-white block">{"In 7 Tagen"}</span>
+              <span className="text-white block">Hire World-Class</span>
+              <span className="text-white block">Cloud & DevOps Engineers.</span>
+              <span className="text-[#f25a75] block">{"{ Ready to Deploy }"}</span>
             </h1>
             
             {/* Centered subheader */}
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Wolf ist die videobasierte Hiring-Plattform für AI-Talente. Überspringe das Screening und erhalte in Rekordzeit von Experten geprüfte Kandidaten.
+              Wolf ist die videobasierte Plattform für Cloud & DevOps Engineers - festangestellt oder freiberuflich. Mit 7-Tage-Garantie für erste Kandidaten.
             </p>
 
             {/* Centered CTA */}
@@ -134,14 +135,14 @@ export default function HeroSection() {
                           
                           {/* Question 1 */}
                           <div className="bg-gray-800 rounded-lg p-4 border-2 border-[#f25a75]/30 cursor-pointer hover:border-[#f25a75]/50 transition-colors">
-                            <span className="text-sm font-medium text-white block mb-2">Frage 1: ML-Systeme in Produktion</span>
-                            <p className="text-xs text-gray-400">"Beschreiben Sie ein ML-System, das Sie in Produktion gebracht haben"</p>
+                            <span className="text-sm font-medium text-white block mb-2">Frage 1: Kubernetes in Produktion</span>
+                            <p className="text-xs text-gray-400">"Beschreiben Sie ein Kubernetes-Cluster, das Sie in Produktion betreiben"</p>
                           </div>
                           
                           {/* Question 2 */}
                           <div className="bg-gray-800 rounded-lg p-4 cursor-pointer hover:border-gray-700 transition-colors border border-gray-700">
-                            <span className="text-sm font-medium text-white block mb-2">Frage 2: Architektur-Entscheidungen</span>
-                            <p className="text-xs text-gray-400">"Wie würden Sie eine skalierbare ML-Pipeline designen?"</p>
+                            <span className="text-sm font-medium text-white block mb-2">Frage 2: CI/CD-Pipeline Design</span>
+                            <p className="text-xs text-gray-400">"Wie würden Sie eine GitOps-basierte CI/CD-Pipeline aufbauen?"</p>
                           </div>
                           
                           {/* Question 3 */}
@@ -159,7 +160,7 @@ export default function HeroSection() {
                               <Play className="w-12 h-12 text-[#f25a75]" />
                             </div>
                             <p className="text-lg text-gray-400">Sarah Schneider</p>
-                            <p className="text-sm text-gray-500">ML Engineer • 3 Jahre</p>
+                            <p className="text-sm text-gray-500">DevOps Engineer • 3 Jahre</p>
                             <p className="text-sm text-gray-600 mt-2">Antwort zu Frage 1</p>
                           </div>
                           {/* Video Controls */}
@@ -184,11 +185,11 @@ export default function HeroSection() {
                   {activeTab === 'scorecard' && (
                     <div className="absolute inset-0 p-6">
                       <div className="bg-gray-800 rounded-lg p-6 h-full overflow-y-auto">
-                        <h3 className="text-lg font-semibold mb-4">AI Technical Proficiency Assessment</h3>
+                        <h3 className="text-lg font-semibold mb-4">Cloud & DevOps Technical Assessment</h3>
                         <div className="space-y-4">
                           <div>
                             <div className="flex justify-between items-center mb-1">
-                              <span className="text-sm text-gray-300">ML Pipeline Design</span>
+                              <span className="text-sm text-gray-300">Kubernetes & Container Orchestration</span>
                               <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <svg key={star} className={`w-5 h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
@@ -197,11 +198,11 @@ export default function HeroSection() {
                                 ))}
                               </div>
                             </div>
-                            <p className="text-xs text-gray-400 italic">"Exzellentes Verständnis von End-to-End ML Workflows und Best Practices"</p>
+                            <p className="text-xs text-gray-400 italic">"Exzellentes Verständnis von Container-Orchestrierung und Cloud-Native Patterns"</p>
                           </div>
                           <div>
                             <div className="flex justify-between items-center mb-1">
-                              <span className="text-sm text-gray-300">Python/TensorFlow</span>
+                              <span className="text-sm text-gray-300">Terraform/Infrastructure as Code</span>
                               <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <svg key={star} className={`w-5 h-5 ${star <= 4 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
@@ -210,11 +211,11 @@ export default function HeroSection() {
                                 ))}
                               </div>
                             </div>
-                            <p className="text-xs text-gray-400 italic">"Solide Kenntnisse, könnte von mehr Erfahrung mit Custom Layers profitieren"</p>
+                            <p className="text-xs text-gray-400 italic">"Solide Kenntnisse in IaC, gute Erfahrung mit Multi-Cloud-Deployments"</p>
                           </div>
                           <div>
                             <div className="flex justify-between items-center mb-1">
-                              <span className="text-sm text-gray-300">MLOps Experience</span>
+                              <span className="text-sm text-gray-300">CI/CD & GitOps Experience</span>
                               <div className="flex gap-1">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <svg key={star} className={`w-5 h-5 ${star <= 5 ? 'text-[#f25a75]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
@@ -223,7 +224,7 @@ export default function HeroSection() {
                                 ))}
                               </div>
                             </div>
-                            <p className="text-xs text-gray-400 italic">"Beeindruckende Erfahrung mit Kubernetes, MLflow und CI/CD für ML"</p>
+                            <p className="text-xs text-gray-400 italic">"Beeindruckende Erfahrung mit ArgoCD, Jenkins und GitLab CI/CD"</p>
                           </div>
                           <div>
                             <div className="flex justify-between items-center mb-1">
@@ -241,7 +242,7 @@ export default function HeroSection() {
                         </div>
                         <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-700">
                           <p className="text-xs sm:text-sm text-gray-400">
-                            Bewertet von: <span className="text-white">Dr. Markus Schmidt, ML Engineer</span>
+                            Bewertet von: <span className="text-white">Dr. Markus Schmidt, Senior DevOps Engineer</span>
                           </p>
                         </div>
                       </div>
@@ -259,11 +260,11 @@ export default function HeroSection() {
                                 <>
                                   <div className="bg-gray-800 rounded p-3 cursor-move">
                                     <p className="text-sm font-medium">Lisa Weber</p>
-                                    <p className="text-xs text-gray-400">AI Architect</p>
+                                    <p className="text-xs text-gray-400">Cloud Architect</p>
                                   </div>
                                   <div className="bg-gray-800 rounded p-3 cursor-move">
                                     <p className="text-sm font-medium">Tom Fischer</p>
-                                    <p className="text-xs text-gray-400">ML Engineer</p>
+                                    <p className="text-xs text-gray-400">SRE Engineer</p>
                                   </div>
                                 </>
                               )}
@@ -276,7 +277,7 @@ export default function HeroSection() {
                               {stage === 'Scored' && (
                                 <div className="bg-gray-800 rounded p-3 cursor-move">
                                   <p className="text-sm font-medium">Max Müller</p>
-                                  <p className="text-xs text-gray-400">Data Scientist</p>
+                                  <p className="text-xs text-gray-400">Platform Engineer</p>
                                   <div className="flex items-center gap-1 mt-1">
                                     <Zap className="w-3 h-3 text-[#f25a75]" />
                                     <span className="text-xs text-[#f25a75]">Top 5%</span>
@@ -304,7 +305,7 @@ export default function HeroSection() {
         {/* Trust Logos */}
         <div className="mt-16 text-center">
           <p className="text-sm text-gray-400 mb-6 uppercase tracking-wider">
-            FROM STARTUPS TO ENTERPRISE – SKIP THE SCREENING, HIRE AI-TALENT
+            VON STARTUPS BIS ENTERPRISE – SKIP THE SCREENING, HIRE CLOUD & DEVOPS ENGINEERS
           </p>
           <div className="flex justify-center items-center gap-4 md:gap-6 lg:gap-8 flex-wrap">
             {logos.map((logo) => (

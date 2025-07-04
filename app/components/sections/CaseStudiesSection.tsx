@@ -11,13 +11,13 @@ const caseStudies = [
   {
     id: 'campus-founders',
     company: 'Campus Founders',
-    jobTitles: ['AI-Track-Lead'],
+    jobTitles: ['Technical Track Lead'],
     industry: 'Startup-Inkubator',
   },
   {
     id: 'bayernlb',
     company: 'BayernLB',
-    jobTitles: ['ML-Engineer', 'MLOps-Engineer'],
+    jobTitles: ['Senior Engineer', 'Platform Engineer'],
     industry: 'Finanzdienstleistungen',
   }
 ]
@@ -158,7 +158,7 @@ export default function CaseStudiesSection() {
               Erfolgsgeschichten.<br />Messbare Ergebnisse.
             </h2>
             <p className="text-xl text-[#121118]/90 max-w-3xl mx-auto font-medium">
-              Entdecke, wie wir <span className="font-bold">AI-Talente</span> erfolgreich mit führenden Unternehmen zusammenbringen.
+              Entdecke, wie wir <span className="font-bold">Tech-Talente</span> erfolgreich mit führenden Unternehmen zusammenbringen.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ export default function CaseStudiesSection() {
 
               <div className="space-y-3">
                 <h3 className="font-platform text-xl font-medium text-[#121118]">
-                  AI-Track-Lead angestellt in 4 Wochen
+                  Technical Track Lead angestellt in 4 Wochen
                 </h3>
                 <div className="flex items-center gap-4 text-sm">
                   <span className="bg-gray-100 px-3 py-1 rounded-full">86 Mitarbeiter</span>
@@ -251,14 +251,14 @@ export default function CaseStudiesSection() {
 
               <div className="space-y-3">
                 <h3 className="font-platform text-xl font-medium text-[#121118]">
-                  2 AI-Experten angestellt in 6 Wochen
+                  2 Tech-Experten angestellt in 6 Wochen
                 </h3>
                 <div className="flex items-center gap-4 text-sm">
                   <span className="bg-gray-100 px-3 py-1 rounded-full">7.500 Mitarbeiter</span>
                   <span className="bg-gray-100 px-3 py-1 rounded-full">Finanzdienstleistungen</span>
                 </div>
                 <p className="text-gray-600">
-                  Wie wir der BayernLB halfen, ihr AI-Team mit einem ML-Engineer und MLOps-Engineer aufzubauen.
+                  Wie wir der BayernLB halfen, ihr Tech-Team mit kritischen Engineering-Positionen zu verstärken.
                 </p>
                 <div className="flex justify-end">
                   <Button 

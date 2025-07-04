@@ -77,7 +77,7 @@ function TalentPreviewSuccessContent() {
                 {showMarketingMessage ? (
                   <>
                     Wir haben dir gerade eine Bestätigungs-E-Mail geschickt. Bitte bestätige deine E-Mail-Adresse, 
-                    damit wir dir die Profile zusenden und dich über die neuesten AI-Recruiting Trends informieren können.
+                    damit wir dir die Profile zusenden und dich über die neuesten Cloud & DevOps-Recruiting Trends informieren können.
                   </>
                 ) : (
                   <>
@@ -109,8 +109,8 @@ function TalentPreviewSuccessContent() {
               <div className="space-y-6">
                 <h3 className="text-lg sm:text-xl mb-3 sm:mb-4">Brauchst du Recruiting-Unterstützung?</h3>
                 <p className="text-base sm:text-lg text-gray-300">
-                  Wenn du über die kostenlosen Profile hinaus Unterstützung bei der Besetzung deiner AI-Positionen brauchst, 
-                  sind wir gerne für dich da. Unser Team hat jahrelange Erfahrung in der AI-Branche und versteht die 
+                  Wenn du über die kostenlosen Profile hinaus Unterstützung bei der Besetzung deiner Cloud & DevOps-Positionen brauchst, 
+                  sind wir gerne für dich da. Unser Team hat jahrelange Erfahrung in der Cloud & DevOps-Branche und versteht die 
                   spezifischen Anforderungen deiner Vakanzen.
                 </p>
                 <div className="flex flex-col space-y-4">
@@ -118,7 +118,7 @@ function TalentPreviewSuccessContent() {
                     size="lg"
                     onClick={() => setDialogOpen(true)}
                   >
-                    Jetzt kostenlose AI-Recruiting Beratung sichern
+                    Jetzt kostenlose Cloud & DevOps-Recruiting Beratung sichern
                   </Button>
                 </div>
               </div>

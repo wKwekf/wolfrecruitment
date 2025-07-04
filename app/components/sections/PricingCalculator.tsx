@@ -120,7 +120,7 @@ export const PricingCalculator = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Kandidatenvorstellung</span>
-                  <span className="text-white">500€/Kandidat</span>
+                  <span className="text-white">1000€/Kandidat</span>
                 </div>
               </div>
             </div>

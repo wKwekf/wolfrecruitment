@@ -11,23 +11,23 @@ import { motion } from "framer-motion"
 const faqs = [
   {
     question: "Wie funktioniert die Wolf Plattform?",
-    answer: "Unsere Recruiter sourcen Kandidaten aus eigenen und öffentlichen Quellen. Dann führen unsere AI-Experten technische Interviews durch, bei denen sie deine vordefinierten Fragen stellen und Skills anhand spezieller Scorecards bewerten. Diese Interviews werden aufgezeichnet - 'See before you meet them'. Du erhältst Zugang zur Plattform mit allen Videos, Bewertungen und kannst deine Pipeline im Kanban-Board verwalten. Alles in einer integrierten Lösung."
+    answer: "Unsere Recruiter sourcen Kandidaten aus eigenen und öffentlichen Quellen. Dann führen unsere DevOps-Experten technische Interviews durch, bei denen sie deine vordefinierten Fragen stellen und Skills anhand spezieller Scorecards bewerten. Diese Interviews werden aufgezeichnet - 'See before you meet them'. Du erhältst Zugang zur Plattform mit allen Videos, Bewertungen und kannst deine Pipeline im Kanban-Board verwalten. Alles in einer integrierten Lösung."
   },
   {
     question: "Was sind Video-Interviews und wie laufen sie ab?",
-    answer: "Unsere ML-Engineers führen 30-minütige strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden und vollständige Scorecards ausgefüllt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 30-minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz, während die detaillierten Scorecards eine objektive Bewertung ermöglichen."
+    answer: "Unsere DevOps-Engineers führen 30-minütige strukturierte Interviews mit den Kandidaten durch, bei denen deine spezifischen Fragen gestellt werden und vollständige Scorecards ausgefüllt werden. Diese werden aufgezeichnet, sodass du die Kandidaten sprechen siehst - 'See before you meet them'. Du definierst vorab technische und kulturelle Fragen sowie die zu prüfenden Skills. Die 30-minütigen Videos geben authentische Einblicke in Kommunikation und Fachkompetenz, während die detaillierten Scorecards eine objektive Bewertung ermöglichen."
   },
   {
     question: "Wer führt die technischen Interviews und Bewertungen durch?",
-    answer: "Zwei Expertenebenen: Alle unsere Recruiter sind Google Cloud zertifizierte ML-Engineers. Zusätzlich haben wir für technische Interviews echte AI-Practitioners, die täglich AI-Systeme bauen. Diese führen die technischen Interviews für dich durch - unser Anspruch ist es, dir diese aufwändige Arbeit komplett abzunehmen. Jede Bewertung erfolgt mit nachvollziehbaren Scorecards."
+    answer: "Zwei Expertenebenen: Unsere spezialisierten Tech-Recruiter haben jahrelange Erfahrung im Cloud & DevOps-Markt und ein tiefes Netzwerk. Für die technischen Interviews setzen wir echte DevOps-Practitioners ein, die täglich Cloud-Infrastrukturen und CI/CD-Pipelines bauen. Diese führen die technischen Interviews für dich durch - unser Anspruch ist es, dir diese aufwändige Arbeit komplett abzunehmen. Jede Bewertung erfolgt mit nachvollziehbaren Scorecards."
   },
   {
     question: "Wie schnell erhalten wir qualifizierte Kandidaten?",
-    answer: "Unsere 7-Tage-Garantie ist kein leeres Versprechen: Von deinem Briefing bis zu den ersten Video-Interviews und Bewertungen vergehen maximal 7 Tage. Da wir einen aktiven Pool von AI-Experten pflegen und unsere Plattform den Prozess digitalisiert, sind wir 4-6x schneller als traditionelle Recruiter."
+    answer: "Unsere 7-Tage-Garantie ist kein leeres Versprechen: Von deinem Briefing bis zu den ersten Video-Interviews und Bewertungen vergehen maximal 7 Tage. Da wir einen aktiven Pool von Cloud & DevOps-Experten pflegen und unsere Plattform den Prozess digitalisiert, sind wir 4-6x schneller als traditionelle Recruiter."
   },
   {
-    question: "Welche AI-Rollen könnt ihr über die Plattform besetzen?",
-    answer: "Die Plattform ist für alle AI-Positionen optimiert: ML Engineers, MLOps Engineers, AI Solution Architects, Data Scientists, AI Researchers, Computer Vision Engineers und NLP-Spezialisten. Unsere Bewertungskriterien sind rollenspezifisch angepasst - ein MLOps Engineer wird anders evaluiert als ein AI Researcher."
+    question: "Welche Cloud & DevOps-Rollen könnt ihr über die Plattform besetzen?",
+    answer: "Die Plattform ist für alle Cloud & DevOps-Positionen optimiert: DevOps Engineers, Cloud Architects, Site Reliability Engineers (SRE), Platform Engineers, Infrastructure Engineers und CI/CD-Spezialisten. Unsere Bewertungskriterien sind rollenspezifisch angepasst - ein SRE wird anders evaluiert als ein Cloud Architect."
   },
   {
     question: "Wie stellt die Plattform die Qualität der Kandidaten sicher?",
@@ -47,11 +47,11 @@ const faqs = [
   },
   {
     question: "Was unterscheidet Wolf von anderen Recruiting-Plattformen?",
-    answer: "Drei Kern-Unterschiede: 1) 100% AI-Fokus - keine Vermischung mit anderen Tech-Rollen. 2) Video-first statt CV-first - du siehst Menschen, nicht Papier. 3) Echte Fachexpertise - ML-Engineers bewerten ML-Engineers. Diese Kombination gibt es nur bei Wolf."
+    answer: "Drei Kern-Unterschiede: 1) 100% Cloud & DevOps-Fokus - keine Vermischung mit anderen Tech-Rollen. 2) Video-first statt CV-first - du siehst Menschen, nicht Papier. 3) Echte Fachexpertise - DevOps-Engineers bewerten DevOps-Engineers. Diese Kombination gibt es nur bei Wolf."
   },
   {
     question: "Kann ich mehrere Positionen gleichzeitig besetzen?",
-    answer: "Absolut! Die Plattform ist für Skalierung gebaut. Du kannst multiple Pipelines parallel führen, verschiedene Rollen mit spezifischen Anforderungen definieren und dein Team kann kollaborativ bewerten. Viele Kunden bauen ihre kompletten AI-Teams über Wolf auf."
+    answer: "Absolut! Die Plattform ist für Skalierung gebaut. Du kannst multiple Pipelines parallel führen, verschiedene Rollen mit spezifischen Anforderungen definieren und dein Team kann kollaborativ bewerten. Viele Kunden bauen ihre kompletten Cloud & DevOps-Teams über Wolf auf."
   },
   {
     question: "Wie läuft der Start mit der Wolf Plattform ab?",

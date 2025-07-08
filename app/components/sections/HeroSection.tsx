@@ -58,19 +58,19 @@ export default function HeroSection() {
           >
             {/* Code snippet */}
             <div className="inline-flex items-center gap-2 mb-8 text-[#f25a75] text-sm font-mono">
-              <span>git push -u origin your-next-hire</span>
+              <span>git checkout --video your-next-engineer</span>
             </div>
             
             {/* Centered headline */}
             <h1 className="font-platform text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight mb-6 max-w-6xl mx-auto">
-              <span className="text-white block">Engineers, die andere</span>
-              <span className="text-white block">übersehen.</span>
+              <span className="text-white block">Skip the Screening.</span>
+              <span className="text-white block">Watch the Skills.</span>
               <span className="text-[#f25a75] block">{"{ Video-First Hiring }"}</span>
             </h1>
             
             {/* Centered subheader */}
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Die videobasierte Recruiting-Plattform für Tech-Talente in DACH. Sieh deine Kandidaten sprechen, bevor du sie triffst. 7-Tage-Garantie.
+              Die videobasierte Tech-Recruiting-Plattform für DACH. Engineers interviewen Engineers. Alle Gespräche auf Video. 7-Tage-Garantie.
             </p>
 
             {/* Centered CTA */}

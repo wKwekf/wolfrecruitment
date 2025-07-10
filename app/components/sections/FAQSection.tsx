@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Welche Tech-Rollen könnt ihr über die Plattform besetzen?",
-    answer: "Die Plattform ist für alle technischen Positionen optimiert: Software Engineers, Tech Leads, Engineering Manager, Full-Stack Developer, Backend Engineers und Spezialisten verschiedener Technologien. Unsere Bewertungskriterien sind rollenspezifisch angepasst - ein Frontend Engineer wird anders evaluiert als ein Tech Lead."
+    answer: "Die Plattform ist für alle technischen Positionen optimiert: Software Engineers, DevOps Engineers, SRE, Cloud Engineers, Security Engineers, Tech Leads, Engineering Manager, Full-Stack Developer, Backend Engineers und Spezialisten verschiedener Technologien. Unsere Bewertungskriterien sind rollenspezifisch angepasst - ein Frontend Engineer wird anders evaluiert als ein DevOps Engineer oder Security Engineer."
   },
   {
     question: "Wie stellt die Plattform die Qualität der Kandidaten sicher?",
